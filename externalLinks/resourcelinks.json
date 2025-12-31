@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "label": "Math and Technical Tools",
+      "description": "Online tools and systems useful for computations and modeling.",
+      "items": [
+        {"type": "link", "title": "LMFDB", "url": "https://www.lmfdb.org"},
+        {"type": "link", "title": "SageMathCell", "url": "https://sagecell.sagemath.org"},
+        {"type": "link", "title": "CoCalc", "url": "https://cocalc.com"}
+      ]
+    },
+    {
+      "label": "Recommended Books",
+      "description": "Books and long‑form references for deeper study.",
+      "items": [
+        {"type": "link", "title": "Elliptic Curves, Modular Forms, and Their L-functions", "url": "https://www.amazon.com/..."},
+        {"type": "link", "title": "The Arithmetic of Elliptic Curves", "url": "https://www.amazon.com/..."}
+      ]
+    },
+    {
+      "label": "PDF Guides",
+      "description": "Downloadable PDF materials.",
+      "items": [
+        {"type": "pdf", "title": "Guide to Research", "url": "resources/pdf/guide1.pdf"},
+        {"type": "pdf", "title": "Study Strategies", "url": "resources/pdf/guide2.pdf"}
+      ]
+    },
+    {
+      "label": "Tutorials & Tools",
+      "description": "Tutorial pages and interactive materials.",
+      "items": [
+        {"type": "tutorial", "title": "Python Programming", "url": "resources/tutorials/python.html"}
+      ]
+    }
+  ]
+}
