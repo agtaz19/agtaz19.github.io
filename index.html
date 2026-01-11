@@ -29,6 +29,11 @@ Home Landing page:
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
+
+        <!-- Collapsable Script-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     </head>
     <!-- END HEAD -->
 
@@ -37,56 +42,88 @@ Home Landing page:
 
         <!--========== HEADER ==========-->
         <header class="header navbar-fixed-top">
-            <!-- Navbar -->
-            <nav class="navbar" role="navigation">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="menu-container js_nav-item">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="toggle-icon"></span>
-                        </button>
-
-                        <!-- Logo -->
-                        <div class="logo">
-                            <a class="logo-wrap" href="#body">
-                                <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
-                                <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
+        <nav class="navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="row">
+                        <!-- Navbar header with logo and toggle -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            
+                            <a class="navbar-brand" href="index.html">
+                                <img src="img/logo.png" alt="Logo" style="height:40px;">
                             </a>
                         </div>
-                        <!-- End Logo -->
-                    </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse nav-collapse">
-                        <div class="menu-container">
-                            <ul class="nav navbar-nav navbar-nav-right">
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="index.html">Home</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="publiation.html">Publications & Research</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="resources.html">Resources</a>
-                                </li>
+                        <!-- Collapsible menu -->
+                        <div class="collapse navbar-collapse" id="main-nav">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="aboutme.html">About Me & CV</a></li>
+                                <li><a href="work.html">Work & Experience</a></li>
+                                <li><a href="outreach.html">Events & Outreach</a></li>
+                                <li><a href="publication.html">Publications & Research</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="resources.html">Resources</a></li>
                             </ul>
                         </div>
+
+
                     </div>
-                    <!-- End Navbar Collapse -->
                 </div>
-            </nav>
-            <!-- Navbar -->
-        </header>
+            </div>
+        </nav>
+    </header>
+
+<!--
+    <header class="header navbar-fixed-top">
+        <nav class="navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="row">
+
+                        <!--Navbar header
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="logo">
+                                <a class="logo-wrap" href="index.html">
+                                    <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
+                                    <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!--Collapsible Menu
+                        <div class="collapse navbar-collapse" id="main-nav">
+                            <div class="menu-container">
+                                <ul class="nav navbar-nav navbar-nav-right">
+                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="index.html">Home</a></li>
+                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a></li>
+                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a></li>
+                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a></li>
+                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a></li>
+                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="projects.html">Projects</a></li>
+                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="resources.html">Resources</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+-->
         <!--========== END HEADER ==========-->
 
         <!--========== SLIDER ==========-->
@@ -116,31 +153,17 @@ Home Landing page:
                 <div class="row">
                     <div class="col-sm-3 sm-margin-b-30">
                         <div class="text-right sm-text-left">
-                            <h2 class="margin-b-0">About Me</h2>
+                            <h2 class="margin-b-0">Welcome</h2>
                         </div>
                     </div>
                     <div class="col-sm-8 col-sm-offset-1">
                         <div class="margin-b-60">
-                            <!--===
-                            <p>My name is Asimina and in Fall 2025, I am a Peter M. Curran Visiting Assistant Professor at Fordham University. In Spring 2025, I completed my Ph.D. in Mathematics from the University of Connecticut (UConn) under Álvaro Lozano-Robledo, where I was supported by the Graduate Fellowship for STEM Diversity (GFSD) from 2022 - 2025. My interests are in number theory and algebra, specifically, arithmetic geometry and algebraic number theory. 
+                            <p>
+                                This is my portfolio. Here, you will find a curated overview of my research, projects, and professional experience across finance, consulting, and quantitative analysis. This space is designed to highlight my work, provide insights into my approach to problem-solving, and showcase contributions to both academic, professional, and applied projects.
                             </p>
 
-                            <p> Spring 2020, I graduated from Macaulay Honors at Baruch College (CUNY) with a B.A. in Mathematics and minors in Philosophy and Interdisciplinary studies of New York. In Fall 2017, I placed second at the Traders@MIT competition (the largest intercollegiate algorithmic trading competition in the country). In Spring 2018, I worked in the New York Stock Exchange (NYSE) with Group One Trading as a Trade Analyst Intern. In the summer of 2018, I participated in the NSF funded number theory REU at Oregon State University and was advised by Holly Swisher. In Spring 2019, I studied abroad in Budapest Semesters in Mathematics (BSM). In the summer of 2019, I participated in the NSF funded number theory REU at Texas A&M University and was advised by Riad Masri. My senior year, I was the first student at Baruch to write an honors thesis in math, and was advised by Andrew Obus. 
-                            </p>
-
-                            <p>I have a 5 year old female German Shepherd named Athena. Her instagram is @athenahamakiotes. In my free time, I like to do Brazilian jiu-jitsu and judo. I also enjoy swimming, going on walks/hikes, and listening to music. 
-                            </p>
-
-                            <p>If you would like to contact me, my email is ahamakiotes@fordham.edu. 
-                            </p>
-                            ===-->
-
-                            <p>As an Officer at State Street’s Alternative Investments Business Transformation segment, I assist both State Street & their clients with alternatives consulting related to strategy & operations. 
-                            </p>
-                            
-                            <p>Prior to my current position, I worked with FTI Consulting, a boutique consultancy, where I worked under the Corporate Finance & Restructuring group to assist clients transform their business and create value through various strategic initiatives related to: performance improvement, restructuring, and transactions. Over the course of my two years at the firm – I identified and reduced over $55 million in total savings. I additionally involved myself with firm recruiting, new hire onboarding/training, and the Hispanic Organization for Latino Advancement.  
-                            </p>
-                            <p>I hold a dual degree in Supply Chain Management and Finance from Arizona State University, where I graduated with honors, summa cum laude, and received multiple scholarships. I am passionate about data, capital markets, and continuous education. Currently, I am taking several mathematics and computer science courses to deepen my technical skillset to ultimately achieve a graduate degree. 
+                            <p> 
+                                Thank you for visiting, and I invite you to explore all content presented here.
                             </p>
 
                         </div>
@@ -149,14 +172,16 @@ Home Landing page:
                     </div>
                 </div>
                 <!--// end row -->
+            <hr>
             </div>
         </div>
+
         <!-- End About -->
 
         <!-- Experience -->
         <div id="Work & Experience">
             <div class="bg-color-sky-light" data-auto-height="true">
-                <div class="container content-lg">
+                <div class="container content-sm">
                     <div class="row">
                         <div class="col-sm-3 sm-margin-b-30">
                             <div class="text-right sm-text-left">
@@ -171,9 +196,29 @@ Home Landing page:
                                             <i class="service-icon icon-chemistry"></i>
                                         </div>
                                         <div class="service-info">
-                                            <h3>Financial Modeling</h3>
-                                            <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor
-
+                                            <h3>Business Strategy & Transformation</h3>
+                                            <p class="margin-b-5">
+                                                <li>
+                                                    Strategic analysis and market assessment
+                                                </li>
+                                                <li>
+                                                    Operational diagnostics and process improvement
+                                                </li>
+                                                <li>
+                                                    Data-driven decision making and performance evaluation
+                                                </li>
+                                                <li>
+                                                    Translating insights into actionable recommendations
+                                                </li>
+                                                <li>
+                                                    Problem-solving within cross-functional and collaborative environments
+                                                </li>
+                                                <li>
+                                                    Business/financial modeling and scenario planning
+                                                </li>
+                                                <li>
+                                                    Identifying opportunities for organizational transformation and growth
+                                                </li>
                                             </p>
                                         </div>
                                         <a href="work.html" class="content-wrapper-link"></a>    
@@ -185,8 +230,30 @@ Home Landing page:
                                             <i class="service-icon color-white icon-screen-tablet"></i>
                                         </div>
                                         <div class="service-info">
-                                            <h3 class="color-white">Cost Transformation & Operations</h3>
-                                            <p class="color-white margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                            <h3 class="color-white">Quant Finance</h3>
+                                            <p class="color-white margin-b-5">
+                                                <li class="color-white margin-b-5">
+                                                    Statistical modeling and data analysis
+                                                </li>
+                                                <li class="color-white margin-b-5">
+                                                    Algorithmic and event-driven trading strategies
+                                                </li>
+                                                <li class="color-white margin-b-5">
+                                                    Time series analysis and forecasting
+                                                </li>
+                                                <li class="color-white margin-b-5">
+                                                    Risk measurement and management, including Value-at-Risk (VaR)
+                                                </li>
+                                                <li class="color-white margin-b-5">
+                                                    Financial instrument pricing and portfolio construction
+                                                </li>
+                                                <li class="color-white margin-b-5">
+                                                    Python, R, and MATLAB for quantitative research
+                                                </li>
+                                                <li class="color-white margin-b-5">
+                                                    Backtesting strategies and evaluating performance metrics
+                                                </li>
+                                            </p>
                                         </div>
                                         <a href="work.html" class="content-wrapper-link"></a>    
                                     </div>
@@ -197,8 +264,30 @@ Home Landing page:
                                             <i class="service-icon icon-badge"></i>
                                         </div>
                                         <div class="service-info">
-                                            <h3>Quant-Finance</h3>
-                                            <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                            <h3>Mathematical Modeling</h3>
+                                            <p class="margin-b-5">
+                                                <li>
+                                                    Formulating and analyzing mathematical models for real-world problems
+                                                </li>
+                                                <li>
+                                                    Applying calculus, linear algebra, and differential equations to model systems
+                                                </li>
+                                                <li>
+                                                    Optimization techniques, including linear, nonlinear, and stochastic methods
+                                                </li>
+                                                <li>
+                                                    Simulation and scenario analysis for complex systems
+                                                </li>
+                                                <li>
+                                                    Translating theoretical models into computational solutions
+                                                </li>
+                                                <li>
+                                                    Using Python, MATLAB, and R for numerical modeling and visualization
+                                                </li>
+                                                <li>
+                                                    Validating models and interpreting results to inform decisions
+                                                </li>
+                                            </p>
                                         </div>
                                         <a href="work.html" class="content-wrapper-link"></a>    
                                     </div>
@@ -208,6 +297,7 @@ Home Landing page:
                         </div>
                     </div>
                     <!--// end row -->
+                <hr>
                 </div>
             </div>
         </div>
@@ -215,7 +305,7 @@ Home Landing page:
 
         <!-- Projects -->
         <div id="Highlighted Projects">
-            <div class="container content-lg">
+            <div class="container content-sm">
                 <div class="row">
                     <div class="col-sm-3 sm-margin-b-30">
                         <div class="text-right sm-text-left">
@@ -449,11 +539,11 @@ Home Landing page:
                             <div class="row">
                                 <div class="col-md-3 col-xs-6 md-margin-b-30">
                                     <h5>Location</h5>
-                                    <a href="#">New York, New York</a>
+                                    <a>New York, New York</a>
                                 </div>
                                 <div class="col-md-3 col-xs-6 md-margin-b-30">
                                     <h5>Phone</h5>
-                                    <a href="#">+1 (480) 619-2344</a>
+                                    <a>+1 (480) 619-2344</a>
                                 </div>
                                 <div class="col-md-3 col-xs-6">
                                     <h5>Email</h5>
