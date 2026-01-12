@@ -244,13 +244,10 @@ body,html,html a{-webkit-font-smoothing:antialiased}
 .service 
 .service-element,
 .service 
-.service-info{-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);transform:translate3d(0,0,0);transition-duration:.3s;transition-property:all;transition-timing-function:cubic-bezier(.7,1,.7,1)}
 .service 
 .service-icon{display:block;font-size:30px;color:#d4af37;margin-bottom:30px}
 .service:hover 
-.service-element{opacity:0;-webkit-transform:translate3d(0,-100%,0);-moz-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0);transition-duration:.3s;transition-property:all;transition-timing-function:cubic-bezier(.7,1,.7,1)}
 .service:hover 
-.service-info{-webkit-transform:translate3d(0,-30%,0);-moz-transform:translate3d(0,-30%,0);transform:translate3d(0,-30%,0);transition-duration:.3s;transition-property:all;transition-timing-function:cubic-bezier(.7,1,.7,1)}
 
 .work{display:block}
 .work 
@@ -617,6 +614,30 @@ body,html,html a{-webkit-font-smoothing:antialiased}
    .xs-text-right{text-align:right}
 }
 
+.detail-row {
+    display: none;
+    background: #ffffff;
+}
+
+.summary-row {
+    cursor: pointer;
+}
+
+.summary-row:hover {
+    background-color: #ffffff;
+}
+
+.detail-container {
+    padding: 15px 20px;
+    border-left: 4px solid #d4af37;
+}
+
+code {
+  color: #1f7a3a;
+  background-color: #d1cdc1;
+  font-weight: bold;
+}
+
 /* ==================================================
    16. Responsive Overrides / Hotfixes
    ================================================== */
@@ -630,7 +651,6 @@ body,html,html a{-webkit-font-smoothing:antialiased}
 .text-primary {
     color: #1f7a3a !important; /* or #000000 */
 }
-
 .publications {
     width: 100%;
     margin-top: 30px;
@@ -673,4 +693,10 @@ table {
 .detail-container {
     white-space: normal;
     word-wrap: break-word;
+}
+
+.masonry-grid img {
+    height: 250px;     /* or any consistent height */
+    width: 100%;
+    object-fit: cover;
 }

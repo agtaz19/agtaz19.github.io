@@ -21,129 +21,153 @@ Research & Publications
         <link href="css/layout.min.css" rel="stylesheet" type="text/css"/>
 
         <link rel="shortcut icon" href="favicon.ico"/>
-    </head>
 
+        <!-- Collapsable Script-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+    <!-- END HEAD -->
+
+    <!-- BODY -->
     <body id="body" data-spy="scroll" data-target=".header">
 
-        <!--========== HEADER ==========-->
-        <header class="header navbar-fixed-top">
-            <nav class="navbar" role="navigation">
-                <div class="container">
-                    <div class="menu-container js_nav-item">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="toggle-icon"></span>
-                        </button>
+    <!--========== HEADER ==========-->
+    <header class="header navbar-fixed">
+        <nav class="navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="row">
+                        <div class="menu-container js_nav-item">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="toggle-icon"></span>
+                                </button>
 
-                        <div class="logo">
-                            <a class="logo-wrap" href="index.html">
-                                <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
-                                <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
-                            </a>
+                                <div class="logo">
+                                    <a class="logo-wrap" href="index.html">
+                                        <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
+                                        <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="collapse navbar-collapse nav-collapse">
-                        <div class="menu-container">
-                            <ul class="nav navbar-nav navbar-nav-right">
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="index.html">Home</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="resources.html">Resources</a>
-                                </li>
-                            </ul>
+                        <div class="collapse navbar-collapse nav-collapse" id="main-nav">
+                            <div class="menu-container">
+                                <ul class="nav navbar-nav navbar-nav-right">
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="index.html">Home</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="projects.html">Projects</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="resources.html">Resources</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </nav>
-        </header>
-        <!--========== END HEADER ==========-->
+            </div>
+        </nav>
+    </header>
 
         <!--========== PAGE CONTENT ==========-->
         <main>
-            <div class="container content-lg">
-                <h2 class="section-title">Research & Publications</h2>
-                <p class="section-sub-title">A curated selection of my research work and publications</p>
+            <div class="container content-sm">
+                <div class="row">
+                    <h1 class="section-title">Research & Publications
+                        <p><small><i> 
+                            Last Updated December 2025
+                        </i></small></p>
+                    </h1>
+                    <p class="section-sub-title">A curated collection of my research work, publications, and projects where I contributed as a collaborator or research assistant. These pieces reflect a mix of independent inquiry, academic coursework, and partnerships with faculty or peers. Together, they represent the topics I’ve explored in greater depth, the methods I’ve applied, and the areas where I’ve helped advance ongoing research efforts.
+                    </p>
+                    <hr>
+                </div>
             </div>
 
-            <!-- Journal Articles -->
-            <section id="journal-articles" class="container">
-                <h3>Journal Articles</h3>
-                <ul class="list-unstyled">
-                    <li>
-                        <strong>Author A., Author B., Author C.</strong> (2025). Title of Journal Article. <em>Journal Name</em>, 12(3), 45-67. <a href="#">[PDF]</a>
-                    </li>
-                    <li>
-                        <strong>Author A., Author D.</strong> (2024). Another Journal Article. <em>Another Journal</em>, 8(2), 123-135. <a href="#">[PDF]</a>
-                    </li>
-                </ul>
-            </section>
+            <section id="literature" class="container">
+                <div class="row" class="publications">
+                    <h2>
+                        Publications
+                    </h2>
 
-            <!-- Conference Papers -->
-            <section id="conference-papers" class="container">
-                <h3>Conference Papers</h3>
-                <ul class="list-unstyled">
-                    <li>
-                        <strong>Author A., Author B.</strong> (2023). Title of Conference Paper. In <em>Proceedings of Conference Name</em> (pp. 123-130). <a href="#">[PDF]</a>
-                    </li>
-                    <li>
-                        <strong>Author A.</strong> (2022). Another Conference Paper. In <em>Proceedings of Another Conference</em> (pp. 45-50). <a href="#">[PDF]</a>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Other Research Outputs -->
-            <section id="other-research" class="container">
-                <h3>Other Research Outputs</h3>
-                <ul class="list-unstyled">
-                    <li>
-                        <strong>Author A.</strong> (2025). Research Report Title. Organization Name. <a href="#">[PDF]</a>
-                    </li>
-                    <li>
-                        <strong>Author A., Author B.</strong> (2024). Dataset or Tool Description. <a href="#">[Link]</a>
-                    </li>
-                </ul>
-            </section>
-
-        <!-- Selected Projects -->
-            <section id="projects" class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h2>Selected Projects</h2>
-                    </div>
-                </div>
-
-                <div class="row margin-b-30">
-                    <div class="col-sm-12">
-                        <h4>Project Title</h4>
-                        <p class="text-muted">Independent / Academic / Professional</p>
-
-                        <p>
-                            Clear explanation of the problem, why it mattered, and what you built.
-                        </p>
+                        <!-- Supporting Research -->
+                        <h3 class="pub-section-title">Supporting Research</h3>
+                            <p class="text-muted" style="margin-bottom: 8px;">
+                                Research for which I contributed data collection, editing, or supporting analysis.
+                            </p>
 
                         <ul>
-                            <li>Methodology: statistical, computational, or financial approach.</li>
-                            <li>Implementation: languages, libraries, or systems used.</li>
-                            <li>Outcome: insights, performance improvements, or deliverables.</li>
+                            <table class="pub-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 65%;">Authors / Title</th>
+                                        <th style="width: 10%;">Year</th>
+                                        <th style="width: 10%;">Link</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Goyal A., Wahal S.</strong> R&amp;D, Expected Profitability, and Expected Returns
+                                        </td>
+                                        <td>2023</td>
+                                        <td><a href="pdf/ssrn-4339765.pdf"><bold>PDF</bold></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </ul>
-                    </div>
+
+
+                        <hr>
+                    
+                        <!-- Undergraduate Papers -->
+                        <h3 class="pub-section-title">
+                            Undergraduate Papers
+                        </h3>
+                            <p class="text-muted" style="margin-bottom: 8px;">
+                                Undegraduate Research, thesis, etc.
+                            </p>
+
+                            <ul>
+                                <table class="pub-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 65%;">Authors / Title</th>
+                                            <th style="width: 10%;">Year</th>
+                                            <th style="width: 10%;">Link</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <strong>Tilly A.</strong> Shoes, Coronavirus, &amp; LBOs
+                                            </td>
+                                            <td>2022</td>
+                                            <td><a href="pdf/tilly_spring_2022_0.pdf">PDF</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </ul>
                 </div>
             </section>
-            <!-- End Selected Projects -->
         
         </main>
         
@@ -165,11 +189,11 @@ Research & Publications
                                 <div class="row">
                                     <div class="col-md-3 col-xs-6 md-margin-b-30">
                                         <h5>Location</h5>
-                                        <a href="#">New York, New York</a>
+                                        <a>New York, New York</a>
                                     </div>
                                     <div class="col-md-3 col-xs-6 md-margin-b-30">
                                         <h5>Phone</h5>
-                                        <a href="#">+1 (480) 619-2344</a>
+                                        <a>+1 (480) 619-2344</a>
                                     </div>
                                     <div class="col-md-3 col-xs-6">
                                         <h5>Email</h5>

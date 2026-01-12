@@ -25,70 +25,77 @@ About Me in Depth
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
+
+        <!-- Collapsable Script-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
+    
     <!-- END HEAD -->
 
     <!-- BODY -->
     <body id="body" data-spy="scroll" data-target=".header">
 
     <!--========== HEADER ==========-->
-    <header class="header navbar-fixed-top">
-        <!-- Navbar -->
-        <nav class="navbar" role="navigation">
+    <header class="header navbar-fixed">
+        <nav class="navbar">
             <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="menu-container js_nav-item">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="toggle-icon"></span>
-                    </button>
+                <div class="row">
+                    <div class="row">
+                        <div class="menu-container js_nav-item">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="toggle-icon"></span>
+                                </button>
 
-                    <!-- Logo -->
-                    <div class="logo">
-                        <a class="logo-wrap" href="index.html">
-                            <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
-                            <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
-                        </a>
-                    </div>
-                    <!-- End Logo -->
-                </div>
+                                <div class="logo">
+                                    <a class="logo-wrap" href="index.html">
+                                        <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
+                                        <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse nav-collapse">
-                    <div class="menu-container">
-                        <ul class="nav navbar-nav navbar-nav-right">
-                            <li class="js_nav-item nav-item">
-                                <a class="nav-item-child nav-item-hover" href="index.html">Home</a>
-                            </li>
-                            <li class="js_nav-item nav-item">
-                                <a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a>
-                            </li>
-                            <li class="js_nav-item nav-item">
-                                <a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a>
-                            </li>
-                            <li class="js_nav-item nav-item">
-                                <a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a>
-                            </li>
-                            <li class="js_nav-item nav-item">
-                                <a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a>
-                            </li>
-                            <li class="js_nav-item nav-item">
-                                <a class="nav-item-child nav-item-hover" href="resources.html">Resources</a>
-                            </li>
-                        </ul>
+                        <div class="collapse navbar-collapse nav-collapse" id="main-nav">
+                            <div class="menu-container">
+                                <ul class="nav navbar-nav navbar-nav-right">
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="index.html">Home</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="projects.html">Projects</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="resources.html">Resources</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- End Navbar Collapse -->
             </div>
         </nav>
-        <!-- Navbar -->
     </header>
     <!--========== END HEADER ==========-->
 
     <!--========== PAGE LAYOUT ==========-->
     <main>
         <!-- About -->
-        <section id="about" class="container content-lg">            
+        <section id="about" class="container content-sm">            
             <div class="row">
                 <h1>
                     About Me
@@ -108,7 +115,7 @@ About Me in Depth
                     
                     <div class="col-12">
                         <h3>
-                            Current Situation
+                            Current Endeavors
                         </h3>
                         <p>
                             I am currently an Officer in State Street’s Alternative Investments Transformation group, where I focus on managing and optimizing the intersection of people, processes, and technology across private equity, hedge funds, and other alternative investment platforms. In this role, I work closely with internal and external stakeholders to analyze, design, and implement operational improvements that enhance efficiency, reduce risk, and support scalable, client-facing solutions. My responsibilities span the full spectrum of transformation work: identifying and deploying process improvements, gathering and interpreting end-user requirements, collaborating with internal developers to deliver tailored solutions, and leading workshops to communicate complex operational models to diverse teams. The role requires balancing multiple priorities, applying creative problem-solving to complex operational challenges, and driving meaningful outcomes under tight timelines—all while ensuring compliance with regulatory and internal policy frameworks.
@@ -121,7 +128,7 @@ About Me in Depth
                         </p>
 
                         <h3>
-                            Previous Endeavors
+                            Previous Experiences
                         </h3>
                         <p>
                             Prior to my current role, I was a consultant at FTI Consulting within the Corporate Finance & Restructuring practice. There, I advised clients on performance improvement, restructuring initiatives, and transaction-related projects, contributing to over $55 million in identified and implemented cost savings. In addition to client work, I participated in recruiting, new-hire onboarding and training, and internal initiatives focused on diversity and inclusion, which honed both my leadership and organizational skills in high-pressure, results-driven environments.
@@ -351,7 +358,7 @@ About Me in Depth
             </div>
 
             <div class="container">
-                <embed src="pdf/Tilly, Alexandre_CV.pdf" type="application/pdf" width="100%" height="600px" />
+                <iframe src="pdf/Tilly, Alexandre_CV.pdf" type="application/pdf" width="100%" height="600px" ></iframe>
             </div>
                 
         </section>
@@ -378,11 +385,11 @@ About Me in Depth
                             <div class="row">
                                 <div class="col-md-3 col-xs-6 md-margin-b-30">
                                     <h5>Location</h5>
-                                        <a href="#">New York, New York</a>
+                                        <a>New York, New York</a>
                                 </div>
                                 <div class="col-md-3 col-xs-6 md-margin-b-30">
                                     <h5>Phone</h5>
-                                        <a href="#">+1 (480) 619-2344</a>
+                                        <a>+1 (480) 619-2344</a>
                                 </div>
                                 <div class="col-md-3 col-xs-6">
                                     <h5>Email</h5>

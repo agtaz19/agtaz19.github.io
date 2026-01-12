@@ -25,69 +25,75 @@ About Me in Depth
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
+
+        <!-- Collapsable Script-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     </head>
     <!-- END HEAD -->
 
     <!-- BODY -->
     <body id="body" data-spy="scroll" data-target=".header">
 
-        <!--========== HEADER ==========-->
-        <header class="header navbar-fixed-top">
-            <!-- Navbar -->
-            <nav class="navbar" role="navigation">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="menu-container js_nav-item">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="toggle-icon"></span>
-                        </button>
+    <!--========== HEADER ==========-->
+    <header class="header navbar-fixed">
+        <nav class="navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="row">
+                        <div class="menu-container js_nav-item">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="toggle-icon"></span>
+                                </button>
 
-                        <!-- Logo -->
-                        <div class="logo">
-                            <a class="logo-wrap" href="index.html">
-                                <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
-                                <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
-                            </a>
+                                <div class="logo">
+                                    <a class="logo-wrap" href="index.html">
+                                        <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
+                                        <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <!-- End Logo -->
-                    </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse nav-collapse">
-                        <div class="menu-container">
-                            <ul class="nav navbar-nav navbar-nav-right">
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="index.html">Home</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a>
-                                </li>
-                                <li class="js_nav-item nav-item">
-                                    <a class="nav-item-child nav-item-hover" href="resources.html">Resources</a>
-                                </li>
-                            </ul>
+                        <div class="collapse navbar-collapse nav-collapse" id="main-nav">
+                            <div class="menu-container">
+                                <ul class="nav navbar-nav navbar-nav-right">
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="index.html">Home</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="projects.html">Projects</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="resources.html">Resources</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <!-- End Navbar Collapse -->
                 </div>
-            </nav>
-            <!-- Navbar -->
-        </header>
-        <!--========== END HEADER ==========-->
+            </div>
+        </nav>
+    </header>
 
         <!--========== PAGE LAYOUT ==========-->
         <main>
-            <section id="work" class="container content-lg">
+            <section id="work" class="container content-sm">
                 <div class="row">
                         <h1>Professional Experience & Organization Involvement<p><small><i> Last Updated December 2025</i></small></p></h1>
                         <p>
@@ -497,11 +503,11 @@ About Me in Depth
                             <div class="row">
                                 <div class="col-md-3 col-xs-6 md-margin-b-30">
                                     <h5>Location</h5>
-                                    <a href="#">New York, New York</a>
+                                    <a>New York, New York</a>
                                 </div>
                                 <div class="col-md-3 col-xs-6 md-margin-b-30">
                                     <h5>Phone</h5>
-                                    <a href="#">+1 (480) 619-2344</a>
+                                    <a>+1 (480) 619-2344</a>
                                 </div>
                                 <div class="col-md-3 col-xs-6">
                                     <h5>Email</h5>

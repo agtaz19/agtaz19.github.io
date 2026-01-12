@@ -21,6 +21,7 @@ Home Landing page:
         <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css"/>
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
+
         <!-- PAGE LEVEL PLUGIN STYLES -->
         <link href="css/animate.css" rel="stylesheet">
 
@@ -40,81 +41,52 @@ Home Landing page:
     <!-- BODY -->
     <body id="body" data-spy="scroll" data-target=".header">
 
-        <!--========== HEADER ==========-->
-        <header class="header navbar-fixed-top">
+    <!--========== HEADER ==========-->
+    <header class="header navbar-fixed">
         <nav class="navbar">
             <div class="container">
                 <div class="row">
                     <div class="row">
-                        <!-- Navbar header with logo and toggle -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            
-                            <a class="navbar-brand" href="index.html">
-                                <img src="img/logo.png" alt="Logo" style="height:40px;">
-                            </a>
-                        </div>
+                        <div class="menu-container js_nav-item">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="toggle-icon"></span>
+                                </button>
 
-                        <!-- Collapsible menu -->
-                        <div class="collapse navbar-collapse" id="main-nav">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="aboutme.html">About Me & CV</a></li>
-                                <li><a href="work.html">Work & Experience</a></li>
-                                <li><a href="outreach.html">Events & Outreach</a></li>
-                                <li><a href="publication.html">Publications & Research</a></li>
-                                <li><a href="projects.html">Projects</a></li>
-                                <li><a href="resources.html">Resources</a></li>
-                            </ul>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-<!--
-    <header class="header navbar-fixed-top">
-        <nav class="navbar">
-            <div class="container">
-                <div class="row">
-                    <div class="row">
-
-                        <!--Navbar header
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-
-                            <div class="logo">
-                                <a class="logo-wrap" href="index.html">
-                                    <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
-                                    <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
-                                </a>
+                                <div class="logo">
+                                    <a class="logo-wrap" href="index.html">
+                                        <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
+                                        <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        
-                        <!--Collapsible Menu
-                        <div class="collapse navbar-collapse" id="main-nav">
+
+                        <div class="collapse navbar-collapse nav-collapse" id="main-nav">
                             <div class="menu-container">
                                 <ul class="nav navbar-nav navbar-nav-right">
-                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="index.html">Home</a></li>
-                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a></li>
-                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a></li>
-                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a></li>
-                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a></li>
-                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="projects.html">Projects</a></li>
-                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="resources.html">Resources</a></li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="index.html">Home</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="projects.html">Projects</a>
+                                    </li>
+                                    <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="resources.html">Resources</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -123,7 +95,8 @@ Home Landing page:
             </div>
         </nav>
     </header>
--->
+
+
         <!--========== END HEADER ==========-->
 
         <!--========== SLIDER ==========-->
@@ -192,9 +165,6 @@ Home Landing page:
                             <div class="row row-space-2 margin-b-4">
                                 <div class="col-md-4 md-margin-b-4">
                                     <div class="service" data-height="height">
-                                        <div class="service-element">
-                                            <i class="service-icon icon-chemistry"></i>
-                                        </div>
                                         <div class="service-info">
                                             <h3>Business Strategy & Transformation</h3>
                                             <p class="margin-b-5">
@@ -225,10 +195,7 @@ Home Landing page:
                                     </div>
                                 </div>
                                 <div class="col-md-4 md-margin-b-4">
-                                    <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
-                                        <div class="service-element">
-                                            <i class="service-icon color-white icon-screen-tablet"></i>
-                                        </div>
+                                    <div class="service bg-color-base" data-height="height">
                                         <div class="service-info">
                                             <h3 class="color-white">Quant Finance</h3>
                                             <p class="color-white margin-b-5">
@@ -260,9 +227,6 @@ Home Landing page:
                                 </div>
                                 <div class="col-md-4">
                                     <div class="service" data-height="height">
-                                        <div class="service-element">
-                                            <i class="service-icon icon-badge"></i>
-                                        </div>
                                         <div class="service-info">
                                             <h3>Mathematical Modeling</h3>
                                             <p class="margin-b-5">
@@ -307,212 +271,151 @@ Home Landing page:
         <div id="Highlighted Projects">
             <div class="container content-sm">
                 <div class="row">
-                    <div class="col-sm-3 sm-margin-b-30">
-                        <div class="text-right sm-text-left">
-                            <h2 class="margin-b-0">Highlighted Projects</h2>
-                        </div>
-                    </div>
-                    <div class="col-sm-8 col-sm-offset-1">
-                        <!-- Masonry Grid -->
-                        <div class="masonry-grid row row-space-2">
-                            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
-                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8 margin-b-4">
-                                <!-- Work -->
-                                <div class="work work-popup-trigger">
-                                    <div class="work-overlay">
-                                        <img class="full-width img-responsive" src="img/800x400/01.jpg" alt="Portfolio Image">
-                                    </div>
-                                    <div class="work-popup-overlay">
-                                        <div class="work-popup-content">
-                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
-                                            <div class="margin-b-30">
-                                                <h3 class="margin-b-5">Art Of Coding</h3>
-                                                <span>Clean &amp; Minimalistic Design</span>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
-                                                    <div class="margin-t-10 sm-margin-t-0">
-                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                                        <ul class="list-inline work-popup-tag">
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Design,</a></li>
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Coding,</a></li>
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Portfolio</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="margin-t-10 sm-margin-t-0">
-                                                        <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
-                                                        <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
-                                                        <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
-                                                        <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Work -->
-                            </div>
-                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
-                                <!-- Work -->
-                                <div class="work work-popup-trigger">
-                                    <div class="work-overlay">
-                                        <img class="full-width img-responsive" src="img/397x400/01.jpg" alt="Portfolio Image">
-                                    </div>
-                                    <div class="work-popup-overlay">
-                                        <div class="work-popup-content">
-                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
-                                            <div class="margin-b-30">
-                                                <h3 class="margin-b-5">Art Of Coding</h3>
-                                                <span>Clean &amp; Minimalistic Design</span>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
-                                                    <div class="margin-t-10 sm-margin-t-0">
-                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                                        <ul class="list-inline work-popup-tag">
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Design,</a></li>
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Coding,</a></li>
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Portfolio</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="margin-t-10 sm-margin-t-0">
-                                                        <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
-                                                        <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
-                                                        <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
-                                                        <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Work -->
-                            </div>
-                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
-                                <!-- Work -->
-                                <div class="work work-popup-trigger">
-                                    <div class="work-overlay">
-                                        <img class="full-width img-responsive" src="img/397x300/01.jpg" alt="Portfolio Image">
-                                    </div>
-                                    <div class="work-popup-overlay">
-                                        <div class="work-popup-content">
-                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
-                                            <div class="margin-b-30">
-                                                <h3 class="margin-b-5">Art Of Coding</h3>
-                                                <span>Clean &amp; Minimalistic Design</span>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
-                                                    <div class="margin-t-10 sm-margin-t-0">
-                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                                        <ul class="list-inline work-popup-tag">
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Design,</a></li>
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Coding,</a></li>
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Portfolio</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="margin-t-10 sm-margin-t-0">
-                                                        <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
-                                                        <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
-                                                        <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
-                                                        <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Work -->
-                            </div>
-                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
-                                <!-- Work -->
-                                <div class="work work-popup-trigger">
-                                    <div class="work-overlay">
-                                        <img class="full-width img-responsive" src="img/397x300/02.jpg" alt="Portfolio Image">
-                                    </div>
-                                    <div class="work-popup-overlay">
-                                        <div class="work-popup-content">
-                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
-                                            <div class="margin-b-30">
-                                                <h3 class="margin-b-5">Art Of Coding</h3>
-                                                <span>Clean &amp; Minimalistic Design</span>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
-                                                    <div class="margin-t-10 sm-margin-t-0">
-                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                                        <ul class="list-inline work-popup-tag">
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Design,</a></li>
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Coding,</a></li>
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Portfolio</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="margin-t-10 sm-margin-t-0">
-                                                        <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
-                                                        <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
-                                                        <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
-                                                        <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Work -->
-                            </div>
-                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
-                                <!-- Work -->
-                                <div class="work work-popup-trigger">
-                                    <div class="work-overlay">
-                                        <img class="full-width img-responsive" src="img/397x300/03.jpg" alt="Portfolio Image">
-                                    </div>
-                                    <div class="work-popup-overlay">
-                                        <div class="work-popup-content">
-                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
-                                            <div class="margin-b-30">
-                                                <h3 class="margin-b-5">Art Of Coding</h3>
-                                                <span>Clean &amp; Minimalistic Design</span>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
-                                                    <div class="margin-t-10 sm-margin-t-0">
-                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                                        <ul class="list-inline work-popup-tag">
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Design,</a></li>
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Coding,</a></li>
-                                                            <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Portfolio</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="margin-t-10 sm-margin-t-0">
-                                                        <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
-                                                        <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
-                                                        <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
-                                                        <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Work -->
+                    <div class="row">
+                        <div class="col-sm-3 sm-margin-b-30">
+                            <div class="text-right sm-text-left">
+                                <h2 class="margin-b-0">Highlighted Projects</h2>
                             </div>
                         </div>
-                        <!-- End Masonry Grid -->
+
+                        <div class="col-sm-8 col-sm-offset-1">
+                            <!-- Masonry Grid -->
+                            <div class="masonry-grid row row-space-2">
+                                <div class="masonry-grid-sizer col-sm-6 col-md-4"></div>
+                                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                    
+                                    <!-- Project -->
+                                    <div class="work work-popup-trigger">
+                                        <div class="work-overlay">
+                                            <img class="full-width img-responsive" src="img/NYC-Weather.jpg" alt="Portfolio Image">
+                                        </div>
+                                        <div class="work-popup-overlay">
+                                            <div class="work-popup-content">
+                                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                                <div class="margin-b-30">
+                                                    <h3 class="margin-b-5">NYC Weather Forecasting - Kalshi</h3>
+                                                    <span>Event Forecasting & Weather Predictions</span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                        <div class="margin-t-10 sm-margin-t-0">
+                                                            <p>Myself and a small team embarked on a strategy to implement an active strategy within Kalshi reagarding weather contracts in NYC. We scrapped publically available data and quasi-public data in order to aggregate the data to create a probabilistic model to predict the rain forecast for the following day</p>
+                                                            <p>We leveraged Python to code this project and created an indicator and improved the signal by 5% which resulted in our model being correct around 85% of the time.</p>
+                                                            <ul class="list-inline work-popup-tag">
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Data Science,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Weather Forecasting,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Event Contracts</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="margin-t-10 sm-margin-t-0">
+                                                            <i>
+                                                                Quantitative Finance & Event Derivatives, Data Science & Statistical Modeling, Weather & Environmental Data Analysis.
+
+                                                            </i>
+                                                            <p>
+                                                                <small><a href ="projects.html" class="margin-b-5"><strong>Read More</strong></a></small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Work -->
+                                </div>
+                                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                    <!-- Work -->
+                                    <div class="work work-popup-trigger">
+                                        <div class="work-overlay">
+                                            <img class="full-width img-responsive" src="img/Crisis-Investing.jpg" alt="Portfolio Image">
+                                        </div>
+                                        <div class="work-popup-overlay">
+                                            <div class="work-popup-content">
+                                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                                <div class="margin-b-30">
+                                                    <h3 class="margin-b-25">Crisis Investing</h3>
+                                                    <span>Trading Strategy Integration</span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                        <div class="margin-t-10 sm-margin-t-0">
+                                                            <p>During my time at FTI Consulting, on the side, I created a systematic equities strategy that executes through Interactive Brokers workstation, which encapsulates the "flee to quality" framework during times of distress. Work involved scraping, aggregating and validating data.</p>
+                                                            <p>This strategy captures post-crisis broad rebounds, various equity crisis factors, and monthly indicator screenings.</p>
+                                                            <ul class="list-inline work-popup-tag">
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Systematic Trading,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Equities,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Portfolio Management</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="margin-t-10 sm-margin-t-0">
+                                                            <i>
+                                                                Quantitiative Research & Modeling, Systematic Strategy Development, Software Engineering & Data Infastructure, Portfolio Constuction & Execution, Macro & Regime-Based Analytics.
+
+                                                            </i>
+                                                            <p>
+                                                                <small><a href ="projects.html" class="margin-b-5"><strong>Read More</strong></a></small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Work -->
+                                </div>
+
+                                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
+                                    <!-- Work -->
+                                    <div class="work work-popup-trigger">
+                                        <div class="work-overlay">
+                                            <img class="full-width img-responsive" src="img/Valuation.jpg" alt="Portfolio Image">
+                                        </div>
+                                        <div class="work-popup-overlay">
+                                            <div class="work-popup-content">
+                                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                                <div class="margin-b-30">
+                                                    <h3 class="margin-b-5">Company Valuations</h3>
+                                                    <span>Understanding Enterprise Value of Public Companies</span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                        <div class="margin-t-10 sm-margin-t-0">
+                                                            <p>
+                                                                Conducted Multiple valuations of companies (AAPL, MSP, WMT, etc) using precedent transactions, comparable companies, and DCF. Assessed the enterprise value, equity value, and investibility of company using fundamental analysis. Created accompanying powerpoint presentations.
+                                                            </p>
+                                                            <ul class="list-inline work-popup-tag">
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">M&A,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Valuation,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Portfolio</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="margin-t-10 sm-margin-t-0">
+                                                            <i>
+                                                                Financial Modeling & Valuation, Fundamental Equity Research, Comparative & Competitive Benchmarking, Scenario & Scenativity Analysis, Presentation & Communication
+
+                                                            </i>
+                                                            <p>
+                                                                <small><a href ="projects.html" class="margin-b-5"><strong>Read More</strong></a></small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Work -->
+                                </div>                            
+                                
+                            
+                            </div>
+                            <!-- End Masonry Grid -->
+                        </div>
                     </div>
                 </div>
                 <!--// end row -->
