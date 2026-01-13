@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <!-- ==============================
-About Me in Depth
+Work
+1) Work Experience
+2) Skills
+3) Professional Orgs
 ================================== -->
 <html lang="en" class="no-js">
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8"/>
-        <title>About - Tilly, Alexandre</title>
-        <link rel="icon" href="img/logo-white.png" type="image/png">
+        <title>Work & Experience - Tilly, Alexandre</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta content="" name="description"/>
@@ -26,40 +28,36 @@ About Me in Depth
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
-
-        <!-- Collapsable Script-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     </head>
     <!-- END HEAD -->
 
     <!-- BODY -->
     <body id="body" data-spy="scroll" data-target=".header">
 
-    <!--========== HEADER ==========-->
-    <header class="header navbar-fixed">
-        <nav class="navbar">
-            <div class="container">
-                <div class="row">
-                    <div class="row">
-                        <div class="menu-container js_nav-item">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="toggle-icon"></span>
-                                </button>
+        <!--========== HEADER ==========-->
+        <header class="header navbar-fixed-top">
+            <!-- Navbar -->
+            <nav class="navbar" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="menu-container js_nav-item">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon"></span>
+                        </button>
 
-                                <div class="logo">
-                                    <a class="logo-wrap" href="index.html">
-                                        <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
-                                        <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
-                                    </a>
-                                </div>
-                            </div>
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a class="logo-wrap" href="index.html">
+                                <img class="logo-img logo-img-main" src="img/logo.png" alt="Asentus Logo">
+                                <img class="logo-img logo-img-active" src="img/logo.png" alt="Asentus Logo">
+                            </a>
                         </div>
+                        <!-- End Logo -->
+                    </div>
 
-                        <div class="collapse navbar-collapse nav-collapse" id="main-nav">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse nav-collapse">
                             <div class="menu-container">
                                 <ul class="nav navbar-nav navbar-nav-right">
                                     <li class="js_nav-item nav-item">
@@ -85,17 +83,18 @@ About Me in Depth
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                    <!-- End Navbar Collapse -->
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+            <!-- Navbar -->
+        </header>
+        <!--========== END HEADER ==========-->
 
         <!--========== PAGE LAYOUT ==========-->
         <main>
-            <section id="work" class="container content-sm">
-                <div class="row">
+            <section id="work" class="container content-lg">
+                <div class="col-xs-12">
                         <h1>Professional Experience & Organization Involvement<p><small><i> Last Updated December 2025</i></small></p></h1>
                         <p>
                             I am an Officer in State Street’s Alternative Investments Transformation group, where I operate at the interface of operational architecture, data flows, and technology-enabled process design across private equity, hedge fund, and alternative investment platforms. My work involves decomposing complex fund lifecycle processes, eliciting and formalizing business requirements, and partnering with internal technology teams to deliver scalable solutions that improve operational efficiency, data integrity, and risk controls. Previously, I was a management consultant in FTI Consulting’s Corporate Finance & Restructuring practice, where I applied rigorous financial analysis, process diagnostics, and execution frameworks to performance improvement, restructuring, and transaction-related engagements, contributing to over $55 million in realized cost savings. Earlier experience includes private equity, venture capital, and corporate strategy roles at Transcend Healthcare Partners, Anodize Capital Partners (Search Fund), and Intel, where I supported investment underwriting, due diligence, financial modeling, and data-driven go-to-market strategy initiatives, including work on autonomous vehicle programs.
@@ -109,7 +108,7 @@ About Me in Depth
 
             <!-- Specific Work Experience -->
             <section id="experience" class="container">
-                <div class = "row">
+                <div class="col-xs-12">
                     <h2>
                         Work Experience
                     </h2>
@@ -232,258 +231,250 @@ About Me in Depth
                         </div>
                     </div>
                     <!-- End Experience 3 -->
-                <hr>
+                    <hr>
                 </div>
             </section>
             <!-- End Specific Work Experience -->
 
             <!-- Skills -->
             <section id="skills" class="container">
-                <div class ="row">
-                    <div class="row margin-b-40">
-                        <div class="col-sm-12">
-                            <h2 style="margin-bottom: 30px;">
-                                Skills
-                            </h2>
+                <div class ="col-xs-12">
+                    <h2 style="margin-bottom: 30px;">
+                        Skills
+                    </h2>
 
-                                <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 40px; flex-wrap: wrap;">
 
-                                    <!-- Tools & Technologies Column -->
-                                        <div style="flex: 1; min-width: 300px;">
-                                            <h3 style="border-bottom: 2px solid #1f7a3a; padding-bottom: 5px;">
-                                                Tools & Technologies
-                                            </h3>
-                                            <ul style="list-style-type: none; padding-left: 0;">
-                                                <li>
-                                                    <strong>
-                                                        Programming Languages:
-                                                    </strong>
-                                                    <ul>
-                                                        <li>
-                                                            Github/Git
-                                                        </li>
-                                                        <li>
-                                                            Python: NumPy, Pandas, Seaborn, DateTime
-                                                        </li>
-                                                        <li>
-                                                            R
-                                                        </li>
-                                                        <li>
-                                                            SQL
-                                                        </li>
-                                                        <li>
-                                                            C++
-                                                        </li>
-                                                        <li>
-                                                            Java
-                                                        </li>
-                                                        <li>
-                                                            Magma
-                                                        </li>
-                                                        <li>
-                                                            SageMath
-                                                        </li>
-                                                        <li>
-                                                            Mathematica
-                                                        </li>
-                                                        <li>
-                                                            LaTeX
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <strong>
-                                                        Market Intelligence Software:
-                                                    </strong>
-                                                    <ul>
-                                                        <li>
-                                                            Bloomberg
-                                                        </li>
-                                                        <li>
-                                                            Cap IQ
-                                                        </li>
-                                                        <li>
-                                                            FactSet
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <strong>
-                                                        Microsoft Suite:
-                                                    </strong>
-                                                    <ul>
-                                                        <li>
-                                                            Excel
-                                                        </li>
-                                                        <li>
-                                                            Word
-                                                        </li>
-                                                        <li>
-                                                            PowerPoint
-                                                        </li>
-                                                        <li>
-                                                            Microsoft Project
-                                                        </li>
-                                                        <li>
-                                                            PowerBI
-                                                        </li>
-                                                        <li>
-                                                            Power Automate
-                                                        </li>
-                                                        <li>
-                                                            VBA
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <strong>
-                                                        Other Tools:
-                                                    </strong>
-                                                    <ul>
-                                                        <li>
-                                                            Tableau
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <!-- Industry Knowledge Column -->
-                                        <div style="flex: 1; min-width: 300px;">
-                                            <h3 style="border-bottom: 2px solid #1f7a3a; padding-bottom: 5px;">Industry Knowledge</h3>
-                                            <ul style="list-style-type: none; padding-left: 0;">
-                                                <li>
-                                                    <strong>
-                                                        Finance & Quantitative Finance:
-                                                    </strong>
-                                                    <ul>
-                                                        <li>
-                                                            Refinitiv, Debtwire, Octus
-                                                        </li>
-                                                        <li>Pitchbook, Crunchbase, WRDs</li>
-                                                        <li>Mergers & Acquisitions, Alternative Investments, Portfolio Management, Risk Management, Trading, Due Diligence (Commercial, Market, Operational), Equity Research, Investments, FP&A</li>
-                                                        <li>Securities: Fixed Income, Options</li>
-                                                        <li>Financial Modeling</li>
-                                                        <li>Restructuring: Bankruptcy Advisory, 13 Week Cash Flow</li>
-                                                        <li>Investment Management</li>
-                                                        <li>Management: Corporate Strategy, Business Strategy, Market Research, Operational Modeling, Business Development, Root Cause Analysis</li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <strong>
-                                                        Estate Planning & Private Wealth Management:
-                                                    </strong>
-                                                    <ul>
-                                                        <li>
-                                                            Trusts, Wills, Power of Attorney, Business Law
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <strong>
-                                                        Data Science:
-                                                    </strong>
-                                                    <ul>
-                                                        <li>
-                                                            Quantitative Analytics
-                                                        </li>
-                                                        <li>
-                                                            Statistics: Regressions, Bayesian Statistics, Maximum Likelihood Estimator
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <strong>
-                                                        Supply Chain Management:
-                                                    </strong>
-                                                    <ul>
-                                                        <li>
-                                                            Pricing Strategy, Cost & Spend Management
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <strong>
-                                                        Accounting:
-                                                    </strong>
-                                                    <ul>
-                                                        <li>
-                                                            Financial Accounting, Managerial Accounting, Fund Accounting, AR/AP Management
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <strong>
-                                                        Real Estate:
-                                                    </strong>
-                                                    <ul>
-                                                        <li>
-                                                            Real Estate Valuation
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                </div>
-                        </div>
-                    <hr>
+                    <!-- Tools & Technologies Column -->
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="border-bottom: 2px solid #1f7a3a; padding-bottom: 5px;">
+                            Tools & Technologies
+                        </h3>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li>
+                                <strong>
+                                    Programming Languages:
+                                </strong>
+                                <ul>
+                                    <li>
+                                        Github/Git
+                                    </li>
+                                    <li>
+                                        Python: NumPy, Pandas, Seaborn, DateTime
+                                    </li>
+                                    <li>
+                                        R
+                                    </li>
+                                    <li>
+                                        SQL
+                                    </li>
+                                    <li>
+                                        C++
+                                    </li>
+                                    <li>
+                                        Java
+                                    </li>
+                                    <li>
+                                        Magma
+                                    </li>
+                                    <li>
+                                        SageMath
+                                    </li>
+                                    <li>
+                                        Mathematica
+                                    </li>
+                                    <li>
+                                        LaTeX
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>
+                                    Market Intelligence Software:
+                                </strong>
+                                <ul>
+                                    <li>
+                                        Bloomberg
+                                    </li>
+                                    <li>
+                                        Cap IQ
+                                    </li>
+                                    <li>
+                                        FactSet
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>
+                                    Microsoft Suite:
+                                </strong>
+                                <ul>
+                                    <li>
+                                        Excel
+                                    </li>
+                                    <li>
+                                        Word
+                                    </li>
+                                    <li>
+                                        PowerPoint
+                                    </li>
+                                    <li>
+                                        Microsoft Project
+                                    </li>
+                                    <li>
+                                        PowerBI
+                                    </li>
+                                    <li>
+                                        Power Automate
+                                    </li>
+                                    <li>
+                                        VBA
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>
+                                    Other Tools:
+                                </strong>
+                                <ul>
+                                    <li>
+                                        Tableau
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
+
+                    <!-- Industry Knowledge Column -->
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="border-bottom: 2px solid #1f7a3a; padding-bottom: 5px;">Industry Knowledge</h3>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li>
+                                <strong>
+                                    Finance & Quantitative Finance:
+                                </strong>
+                                <ul>
+                                    <li>
+                                        Refinitiv, Debtwire, Octus
+                                    </li>
+                                    <li>Pitchbook, Crunchbase, WRDs</li>
+                                    <li>Mergers & Acquisitions, Alternative Investments, Portfolio Management, Risk Management, Trading, Due Diligence (Commercial, Market, Operational), Equity Research, Investments, FP&A</li>
+                                    <li>Securities: Fixed Income, Options</li>
+                                    <li>Financial Modeling</li>
+                                    <li>Restructuring: Bankruptcy Advisory, 13 Week Cash Flow</li>
+                                    <li>Investment Management</li>
+                                    <li>Management: Corporate Strategy, Business Strategy, Market Research, Operational Modeling, Business Development, Root Cause Analysis</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>
+                                    Estate Planning & Private Wealth Management:
+                                </strong>
+                                <ul>
+                                    <li>
+                                        Trusts, Wills, Power of Attorney, Business Law
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>
+                                    Data Science:
+                                </strong>
+                                <ul>
+                                    <li>
+                                        Quantitative Analytics
+                                    </li>
+                                    <li>
+                                        Statistics: Regressions, Bayesian Statistics, Maximum Likelihood Estimator
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>
+                                    Supply Chain Management:
+                                </strong>
+                                <ul>
+                                    <li>
+                                        Pricing Strategy, Cost & Spend Management
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>
+                                    Accounting:
+                                </strong>
+                                <ul>
+                                    <li>
+                                        Financial Accounting, Managerial Accounting, Fund Accounting, AR/AP Management
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>
+                                    Real Estate:
+                                </strong>
+                                <ul>
+                                    <li>
+                                        Real Estate Valuation
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    <hr>
                 </div>
             </section>
             <!-- End Skills -->
 
             <!-- Professional Organizations -->
             <section id="skills" class="container">
-                <div class="row">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h2 class = "section-title">
-                                Professional Organizations
-                            </h2>
-                            <p>
-                                Involved organizations:
-                            </p>
-                        </div> 
-                        
-                        <div id="Professional Organizations" class ="container">
-                            <ul style="padding-left: 30px;">
-                                <li>
-                                    International Association for Quantitative Finance <a href="https://www.iaqf.org/">(IAQF)</a>
-                                </li>
+                <div class="col-xs-12">
+                    <h2 class = "section-title">
+                        Professional Organizations
+                    </h2>
+                    <p>
+                        Involved organizations:
+                    </p>
 
-                                <li>
-                                    Society of Quantitative Analysis <a href="https://www.sqa-us.org/">(SQA)</a>
-                                </li>
+                    <div id="Professional Organizations" class ="container">
+                        <ul style="padding-left: 30px;">
+                            <li>
+                                International Association for Quantitative Finance <a href="https://www.iaqf.org/">(IAQF)</a>
+                            </li>
 
-                                <li>
-                                    Society of Quantitative Analysis <a href="https://www.siam.org/">(SIAM)</a>
-                                </li>
+                            <li>
+                                Society of Quantitative Analysis <a href="https://www.sqa-us.org/">(SQA)</a>
+                            </li>
 
-                                <li>
-                                    Institute for Supply Management <a href="https://www.ismworld.org/">(ISM)</a>
-                                </li>
+                            <li>
+                                Society of Quantitative Analysis <a href="https://www.siam.org/">(SIAM)</a>
+                            </li>
 
-                                <li>
-                                    The American Finance Association <a href="https://afajof.org/">(AFA)</a>
-                                </li>
+                            <li>
+                                Institute for Supply Management <a href="https://www.ismworld.org/">(ISM)</a>
+                            </li>
 
-                                <li>
-                                    Turnaround Management Association <a href="https://www.turnaround.org/">(TMA)</a>
-                                </li>
+                            <li>
+                                The American Finance Association <a href="https://afajof.org/">(AFA)</a>
+                            </li>
 
-                                <li>
-                                    Beta Gamma Sigma <a href="https://www.betagammasigma.org/">(BGS)</a>
-                                </li>
-                            </ul>
-                        </div>
+                            <li>
+                                Turnaround Management Association <a href="https://www.turnaround.org/">(TMA)</a>
+                            </li>
 
+                            <li>
+                                Beta Gamma Sigma <a href="https://www.betagammasigma.org/">(BGS)</a>
+                            </li>
+                        </ul>
                     </div>
+
                 </div>
             </section>
             <!-- End Professional Organizations -->
 
         
-        </main>
-
+        </main>    
 
         <!--========== END PAGE LAYOUT ==========-->
 
@@ -493,7 +484,7 @@ About Me in Depth
         <!-- Contact -->
         <div id="contact">
             <div class="bg-color-sky-light">
-                <div class="container content-lg">
+                <div class="container content-sm">
                     <div class="row">
                         <div class="col-sm-3 sm-margin-b-30">
                             <div class="text-right sm-text-left">

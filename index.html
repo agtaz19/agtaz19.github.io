@@ -11,7 +11,6 @@ Home Landing page:
     <head>
         <meta charset="utf-8"/>
         <title>Home - Tilly, Alexandre</title>
-        <link rel="icon" href="img/logo-white.png" type="image/png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta content="" name="description"/>
@@ -22,7 +21,6 @@ Home Landing page:
         <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css"/>
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
-
         <!-- PAGE LEVEL PLUGIN STYLES -->
         <link href="css/animate.css" rel="stylesheet">
 
@@ -31,83 +29,78 @@ Home Landing page:
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
-
-        <!-- Collapsable Script-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     </head>
     <!-- END HEAD -->
 
     <!-- BODY -->
     <body id="body" data-spy="scroll" data-target=".header">
 
-    <!--========== HEADER ==========-->
-    <header class="header navbar-fixed">
-        <nav class="navbar">
-            <div class="container">
-                <div class="row">
-                    <div class="row">
-                        <div class="menu-container js_nav-item">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="toggle-icon"></span>
-                                </button>
+        <!--========== HEADER ==========-->
+        <header class="header navbar-fixed-top">
+            <!-- Navbar -->
+            <nav class="navbar" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="menu-container js_nav-item">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon"></span>
+                        </button>
 
-                                <div class="logo">
-                                    <a class="logo-wrap" href="index.html">
-                                        <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
-                                        <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
-                                    </a>
-                                </div>
-                            </div>
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a class="logo-wrap" href="index.html">
+                                <img class="logo-img logo-img-main" src="img/logo.png" alt="Asentus Logo">
+                                <img class="logo-img logo-img-active" src="img/logo.png" alt="Asentus Logo">
+                            </a>
                         </div>
+                        <!-- End Logo -->
+                    </div>
 
-                        <div class="collapse navbar-collapse nav-collapse" id="main-nav">
-                            <div class="menu-container">
-                                <ul class="nav navbar-nav navbar-nav-right">
-                                    <li class="js_nav-item nav-item">
-                                        <a class="nav-item-child nav-item-hover" href="index.html">Home</a>
-                                    </li>
-                                    <li class="js_nav-item nav-item">
-                                        <a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a>
-                                    </li>
-                                    <li class="js_nav-item nav-item">
-                                        <a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a>
-                                    </li>
-                                    <li class="js_nav-item nav-item">
-                                        <a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a>
-                                    </li>
-                                    <li class="js_nav-item nav-item">
-                                        <a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a>
-                                    </li>
-                                    <li class="js_nav-item nav-item">
-                                        <a class="nav-item-child nav-item-hover" href="projects.html">Projects</a>
-                                    </li>
-                                    <li class="js_nav-item nav-item">
-                                        <a class="nav-item-child nav-item-hover" href="resources.html">Resources</a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse nav-collapse">
+                        <div class="menu-container">
+                            <ul class="nav navbar-nav navbar-nav-right">
+                                <li class="js_nav-item nav-item">
+                                    <a class="nav-item-child nav-item-hover" href="index.html">Home</a>
+                                </li>
+                                <li class="js_nav-item nav-item">
+                                    <a class="nav-item-child nav-item-hover" href="aboutme.html">About Me & CV</a>
+                                </li>
+                                <li class="js_nav-item nav-item">
+                                    <a class="nav-item-child nav-item-hover" href="work.html">Work & Experience</a>
+                                </li>
+                                <li class="js_nav-item nav-item">
+                                    <a class="nav-item-child nav-item-hover" href="outreach.html">Events & Outreach</a>
+                                </li>
+                                <li class="js_nav-item nav-item">
+                                    <a class="nav-item-child nav-item-hover" href="publication.html">Publications & Research</a>
+                                </li>
+                                <li class="js_nav-item nav-item">
+                                    <a class="nav-item-child nav-item-hover" href="projects.html">Projects</a>
+                                </li>
+                                <li class="js_nav-item nav-item">
+                                    <a class="nav-item-child nav-item-hover" href="resources.html">Resources</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                    <!-- End Navbar Collapse -->
                 </div>
-            </div>
-        </nav>
-    </header>
-
-
+            </nav>
+            <!-- Navbar -->
+        </header>
         <!--========== END HEADER ==========-->
 
         <!--========== SLIDER ==========-->
         <div class="promo-block parallax-window" data-parallax="scroll" data-image-src="img\1920x1080\01.JPG">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="promo-block-divider">
-                            <h1 class="promo-block-title"> Alexandre <br/> Tilly</h1>
-                            <p class="promo-block-text"> New York, New York</p>
+                <div class="col-sm-6">
+                    <div class="promo-block-divider">
+                        <h1 class="promo-block-title">Alexandre <br/> Tilly</h1>
+                            <p class="promo-block-text">
+                                New York, New York
+                            </p>
                         </div>
                         <ul class="list-inline">
                             <li><a href="https://github.com/agtaz19" class="social-icons"><i class="icon-social-github"></i></a></li>
@@ -118,7 +111,7 @@ Home Landing page:
                 <!--// end row -->
             </div>
         </div>
-        <!--========== EMD SLIDER ==========-->
+        <!--========== SLIDER ==========-->
 
         <!--========== PAGE LAYOUT ==========-->
         <!-- About -->
@@ -303,9 +296,9 @@ Home Landing page:
                                                             <p>Myself and a small team embarked on a strategy to implement an active strategy within Kalshi reagarding weather contracts in NYC. We scrapped publically available data and quasi-public data in order to aggregate the data to create a probabilistic model to predict the rain forecast for the following day</p>
                                                             <p>We leveraged Python to code this project and created an indicator and improved the signal by 5% which resulted in our model being correct around 85% of the time.</p>
                                                             <ul class="list-inline work-popup-tag">
-                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Data Science,</a></li>
-                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Weather Forecasting,</a></li>
-                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Event Contracts</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="projects.html">Data Science,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="projects.html">Weather Forecasting,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="projects.html">Event Contracts</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -345,9 +338,9 @@ Home Landing page:
                                                             <p>During my time at FTI Consulting, on the side, I created a systematic equities strategy that executes through Interactive Brokers workstation, which encapsulates the "flee to quality" framework during times of distress. Work involved scraping, aggregating and validating data.</p>
                                                             <p>This strategy captures post-crisis broad rebounds, various equity crisis factors, and monthly indicator screenings.</p>
                                                             <ul class="list-inline work-popup-tag">
-                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Systematic Trading,</a></li>
-                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Equities,</a></li>
-                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Portfolio Management</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="projects.html">Systematic Trading,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="projects.html">Equities,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="projects.html">Portfolio Management</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -389,9 +382,9 @@ Home Landing page:
                                                                 Conducted Multiple valuations of companies (AAPL, MSP, WMT, etc) using precedent transactions, comparable companies, and DCF. Assessed the enterprise value, equity value, and investibility of company using fundamental analysis. Created accompanying powerpoint presentations.
                                                             </p>
                                                             <ul class="list-inline work-popup-tag">
-                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">M&A,</a></li>
-                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Valuation,</a></li>
-                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Portfolio</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="projects.html">M&A,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="projects.html">Valuation,</a></li>
+                                                                <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="projects.html">Portfolio</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -455,7 +448,7 @@ Home Landing page:
                                 </div>
                                 <div class="col-md-3 col-xs-6">
                                     <h5>Web</h5>
-                                    <a href="index.html">agtaz19@github.io</a>
+                                    <a href="projects.html">agtaz19@github.io</a>
                                 </div>
                             </div>
                         </div>

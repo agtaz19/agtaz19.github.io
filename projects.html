@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <!-- ==============================
-Research & Publications
+About Me:
+1) In Depth About Me
+2) Timeline
+3) CV
 ================================== -->
 <html lang="en" class="no-js">
+    <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8"/>
-        <title>Projects - Tilly, Alexandre</title>
-        <link rel="icon" href="img/logo-white.png" type="image/png">
+        <title>About - Tilly, Alexandre</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
 
         <!-- GLOBAL MANDATORY STYLES -->
         <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
@@ -21,41 +26,38 @@ Research & Publications
         <!-- THEME STYLES -->
         <link href="css/layout.min.css" rel="stylesheet" type="text/css"/>
 
+        <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
-
-        <!-- Collapsable Script-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     </head>
     <!-- END HEAD -->
 
     <!-- BODY -->
     <body id="body" data-spy="scroll" data-target=".header">
 
-    <!--========== HEADER ==========-->
-    <header class="header navbar-fixed">
-        <nav class="navbar">
-            <div class="container">
-                <div class="row">
-                    <div class="row">
-                        <div class="menu-container js_nav-item">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="toggle-icon"></span>
-                                </button>
+        <!--========== HEADER ==========-->
+        <header class="header navbar-fixed-top">
+            <!-- Navbar -->
+            <nav class="navbar" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="menu-container js_nav-item">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon"></span>
+                        </button>
 
-                                <div class="logo">
-                                    <a class="logo-wrap" href="index.html">
-                                        <img class="logo-img logo-img-main" src="img/logo.png" alt="Logo">
-                                        <img class="logo-img logo-img-active" src="img/logo.png" alt="Logo">
-                                    </a>
-                                </div>
-                            </div>
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a class="logo-wrap" href="index.html">
+                                <img class="logo-img logo-img-main" src="img/logo.png" alt="Asentus Logo">
+                                <img class="logo-img logo-img-active" src="img/logo.png" alt="Asentus Logo">
+                            </a>
                         </div>
+                        <!-- End Logo -->
+                    </div>
 
-                        <div class="collapse navbar-collapse nav-collapse" id="main-nav">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse nav-collapse">
                             <div class="menu-container">
                                 <ul class="nav navbar-nav navbar-nav-right">
                                     <li class="js_nav-item nav-item">
@@ -81,18 +83,19 @@ Research & Publications
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                    <!-- End Navbar Collapse -->
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+            <!-- Navbar -->
+        </header>
+        <!--========== END HEADER ==========-->
 
-        <!--========== PAGE CONTENT ==========-->
+        <!--========== PAGE LAYOUT ==========-->
         <main>
             
-            <div class="container content-sm">
-                <div class="row">
+            <div class="container content-lg">
+                <div class="col-xs-12">
                     <h1 class="section-title">Personal & Collaborative Endeavours
                         <p><small><i> 
                             Last Updated December 2025
@@ -107,486 +110,483 @@ Research & Publications
 
             <!-- Projects -->
                 <section id="projects" class="container">
-                    <div class="row">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h2>
-                                    Projects
-                                </h2>
-                            </div>
-                        </div>
+                    <div class="col-xs-12">
+                        <h2>
+                            Projects
+                        </h2>
 
-                            <table class="table project-summary-table">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            Name
-                                        </th>
-                                        <th>
-                                            Type
-                                        </th>
-                                        <th>
-                                            Main Technique
-                                        </th>
-                                        <th>
-                                            Date
-                                        </th>
-                                    </tr>
-                                </thead>
 
-                                <tbody>
+                        <table class="table project-summary-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Type
+                                    </th>
+                                    <th>
+                                        Main Technique
+                                    </th>
+                                    <th>
+                                        Date
+                                    </th>
+                                </tr>
+                            </thead>
 
-                                    <!-- Project 1 -->
-                                    <tr onclick="toggleRow('p1-details')" class="summary-row">
-                                        <td>
-                                            Convertible Bond Monte Carlo Pricing
-                                        </td>
-                                        <td>
-                                            Research (Quant)
-                                        </td>
-                                        <td>
-                                            Statistical Modeling
-                                        </td>
-                                        <td>
-                                            Fall 2025
-                                        </td>
-                                    </tr>
-                                    <tr id="p1-details" class="detail-row">
-                                        <td colspan="4">
-                                            <div class="detail-container">
-                                                <p>
-                                                    This project implements and extends models for pricing convertible bonds (CBs) using Monte Carlo simulations, reproducing and enhancing methods from Brinell (2023) and Kind & Wilde (2005).
-                                                </p>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Methodology:</strong> 
-                                                        Simulate stock price paths with Geometric Brownian Motion (GBM), evaluate European and American CB payoffs, and use regression-based techniques for early exercise decisions in American CBs.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Implementation:</strong> 
-                                                        Developed modular Python scripts including <code>GBM_Simulation.py</code>, <code>CB_European_BS.py</code>, <code>CB_European_MC.py</code>, and <code>CB_American_MC.py</code>. Parameters are loaded from <code>parameters.txt</code> via <code>Get_Parameters.py</code>. Utilized NumPy for vectorized simulations and utility functions for payoff computation and regression.</li>
-                                                    <li>
-                                                        <strong>Outcome:</strong> 
-                                                        Successfully reproduced benchmark European CB prices, validated Monte Carlo simulations against analytical results, and extended the model to handle American-style CBs with early conversion options. Provides a foundation for future extensions including puts, calls, and forced conversion scenarios.</li>
-                                                    <li>
-                                                        <strong>Extensions:</strong> 
-                                                        Potential future work includes modeling early redemption options (puts and calls), simulating issuer-triggered forced conversions, integrating refinements from Kind & Wilde (2005), and incorporating advanced pricing features for more complex CB structures.
-                                                    </li>
-                                                </ul>
-                                                <center>
-                                                    <iframe src="pdf\MonteCarloConvertibleBondPricing.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
-                                                </center>
-                                            </div>
-                                        </td>
-                                    </tr>
+                            <tbody>
 
-                                    <!-- Project 2 -->
-                                    <tr onclick="toggleRow('p2-details')" class="summary-row">
-                                        <td>
-                                            Momentum Risk Management
-                                        </td>
-                                        <td>
-                                            Research (Quant)
-                                        </td>
-                                        <td>
-                                            Quantitative Finance / Portfolio Management
-                                        </td>
-                                        <td>
-                                            Fall 2025
-                                        </td>
-                                    </tr>
-                                    <tr id="p2-details" class="detail-row">
-                                        <td colspan="4">
-                                            <div class="detail-container">
-                                                <p>
-                                                    The Momentum-Risk-Mitigation project explores risk-managed momentum strategies in equity markets, combining insights from Seppi & Sunner (2021) and Rutkowski et al. (2025). The project constructs momentum portfolios designed to capture excess returns while mitigating downside risks through advanced portfolio management techniques.
-                                                </p>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Methodology:</strong> 
-                                                        Acquire and preprocess historical equity and benchmark data; construct long-only, equal-weighted momentum portfolios; compute weekly returns; rank stocks into top-performing quantiles; integrate risk mitigation techniques including volatility scaling, diversification, and tail hedges; and compute risk-adjusted performance metrics such as Sharpe ratio, alpha, beta, maximum drawdown, and Value at Risk (VaR).
-                                                    </li>
-                                                    <li>
-                                                        <strong>Implementation:</strong> 
-                                                        Developed modular Python scripts for data acquisition, portfolio construction, performance and risk analysis, and visualization. Leveraged Pandas and NumPy for efficient data handling and computations, and structured workflows to support reproducibility and continuous evaluation of portfolio strategies.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Outcome:</strong> 
-                                                        Successfully created a foundational pipeline for risk-managed momentum strategies, enabling backtested evaluation of portfolios from 2015–2025. Initial analyses demonstrate the ability to capture momentum returns while controlling portfolio risk, providing benchmarks for further optimization and strategy development.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Extensions:</strong> 
-                                                        Future work includes implementing alternative weighting schemes, adding factor overlays (e.g., size, value), extending momentum strategies across international markets, integrating machine learning for predictive ranking, and incorporating real-time execution considerations for trading simulation and transaction cost analysis.
-                                                    </li>
-                                                </ul>
-                                                <center>
-                                                    <iframe src="pdf\Momentum Risk Management.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
-                                                </center>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <!-- Project 1 -->
+                                <tr onclick="toggleRow('p1-details')" class="summary-row">
+                                    <td>
+                                        Convertible Bond Monte Carlo Pricing
+                                    </td>
+                                    <td>
+                                        Research (Quant)
+                                    </td>
+                                    <td>
+                                        Statistical Modeling
+                                    </td>
+                                    <td>
+                                        Fall 2025
+                                    </td>
+                                </tr>
+                                <tr id="p1-details" class="detail-row">
+                                    <td colspan="4">
+                                        <div class="detail-container">
+                                            <p>
+                                                This project implements and extends models for pricing convertible bonds (CBs) using Monte Carlo simulations, reproducing and enhancing methods from Brinell (2023) and Kind & Wilde (2005).
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <strong>Methodology:</strong> 
+                                                    Simulate stock price paths with Geometric Brownian Motion (GBM), evaluate European and American CB payoffs, and use regression-based techniques for early exercise decisions in American CBs.
+                                                </li>
+                                                <li>
+                                                    <strong>Implementation:</strong> 
+                                                    Developed modular Python scripts including <code>GBM_Simulation.py</code>, <code>CB_European_BS.py</code>, <code>CB_European_MC.py</code>, and <code>CB_American_MC.py</code>. Parameters are loaded from <code>parameters.txt</code> via <code>Get_Parameters.py</code>. Utilized NumPy for vectorized simulations and utility functions for payoff computation and regression.</li>
+                                                <li>
+                                                    <strong>Outcome:</strong> 
+                                                    Successfully reproduced benchmark European CB prices, validated Monte Carlo simulations against analytical results, and extended the model to handle American-style CBs with early conversion options. Provides a foundation for future extensions including puts, calls, and forced conversion scenarios.</li>
+                                                <li>
+                                                    <strong>Extensions:</strong> 
+                                                    Potential future work includes modeling early redemption options (puts and calls), simulating issuer-triggered forced conversions, integrating refinements from Kind & Wilde (2005), and incorporating advanced pricing features for more complex CB structures.
+                                                </li>
+                                            </ul>
+                                            <center>
+                                                <iframe src="pdf\MonteCarloConvertibleBondPricing.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                    <!-- Project 3 -->
-                                    <tr onclick="toggleRow('p3-details')" class="summary-row">
-                                        <td>
-                                            Short-Run-Forex-Eigenvalue-Forecasting
-                                        </td>
-                                        <td>
-                                            Research (Quant)
-                                        </td>
-                                        <td>
-                                            Econometrics / Forex Analysis
-                                        </td>
-                                        <td>
-                                            Fall 2025
-                                        </td>
-                                    </tr>
-                                    <tr id="p3-details" class="detail-row">
-                                        <td colspan="4">
-                                            <div class="detail-container">
-                                                <p>
-                                                    The Short-Run-Forex-Eigenvalue-Pricing project reproduces and extends the analysis of Shalishali & Ho (2010), investigating short-run exchange rate dynamics across Asian, European, and North American currency pairs. The focus is on relationships between spot and forward exchange rates and the application of eigenvector scaling methods for predictive insights.
-                                                </p>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Methodology:</strong> 
-                                                        Acquire historical forex data for seven major currencies; preprocess and clean datasets; apply eigenvector scaling methods to identify dominant relationships among currency pairs; perform regression analyses to evaluate short-run predictability and market efficiency; implement trading strategies based on forward vs. spot rate relationships; assess performance metrics and regional differences.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Implementation:</strong> 
-                                                        Developed modular Python scripts including <code>yfinance_spot_data.py</code> for data retrieval, <code>MarketMatrix.py</code> and <code>ForecastMatrix.py</code> for matrix computations, and <code>summary_for_all_pairs.py</code> for analysis. Pipelines orchestrated via <code>forex_pipeline.py</code>. Leveraged Pandas and NumPy for efficient calculations and matplotlib/seaborn for visualization of predictive performance.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Outcome:</strong> 
-                                                        Established a complete workflow for short-run forex analysis, reproducing key findings from the original 2010 study and extending them to multiple regions. Generated summary outputs, hit rate statistics, and visualizations demonstrating predictive accuracy of forward vs. spot relationships.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Extensions:</strong> 
-                                                        Future work includes expanding to emerging market currencies, incorporating volatility-based models such as GARCH, testing nonlinear and machine learning models for prediction, integrating intraday or high-frequency data, and evaluating real-world execution constraints for strategy deployment.
-                                                    </li>
-                                                </ul>
-                                                <center>
-                                                    <iframe src="pdf\Shortrun Exchange Eigenvector Model.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
-                                                </center>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <!-- Project 2 -->
+                                <tr onclick="toggleRow('p2-details')" class="summary-row">
+                                    <td>
+                                        Momentum Risk Management
+                                    </td>
+                                    <td>
+                                        Research (Quant)
+                                    </td>
+                                    <td>
+                                        Quantitative Finance / Portfolio Management
+                                    </td>
+                                    <td>
+                                        Fall 2025
+                                    </td>
+                                </tr>
+                                <tr id="p2-details" class="detail-row">
+                                    <td colspan="4">
+                                        <div class="detail-container">
+                                            <p>
+                                                The Momentum-Risk-Mitigation project explores risk-managed momentum strategies in equity markets, combining insights from Seppi & Sunner (2021) and Rutkowski et al. (2025). The project constructs momentum portfolios designed to capture excess returns while mitigating downside risks through advanced portfolio management techniques.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <strong>Methodology:</strong> 
+                                                    Acquire and preprocess historical equity and benchmark data; construct long-only, equal-weighted momentum portfolios; compute weekly returns; rank stocks into top-performing quantiles; integrate risk mitigation techniques including volatility scaling, diversification, and tail hedges; and compute risk-adjusted performance metrics such as Sharpe ratio, alpha, beta, maximum drawdown, and Value at Risk (VaR).
+                                                </li>
+                                                <li>
+                                                    <strong>Implementation:</strong> 
+                                                    Developed modular Python scripts for data acquisition, portfolio construction, performance and risk analysis, and visualization. Leveraged Pandas and NumPy for efficient data handling and computations, and structured workflows to support reproducibility and continuous evaluation of portfolio strategies.
+                                                </li>
+                                                <li>
+                                                    <strong>Outcome:</strong> 
+                                                    Successfully created a foundational pipeline for risk-managed momentum strategies, enabling backtested evaluation of portfolios from 2015–2025. Initial analyses demonstrate the ability to capture momentum returns while controlling portfolio risk, providing benchmarks for further optimization and strategy development.
+                                                </li>
+                                                <li>
+                                                    <strong>Extensions:</strong> 
+                                                    Future work includes implementing alternative weighting schemes, adding factor overlays (e.g., size, value), extending momentum strategies across international markets, integrating machine learning for predictive ranking, and incorporating real-time execution considerations for trading simulation and transaction cost analysis.
+                                                </li>
+                                            </ul>
+                                            <center>
+                                                <iframe src="pdf\Momentum Risk Management.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                    <!-- Project 4 -->
-                                    <tr onclick="toggleRow('p4-details')" class="summary-row">
-                                        <td>
-                                            NYC Rain Forecasting - Kalshi
-                                        </td>
-                                        <td>
-                                            Research (Quant)
-                                        </td>
-                                        <td>
-                                            Predictive Modeling
-                                        </td>
-                                        <td>
-                                            Spring 2025
-                                        </td>
-                                    </tr>
-                                    <tr id="p4-details" class="detail-row">
-                                        <td colspan="4">
-                                            <div class="detail-container">
-                                                <p>
-                                                    This project develops a systematic forecasting framework for predicting outcomes of Kalshi’s NYC Daily Rain contracts using publicly available meteorological data. It implements a full workflow of data acquisition, preprocessing, bin-based feature engineering, probabilistic modeling, and out-of-sample validation.
+                                <!-- Project 3 -->
+                                <tr onclick="toggleRow('p3-details')" class="summary-row">
+                                    <td>
+                                        Short-Run-Forex-Eigenvalue-Forecasting
+                                    </td>
+                                    <td>
+                                        Research (Quant)
+                                    </td>
+                                    <td>
+                                        Econometrics / Forex Analysis
+                                    </td>
+                                    <td>
+                                        Fall 2025
+                                    </td>
+                                </tr>
+                                <tr id="p3-details" class="detail-row">
+                                    <td colspan="4">
+                                        <div class="detail-container">
+                                            <p>
+                                                The Short-Run-Forex-Eigenvalue-Pricing project reproduces and extends the analysis of Shalishali & Ho (2010), investigating short-run exchange rate dynamics across Asian, European, and North American currency pairs. The focus is on relationships between spot and forward exchange rates and the application of eigenvector scaling methods for predictive insights.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <strong>Methodology:</strong> 
+                                                    Acquire historical forex data for seven major currencies; preprocess and clean datasets; apply eigenvector scaling methods to identify dominant relationships among currency pairs; perform regression analyses to evaluate short-run predictability and market efficiency; implement trading strategies based on forward vs. spot rate relationships; assess performance metrics and regional differences.
+                                                </li>
+                                                <li>
+                                                    <strong>Implementation:</strong> 
+                                                    Developed modular Python scripts including <code>yfinance_spot_data.py</code> for data retrieval, <code>MarketMatrix.py</code> and <code>ForecastMatrix.py</code> for matrix computations, and <code>summary_for_all_pairs.py</code> for analysis. Pipelines orchestrated via <code>forex_pipeline.py</code>. Leveraged Pandas and NumPy for efficient calculations and matplotlib/seaborn for visualization of predictive performance.
+                                                </li>
+                                                <li>
+                                                    <strong>Outcome:</strong> 
+                                                    Established a complete workflow for short-run forex analysis, reproducing key findings from the original 2010 study and extending them to multiple regions. Generated summary outputs, hit rate statistics, and visualizations demonstrating predictive accuracy of forward vs. spot relationships.
+                                                </li>
+                                                <li>
+                                                    <strong>Extensions:</strong> 
+                                                    Future work includes expanding to emerging market currencies, incorporating volatility-based models such as GARCH, testing nonlinear and machine learning models for prediction, integrating intraday or high-frequency data, and evaluating real-world execution constraints for strategy deployment.
+                                                </li>
+                                            </ul>
+                                            <center>
+                                                <iframe src="pdf\Shortrun Exchange Eigenvector Model.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                                </p>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Methodology:</strong> 
-                                                        Daily NYC precipitation, temperature, humidity, and cloud-cover data were collected from NOAA and related public sources. A binning-based feature engineering process was developed to segment precipitation indicators into predictive regimes, capturing nonlinear threshold behavior relevant to Kalshi’s contract settlement structure.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Implementation:</strong> 
-                                                        The pipeline includes end-to-end data cleaning, aggregation to contract-aligned horizons, calibration of binned features, and supervised-learning models for settlement probability estimation. Cross-validation and calibrated scoring were used to evaluate performance robustness.
-                                                    <li>
-                                                        <strong>Outcome:</strong> 
-                                                        Using the Brier score for model accuracy, the final model achieves an approximately 85 percent out-of-sample directional accuracy in predicting contract outcomes, outperforming naïve baselines and public forecast heuristics. The analysis highlights the value of micro-segmentation calibrated probability modeling in environmental event-derivative forecasting.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Extensions:</strong> 
-                                                        The framework supports additional development, including multi-city forecasting, integration of short-term signal, ensemble weighting across meteorological sources, and real-time trading pipeline deployment aligned with Kalshi contract specifications.
-                                                    </li>
-                                                </ul>
-                                                <center>
-                                                    <iframe src="pdf\Team 4 - May 2025, FQE Presentation - vf.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
-                                                </center>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <!-- Project 4 -->
+                                <tr onclick="toggleRow('p4-details')" class="summary-row">
+                                    <td>
+                                        NYC Rain Forecasting - Kalshi
+                                    </td>
+                                    <td>
+                                        Research (Quant)
+                                    </td>
+                                    <td>
+                                        Predictive Modeling
+                                    </td>
+                                    <td>
+                                        Spring 2025
+                                    </td>
+                                </tr>
+                                <tr id="p4-details" class="detail-row">
+                                    <td colspan="4">
+                                        <div class="detail-container">
+                                            <p>
+                                                This project develops a systematic forecasting framework for predicting outcomes of Kalshi’s NYC Daily Rain contracts using publicly available meteorological data. It implements a full workflow of data acquisition, preprocessing, bin-based feature engineering, probabilistic modeling, and out-of-sample validation.
 
-                                    <!-- Project 5 -->
-                                    <tr onclick="toggleRow('p5-details')" class="summary-row">
-                                        <td>
-                                            Kalshi Front-Running Analysis
-                                        </td>
-                                        <td>
-                                            Research (Quant)
-                                        </td>
-                                        <td>
-                                            Quantitative Trading
-                                        </td>
-                                        <td>
-                                            Fall 2024
-                                        </td>
-                                    </tr>
-                                    <tr id="p5-details" class="detail-row">
-                                        <td colspan="4">
-                                            <div class="detail-container">
-                                                <p>
-                                                    This project develops a quantitative trading framework for analyzing front-running behavior in Kalshi event contracts. The analysis focuses on identifying repeatable pricing patterns preceding market moves, constructing custom candlestick representations, and evaluating predictive signals through systematic backtesting.
-                                                </p>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Methodology:</strong> 
-                                                        Historical intraday Kalshi contract data was transformed into custom candlestick structures capturing open, high, low, and close levels over discrete micro-intervals. These candles were engineered to highlight short-horizon imbalance, momentum, and liquidity-driven dynamics that precede event-related price adjustments.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Implementation:</strong> 
-                                                        The strategy identified several robust pre-move micro-patterns observable in candle-based features, producing measurable predictive lift over random and baseline classifiers. Backtesting demonstrated consistent improvements in directional accuracy and risk-adjusted returns under multiple contract types and sampling intervals.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Outcome:</strong> 
-                                                        Established a complete workflow for short-run forex analysis, reproducing key findings from the original 2010 study and extending them to multiple regions. Generated summary outputs, hit rate statistics, and visualizations demonstrating predictive accuracy of forward vs. spot relationships.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Extensions:</strong> 
-                                                        The framework supports integration of order-flow features, regime-switching models, ensemble predictive architectures, and real-time monitoring modules for production-grade trading applications on event-derivative platforms.
-                                                    </li>
-                                                </ul>
-                                                <center>
-                                                    <iframe src="pdf\Team 4 - Dec 2024, FQE Presentation-vF.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
-                                                </center>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <strong>Methodology:</strong> 
+                                                    Daily NYC precipitation, temperature, humidity, and cloud-cover data were collected from NOAA and related public sources. A binning-based feature engineering process was developed to segment precipitation indicators into predictive regimes, capturing nonlinear threshold behavior relevant to Kalshi’s contract settlement structure.
+                                                </li>
+                                                <li>
+                                                    <strong>Implementation:</strong> 
+                                                    The pipeline includes end-to-end data cleaning, aggregation to contract-aligned horizons, calibration of binned features, and supervised-learning models for settlement probability estimation. Cross-validation and calibrated scoring were used to evaluate performance robustness.
+                                                <li>
+                                                    <strong>Outcome:</strong> 
+                                                    Using the Brier score for model accuracy, the final model achieves an approximately 85 percent out-of-sample directional accuracy in predicting contract outcomes, outperforming naïve baselines and public forecast heuristics. The analysis highlights the value of micro-segmentation calibrated probability modeling in environmental event-derivative forecasting.
+                                                </li>
+                                                <li>
+                                                    <strong>Extensions:</strong> 
+                                                    The framework supports additional development, including multi-city forecasting, integration of short-term signal, ensemble weighting across meteorological sources, and real-time trading pipeline deployment aligned with Kalshi contract specifications.
+                                                </li>
+                                            </ul>
+                                            <center>
+                                                <iframe src="pdf\Team 4 - May 2025, FQE Presentation - vf.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                    <!-- Project 6 -->
-                                    <tr onclick="toggleRow('p6-details')" class="summary-row">
-                                        <td>
-                                            Crisis Investing
-                                        </td>
-                                        <td>
-                                            Research (Quant)
-                                        </td>
-                                        <td>
-                                            Systematic Equity Strategy Design
-                                        </td>
-                                        <td>
-                                            Fall 2022 - FY 2023
-                                        </td>
-                                    </tr>
-                                    <tr id="p6-details" class="detail-row">
-                                        <td colspan="4">
-                                            <div class="detail-container">
-                                                <p>
-                                                    This project applies Verdad’s crisis-investing framework to systematic equity selection and execution within Interactive Brokers (IBKR). The work involves translating "fleeing to quality" into operational screening rules, constructing automated portfolios, and validating performance through historical simulation and live-paper environments.
-                                                </p>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Methodology:</strong> 
-                                                        Verdad’s crisis-investing criteria—focusing on valuation compression, balance-sheet resilience, and post-dislocation recovery dynamics—were operationalized into a structured equity universe filter. Market, fundamental, and macro indicators were transformed into quantitative screening signals aligned with the crisis-investing research canon.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Implementation:</strong> 
-                                                            Developed a Python-based pipeline integrating with the IBKR API to pull real-time fundamentals, execute screen updates, and generate systematic buy and sell lists. Historical samples were used to evaluate performance during prior market dislocations, while simulated IBKR portfolios were employed to validate execution, turnover, and stability across sector and market-cap segments.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Outcome:</strong> 
-                                                        The resulting framework demonstrated material signal strength around post-crisis equity rebounds, capturing value-driven mean-reversion patterns with favorable risk-adjusted performance. Automated IBKR workflows produced consistent basket construction, improved trade discipline, and measurable lift over simple value- and momentum-based baselines.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Extensions:</strong> 
-                                                        Future enhancements include integrating macro-regime classification, expanding screening rules to international markets, and incorporating volatility-adjusted position sizing for improved capital allocation during crisis windows.
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <!-- Project 5 -->
+                                <tr onclick="toggleRow('p5-details')" class="summary-row">
+                                    <td>
+                                        Kalshi Front-Running Analysis
+                                    </td>
+                                    <td>
+                                        Research (Quant)
+                                    </td>
+                                    <td>
+                                        Quantitative Trading
+                                    </td>
+                                    <td>
+                                        Fall 2024
+                                    </td>
+                                </tr>
+                                <tr id="p5-details" class="detail-row">
+                                    <td colspan="4">
+                                        <div class="detail-container">
+                                            <p>
+                                                This project develops a quantitative trading framework for analyzing front-running behavior in Kalshi event contracts. The analysis focuses on identifying repeatable pricing patterns preceding market moves, constructing custom candlestick representations, and evaluating predictive signals through systematic backtesting.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <strong>Methodology:</strong> 
+                                                    Historical intraday Kalshi contract data was transformed into custom candlestick structures capturing open, high, low, and close levels over discrete micro-intervals. These candles were engineered to highlight short-horizon imbalance, momentum, and liquidity-driven dynamics that precede event-related price adjustments.
+                                                </li>
+                                                <li>
+                                                    <strong>Implementation:</strong> 
+                                                    The strategy identified several robust pre-move micro-patterns observable in candle-based features, producing measurable predictive lift over random and baseline classifiers. Backtesting demonstrated consistent improvements in directional accuracy and risk-adjusted returns under multiple contract types and sampling intervals.
+                                                </li>
+                                                <li>
+                                                    <strong>Outcome:</strong> 
+                                                    Established a complete workflow for short-run forex analysis, reproducing key findings from the original 2010 study and extending them to multiple regions. Generated summary outputs, hit rate statistics, and visualizations demonstrating predictive accuracy of forward vs. spot relationships.
+                                                </li>
+                                                <li>
+                                                    <strong>Extensions:</strong> 
+                                                    The framework supports integration of order-flow features, regime-switching models, ensemble predictive architectures, and real-time monitoring modules for production-grade trading applications on event-derivative platforms.
+                                                </li>
+                                            </ul>
+                                            <center>
+                                                <iframe src="pdf\Team 4 - Dec 2024, FQE Presentation-vF.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                    <!-- Project 7 -->
-                                    <tr onclick="toggleRow('p7-details')" class="summary-row">
-                                        <td>
-                                            Supply Chain Strategy
-                                        </td>
-                                        <td>
-                                            Academic
-                                        </td>
-                                        <td>
-                                            Operational & Financial Analysis
-                                        </td>
-                                        <td>
-                                            Spring 2022
-                                        </td>
-                                    </tr>
-                                    <tr id="p7-details" class="detail-row">
-                                        <td colspan="4">
-                                            <div class="detail-container">
-                                                <p>
-                                                    This is a case study regarding operations management and quantifying operational improvements into financial results
-                                                </p>
-                                                <!--<ul>
-                                                    <li>
-                                                        <strong>Methodology:</strong> 
-                                                        AAA
-                                                    </li>
-                                                    <li>
-                                                        <strong>Implementation:</strong> 
-                                                        AAA
-                                                    </li>
-                                                    <li>
-                                                        <strong>Outcome:</strong> 
-                                                        AAA
-                                                    </li>
-                                                    <li>
-                                                        <strong>Extensions:</strong> 
-                                                        AAA
-                                                    </li>
-                                                </ul>-->
-                                                <center>
-                                                    <iframe src="pdf\Team5-NationalCranberryInfographic.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
-                                                </center>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <!-- Project 6 -->
+                                <tr onclick="toggleRow('p6-details')" class="summary-row">
+                                    <td>
+                                        Crisis Investing
+                                    </td>
+                                    <td>
+                                        Research (Quant)
+                                    </td>
+                                    <td>
+                                        Systematic Equity Strategy Design
+                                    </td>
+                                    <td>
+                                        Fall 2022 - FY 2023
+                                    </td>
+                                </tr>
+                                <tr id="p6-details" class="detail-row">
+                                    <td colspan="4">
+                                        <div class="detail-container">
+                                            <p>
+                                                This project applies Verdad’s crisis-investing framework to systematic equity selection and execution within Interactive Brokers (IBKR). The work involves translating "fleeing to quality" into operational screening rules, constructing automated portfolios, and validating performance through historical simulation and live-paper environments.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <strong>Methodology:</strong> 
+                                                    Verdad’s crisis-investing criteria—focusing on valuation compression, balance-sheet resilience, and post-dislocation recovery dynamics—were operationalized into a structured equity universe filter. Market, fundamental, and macro indicators were transformed into quantitative screening signals aligned with the crisis-investing research canon.
+                                                </li>
+                                                <li>
+                                                    <strong>Implementation:</strong> 
+                                                        Developed a Python-based pipeline integrating with the IBKR API to pull real-time fundamentals, execute screen updates, and generate systematic buy and sell lists. Historical samples were used to evaluate performance during prior market dislocations, while simulated IBKR portfolios were employed to validate execution, turnover, and stability across sector and market-cap segments.
+                                                </li>
+                                                <li>
+                                                    <strong>Outcome:</strong> 
+                                                    The resulting framework demonstrated material signal strength around post-crisis equity rebounds, capturing value-driven mean-reversion patterns with favorable risk-adjusted performance. Automated IBKR workflows produced consistent basket construction, improved trade discipline, and measurable lift over simple value- and momentum-based baselines.
+                                                </li>
+                                                <li>
+                                                    <strong>Extensions:</strong> 
+                                                    Future enhancements include integrating macro-regime classification, expanding screening rules to international markets, and incorporating volatility-adjusted position sizing for improved capital allocation during crisis windows.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                    <!-- Project 8 -->
-                                    <tr onclick="toggleRow('p8-details')" class="summary-row">
-                                        <td>
-                                            Retail Investor Sentiment
-                                        </td>
-                                        <td>
-                                            Public/Professional
-                                        </td>
-                                        <td>
-                                            Various Financial Engineering Case Studies
-                                        </td>
-                                        <td>
-                                            Fall 2021 - Spring 2022
-                                        </td>
-                                    </tr>
-                                    <tr id="p8-details" class="detail-row">
-                                        <td colspan="4">
-                                            <div class="detail-container">
-                                                <p>
-                                                    As part of partnership with the WP Carey Department of Finance, ASU Center for Investment Engineering, & ASU Endowment Fund. I participated in the Student Investment Management Fund, which is an opportunity to manage a section of ASU's endowment fund for a full year. During this time we employed a quantitiative strategy regarding investor sentiment and used retail investor order flow to gauge sentiment and position the fund ahead of investor sentiment.
-                                                </p>
+                                <!-- Project 7 -->
+                                <tr onclick="toggleRow('p7-details')" class="summary-row">
+                                    <td>
+                                        Supply Chain Strategy
+                                    </td>
+                                    <td>
+                                        Academic
+                                    </td>
+                                    <td>
+                                        Operational & Financial Analysis
+                                    </td>
+                                    <td>
+                                        Spring 2022
+                                    </td>
+                                </tr>
+                                <tr id="p7-details" class="detail-row">
+                                    <td colspan="4">
+                                        <div class="detail-container">
+                                            <p>
+                                                This is a case study regarding operations management and quantifying operational improvements into financial results
+                                            </p>
+                                            <!--<ul>
+                                                <li>
+                                                    <strong>Methodology:</strong> 
+                                                    AAA
+                                                </li>
+                                                <li>
+                                                    <strong>Implementation:</strong> 
+                                                    AAA
+                                                </li>
+                                                <li>
+                                                    <strong>Outcome:</strong> 
+                                                    AAA
+                                                </li>
+                                                <li>
+                                                    <strong>Extensions:</strong> 
+                                                    AAA
+                                                </li>
+                                            </ul>-->
+                                            <center>
+                                                <iframe src="pdf\Team5-NationalCranberryInfographic.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                                <center>
-                                                    <p>Final Presentation:</p>
-                                                    <iframe src="pdf\Undergrad-April_2022_team B.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
-                                                    <hr>
-                                                    <p>Midpoint Presentation:</p>
-                                                    <iframe src="pdf\undergrad-dec_2021 team B.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
-                                                </center>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <!-- Project 8 -->
+                                <tr onclick="toggleRow('p8-details')" class="summary-row">
+                                    <td>
+                                        Retail Investor Sentiment
+                                    </td>
+                                    <td>
+                                        Public/Professional
+                                    </td>
+                                    <td>
+                                        Various Financial Engineering Case Studies
+                                    </td>
+                                    <td>
+                                        Fall 2021 - Spring 2022
+                                    </td>
+                                </tr>
+                                <tr id="p8-details" class="detail-row">
+                                    <td colspan="4">
+                                        <div class="detail-container">
+                                            <p>
+                                                As part of partnership with the WP Carey Department of Finance, ASU Center for Investment Engineering, & ASU Endowment Fund. I participated in the Student Investment Management Fund, which is an opportunity to manage a section of ASU's endowment fund for a full year. During this time we employed a quantitiative strategy regarding investor sentiment and used retail investor order flow to gauge sentiment and position the fund ahead of investor sentiment.
+                                            </p>
 
-                                    <!-- Project 9 -->
-                                    <tr onclick="toggleRow('p9-details')" class="summary-row">
-                                        <td>
-                                            Equity Valuation of BA & MSP Stock Pitch
-                                        </td>
-                                        <td>
-                                            Academic
-                                        </td>
-                                        <td>
-                                            Valuation
-                                        </td>
-                                        <td>
-                                            Fall 2021
-                                        </td>
-                                    </tr>
-                                    <tr id="p9-details" class="detail-row">
-                                        <td colspan="4">
-                                            <div class="detail-container">
-                                                <p>
-                                                    This project involved a comprehensive fundamental valuation of Boeing (BA) and Datto, Inc. (MSP) for an investor pitch competition. The analysis included business profiling, financial modeling, competitive benchmarking, scenario testing, and risk assessment. The MSP valuation and thesis ultimately secured <strong>1st place</strong> in the end of semester fundamental stock pitch competition.
-                                                </p>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Methodology:</strong> 
-                                                        Conducted a full fundamental review of each company including business model assessment, addressable market analysis, margin structure, capital allocation trends, and risk factor identification. Built detailed valuation frameworks using discounted cash flow modeling, comparable company analysis, and expected risk-reward distributions under base, bull, and bear cases.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Implementation:</strong> 
-                                                        Developed layered valuation models with revenue builds, margin decomposition, and sensitivity analysis. For MSP, incorporated subscription-based recurring revenue dynamics, cybersecurity sector growth, and post-IPO capital structure considerations. For Boeing, evaluated backlog recovery, segment-level cash flow potential, and long-duration aerospace cyclicality. Structured both pitches with investment theses, catalysts, downside framing, and competitive moats.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Outcome:</strong> 
-                                                        The MSP pitch was recognized as the top submission in the competition, demonstrating a stronger valuation outlook, more robust risk-adjusted return profile, and a clearer mispricing relative to fundamentals. The BA analysis provided a contrasting case of long-term recovery value with materially higher risk dispersion, strengthening the team’s comparative insights.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Extensions:</strong> 
-                                                        The model framework can be adapted for sector-wide screens or multi-asset comparative valuation.
-                                                    </li>
-                                                </ul>
-                                                <center>
-                                                    <iframe src="pdf\MSP-InvestorPitch.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
-                                                </center>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            <center>
+                                                <p>Final Presentation:</p>
+                                                <iframe src="pdf\Undergrad-April_2022_team B.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
+                                                <hr>
+                                                <p>Midpoint Presentation:</p>
+                                                <iframe src="pdf\undergrad-dec_2021 team B.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                    <!-- Project 10-->
-                                    <tr onclick="toggleRow('p10-details')" class="summary-row">
-                                        <td>
-                                            ASU SCMA / Dell Case Competition
-                                        </td>
-                                        <td>
-                                            Case Competition
-                                        </td>
-                                        <td>
-                                            Supply Chain Management
-                                        </td>
-                                        <td>
-                                            Fall 2021
-                                        </td>
-                                    </tr>
-                                    <tr id="p10-details" class="detail-row">
-                                        <td colspan="4">
-                                            <div class="detail-container">
-                                                <p>
-                                                    This project analyzed Dell’s reverse supply chain and proposed a strategic roadmap to optimize closed-loop logistics, modular design integration, and customer-facing “first-mile-back” processes. Across two competitive rounds, the team secured second place by developing a comprehensive vision for Dell’s 2026 and 2031 reverse logistics models and recommending interventions that enhance sustainability, resiliency, and customer experience.
-                                                </p>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Methodology:</strong> 
-                                                        Conducted a full-spectrum assessment of Dell’s current reverse logistics architecture using industry frameworks, triple bottom line analysis, and closed-loop supply chain theory. Integrated market trends, ESG pressures, global regulations, and technological shifts (cloud adoption, predictive analytics, transparency requirements) to construct a forward-looking evaluation of constraints and opportunities.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Implementation:</strong> 
-                                                        Developed scenario-based future-state models for Dell’s reverse logistics (2021 → 2026 → 2031), drawing on principles from the case literature and sustainability reporting standards. Proposed system benefits of modular device architecture, decentralized repair networks, and partnerships with Amazon Home Services, community colleges, and 3PL providers. Designed operational workflows to reduce waste, increase component recovery, and improve workforce readiness.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Outcome:</strong> 
-                                                        Delivered a finalist proposal that earned second place. The final recommendation package demonstrated how Dell could materially improve the first-mile-back experience, expand repair access, decrease reliance on Dell-owned hubs, and strengthen closed-loop material flows. Analyses showed measurable impacts on carbon footprint reduction, recyclability, ESG reporting accuracy, and supply chain resilience under modular product architectures.
-                                                    </li>
-                                                    <li>
-                                                        <strong>Extensions:</strong> 
-                                                        Future work could model quantitative cost–benefit impacts of decentralized repair networks, integrate predictive failure analytics, and perform simulation-based evaluation of return flows under varying consumer adoption patterns. The framework can be adapted for broader electronics OEMs pursuing circular-economy alignment.
-                                                    </li>
-                                                </ul>
-                                                <center>
-                                                    <iframe src="pdf\Group 16 Submission Final.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
-                                                </center>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <!-- Project 9 -->
+                                <tr onclick="toggleRow('p9-details')" class="summary-row">
+                                    <td>
+                                        Equity Valuation of BA & MSP Stock Pitch
+                                    </td>
+                                    <td>
+                                        Academic
+                                    </td>
+                                    <td>
+                                        Valuation
+                                    </td>
+                                    <td>
+                                        Fall 2021
+                                    </td>
+                                </tr>
+                                <tr id="p9-details" class="detail-row">
+                                    <td colspan="4">
+                                        <div class="detail-container">
+                                            <p>
+                                                This project involved a comprehensive fundamental valuation of Boeing (BA) and Datto, Inc. (MSP) for an investor pitch competition. The analysis included business profiling, financial modeling, competitive benchmarking, scenario testing, and risk assessment. The MSP valuation and thesis ultimately secured <strong>1st place</strong> in the end of semester fundamental stock pitch competition.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <strong>Methodology:</strong> 
+                                                    Conducted a full fundamental review of each company including business model assessment, addressable market analysis, margin structure, capital allocation trends, and risk factor identification. Built detailed valuation frameworks using discounted cash flow modeling, comparable company analysis, and expected risk-reward distributions under base, bull, and bear cases.
+                                                </li>
+                                                <li>
+                                                    <strong>Implementation:</strong> 
+                                                    Developed layered valuation models with revenue builds, margin decomposition, and sensitivity analysis. For MSP, incorporated subscription-based recurring revenue dynamics, cybersecurity sector growth, and post-IPO capital structure considerations. For Boeing, evaluated backlog recovery, segment-level cash flow potential, and long-duration aerospace cyclicality. Structured both pitches with investment theses, catalysts, downside framing, and competitive moats.
+                                                </li>
+                                                <li>
+                                                    <strong>Outcome:</strong> 
+                                                    The MSP pitch was recognized as the top submission in the competition, demonstrating a stronger valuation outlook, more robust risk-adjusted return profile, and a clearer mispricing relative to fundamentals. The BA analysis provided a contrasting case of long-term recovery value with materially higher risk dispersion, strengthening the team’s comparative insights.
+                                                </li>
+                                                <li>
+                                                    <strong>Extensions:</strong> 
+                                                    The model framework can be adapted for sector-wide screens or multi-asset comparative valuation.
+                                                </li>
+                                            </ul>
+                                            <center>
+                                                <iframe src="pdf\MSP-InvestorPitch.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                </tbody>
-                            </table>
+                                <!-- Project 10-->
+                                <tr onclick="toggleRow('p10-details')" class="summary-row">
+                                    <td>
+                                        ASU SCMA / Dell Case Competition
+                                    </td>
+                                    <td>
+                                        Case Competition
+                                    </td>
+                                    <td>
+                                        Supply Chain Management
+                                    </td>
+                                    <td>
+                                        Fall 2021
+                                    </td>
+                                </tr>
+                                <tr id="p10-details" class="detail-row">
+                                    <td colspan="4">
+                                        <div class="detail-container">
+                                            <p>
+                                                This project analyzed Dell’s reverse supply chain and proposed a strategic roadmap to optimize closed-loop logistics, modular design integration, and customer-facing “first-mile-back” processes. Across two competitive rounds, the team secured second place by developing a comprehensive vision for Dell’s 2026 and 2031 reverse logistics models and recommending interventions that enhance sustainability, resiliency, and customer experience.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <strong>Methodology:</strong> 
+                                                    Conducted a full-spectrum assessment of Dell’s current reverse logistics architecture using industry frameworks, triple bottom line analysis, and closed-loop supply chain theory. Integrated market trends, ESG pressures, global regulations, and technological shifts (cloud adoption, predictive analytics, transparency requirements) to construct a forward-looking evaluation of constraints and opportunities.
+                                                </li>
+                                                <li>
+                                                    <strong>Implementation:</strong> 
+                                                    Developed scenario-based future-state models for Dell’s reverse logistics (2021 → 2026 → 2031), drawing on principles from the case literature and sustainability reporting standards. Proposed system benefits of modular device architecture, decentralized repair networks, and partnerships with Amazon Home Services, community colleges, and 3PL providers. Designed operational workflows to reduce waste, increase component recovery, and improve workforce readiness.
+                                                </li>
+                                                <li>
+                                                    <strong>Outcome:</strong> 
+                                                    Delivered a finalist proposal that earned second place. The final recommendation package demonstrated how Dell could materially improve the first-mile-back experience, expand repair access, decrease reliance on Dell-owned hubs, and strengthen closed-loop material flows. Analyses showed measurable impacts on carbon footprint reduction, recyclability, ESG reporting accuracy, and supply chain resilience under modular product architectures.
+                                                </li>
+                                                <li>
+                                                    <strong>Extensions:</strong> 
+                                                    Future work could model quantitative cost–benefit impacts of decentralized repair networks, integrate predictive failure analytics, and perform simulation-based evaluation of return flows under varying consumer adoption patterns. The framework can be adapted for broader electronics OEMs pursuing circular-economy alignment.
+                                                </li>
+                                            </ul>
+                                            <center>
+                                                <iframe src="pdf\Group 16 Submission Final.pdf" type="application/pdf" width="75%" height="500px" title="Embedded PDF Viewer"></iframe>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                        <script>
-                        function toggleRow(id) {
-                            const row = document.getElementById(id);
-                            row.style.display = (row.style.display === "table-row") ? "none" : "table-row";
-                        }
-                        </script>
+                            </tbody>
+                        </table>
+
+                    <script>
+                    function toggleRow(id) {
+                        const row = document.getElementById(id);
+                        row.style.display = (row.style.display === "table-row") ? "none" : "table-row";
+                    }
+                    </script>
 
 
                     </div>
@@ -596,57 +596,61 @@ Research & Publications
             </div>
         
         </main>
-        
-        <!--========== END PAGE CONTENT ==========-->
+        <!--========== END PAGE LAYOUT ==========-->
 
         <!--========== FOOTER ==========-->
         <footer class="footer">
-            <!-- Contact -->
-            <div id="contact">
-                <div class="bg-color-sky-light">
-                    <div class="container content-lg">
-                        <div class="row">
-                            <div class="col-sm-3 sm-margin-b-30">
-                                <div class="text-right sm-text-left">
-                                    <h2 class="margin-b-0">Contact</h2>
-                                </div>
+        
+        <!-- Contact -->
+        <div id="contact">
+            <div class="bg-color-sky-light">
+                <div class="container content-sm">
+                    <div class="row">
+                        <div class="col-sm-3 sm-margin-b-30">
+                            <div class="text-right sm-text-left">
+                                <h2 class="margin-b-0">Contact</h2>
                             </div>
-                            <div class="col-sm-8 col-sm-offset-1">
-                                <div class="row">
-                                    <div class="col-md-3 col-xs-6 md-margin-b-30">
-                                        <h5>Location</h5>
-                                        <a>New York, New York</a>
-                                    </div>
-                                    <div class="col-md-3 col-xs-6 md-margin-b-30">
-                                        <h5>Phone</h5>
-                                        <a>+1 (480) 619-2344</a>
-                                    </div>
-                                    <div class="col-md-3 col-xs-6">
-                                        <h5>Email</h5>
-                                        <a href="mailto:#">agtaz19@gmail.com</a>
-                                    </div>
-                                    <div class="col-md-3 col-xs-6">
-                                        <h5>Web</h5>
-                                        <a href="index.html">agtaz19@github.io</a>
-                                    </div>
+                        </div>
+                        <div class="col-sm-8 col-sm-offset-1">
+                            <div class="row">
+                                <div class="col-md-3 col-xs-6 md-margin-b-30">
+                                    <h5>Location</h5>
+                                    <a>New York, New York</a>
+                                </div>
+                                <div class="col-md-3 col-xs-6 md-margin-b-30">
+                                    <h5>Phone</h5>
+                                    <a>+1 (480) 619-2344</a>
+                                </div>
+                                <div class="col-md-3 col-xs-6">
+                                    <h5>Email</h5>
+                                    <a href="mailto:#">agtaz19@gmail.com</a>
+                                </div>
+                                <div class="col-md-3 col-xs-6">
+                                    <h5>Web</h5>
+                                    <a href="index.html">agtaz19@github.io</a>
                                 </div>
                             </div>
                         </div>
-                        <!--// end row -->
                     </div>
+                    <!--// end row -->
                 </div>
             </div>
-            <!-- End Contact -->
+        </div>
+        <!-- End Contact -->
+        
         </footer>
         <!--========== END FOOTER ==========-->
 
         <!-- Back To Top -->
         <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
 
-        <!-- JAVASCRIPTS -->
+        <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+        <!-- CORE PLUGINS -->
         <script src="vendor/jquery.min.js" type="text/javascript"></script>
         <script src="vendor/jquery-migrate.min.js" type="text/javascript"></script>
         <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL PLUGINS -->
         <script src="vendor/jquery.easing.js" type="text/javascript"></script>
         <script src="vendor/jquery.back-to-top.js" type="text/javascript"></script>
         <script src="vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
@@ -655,9 +659,13 @@ Research & Publications
         <script src="vendor/jquery.appear.js" type="text/javascript"></script>
         <script src="vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
         <script src="vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL SCRIPTS -->
         <script src="js/layout.min.js" type="text/javascript"></script>
         <script src="js/components/progress-bar.min.js" type="text/javascript"></script>
         <script src="js/components/masonry.min.js" type="text/javascript"></script>
         <script src="js/components/wow.min.js" type="text/javascript"></script>
+
     </body>
+    <!-- END BODY -->
 </html>
