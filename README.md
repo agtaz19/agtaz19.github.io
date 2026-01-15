@@ -2,54 +2,36 @@
 
 ## Project Description
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.
-
-Suspendisse potenti. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod.
+This is a portfolio website that I created to highlight various roles, responsibilities, and activities that I have done in my academic and professional career.
 
 ## Table of Contents
 
 - [Project Description](#project-description)
 - [Table of Contents](#table-of-contents)
-- [Objectives of Project](#objectives-of-project)
 - [Project Status & Project Roadmap](#project-status--project-roadmap)
 - [Methodology & Workflow](#methodology--workflow)
-- [Results & Visuals](#results--visuals)
 - [Repository Structure](#repository-structure)
-- [Authors & Acknowledgements](#authors--acknowledgements)
+- [Authors & Acknowledgements](#acknowledgements)
 - [References](#references)
 - [License](#license)
 
-## Objectives of Project
-[Table of Contents](#table-of-contents)
+## Project Status
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-2. Integer posuere erat a ante venenatis dapibus.
-3. Curabitur blandit tempus porttitor.
-4. Aenean lacinia bibendum nulla sed consectetur.
-5. Vestibulum id ligula porta felis euismod semper.
-
-## Project Status & Project Roadmap
-[Table of Contents](#table-of-contents)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+The website is currently live (Last Update: Dec, 2025)
 
 ### Project Status
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.
-
 - **Current Version:** v0.1.0
-- **Development Stage:** Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- **Last Updated:** Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+- **Development Stage:** Live
+- **Last Updated:** December, 2025
 
-### Project Roadmap
+The website is live with three known issue(s):
 
-- **Phase 1:** Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- **Phase 2:** Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-- **Phase 3:** Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-- **Phase 4:** Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.
+1. CSS bug results in sizing issue with medium sized windows in a desktop window --> solution is to edit CSS
+2. Slider on <index.html> does not show up on mobile
+3. Auto-downloads for certain pptxs across <projects.html> & other tabs
 
 ## Methodology & Workflow
-[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
 
@@ -65,31 +47,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero
 4. Nulla vitae elit libero, a pharetra augue.
 5. Donec ullamcorper nulla non metus auctor fringilla.
 
-## Results & Visuals
-[Table of Contents](#table-of-contents)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-
-### Results
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum.
-
-- **Result 1:** Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- **Result 2:** Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-- **Result 3:** Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-
-### Visuals
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui.
-
-#### Example Visual
-
-![Placeholder Image](https://via.placeholder.com/800x400 "Example Visualization")
-
-_Figure 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue._
-
 ## Repository Structure
-[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.
 
@@ -97,28 +55,45 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur
 
 ```plaintext
 
-project-root/
+agtaz19.github.io/
 │
-├── data/ — Lorem ipsum dolor sit amet, consectetur adipiscing elit
-│   ├── raw/ — Original data sources
-│   ├── processed/ — Cleaned and prepared data
-│   └── external/ — External datasets or references
+├── .github/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
 │
-├── notebooks/ — Jupyter or research notebooks
+├── notebooks/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
 │
-├── src/ — Main source code for the project
-│   ├── __init__.py
-│   ├── module_one.py — Example module with placeholder logic
-│   └── module_two.py
+├── devTools/ - Main source code for the project
+│   ├── __init__.py - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+│   ├── module_one.py - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+│   └── module_two.py - Lorem ipsum dolor sit amet, consectetur adipiscing elit
 │
-├── tests/ — Unit and integration tests
+├── externalLinks/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
 │
-├── results/ — Output files, generated results, or models
+├── img/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
 │
-├── docs/ — Project documentation and references
+├── js/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
 │
-├── requirements.txt — Project dependencies
-├── README.md — Main documentation file
+├── pdf/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+|
+├── sass/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+|
+├── vendor/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+|
+├── aboutme.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+|
+├── index.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+|
+├── outreach.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+|
+├── projects.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+|
+├── publication.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+|
+├── README.md/ - Main documentation file
+|
+├── roueces.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+|
+├── work.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+|
 └── LICENSE — Licensing information
 ```
 
@@ -126,29 +101,11 @@ project-root/
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla.
 
-## Authors & Acknowledgements
-[Table of Contents](#table-of-contents)
+## Acknowledgements
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur.
 
-### Authors
-
-- **Jane Doe** — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- **John Smith** — Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-- **Alex Roe** — Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-
-### Acknowledgements
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla.
-
-Special thanks to:
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-- Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-
 ## References
-[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 
@@ -161,7 +118,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a 
 5. Ipsum, L. (2019). _Aenean Lacinia Bibendum Nulla Sed Consectetur_. Lorem Ipsum Press.
 
 ## License
-[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.
 
