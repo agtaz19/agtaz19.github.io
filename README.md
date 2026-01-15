@@ -11,7 +11,7 @@ This is a portfolio website that I created to highlight various roles, responsib
 - [Project Status & Project Roadmap](#project-status--project-roadmap)
 - [Methodology & Workflow](#methodology--workflow)
 - [Repository Structure](#repository-structure)
-- [Authors & Acknowledgements](#acknowledgements)
+- [Acknowledgements](#acknowledgements)
 - [References](#references)
 - [License](#license)
 
