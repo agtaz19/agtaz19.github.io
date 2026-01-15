@@ -20,6 +20,7 @@ Suspendisse potenti. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis
 - [License](#license)
 
 ## Objectives of Project
+[Table of Contents](#table-of-contents)
 
 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 2. Integer posuere erat a ante venenatis dapibus.
@@ -28,6 +29,7 @@ Suspendisse potenti. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis
 5. Vestibulum id ligula porta felis euismod semper.
 
 ## Project Status & Project Roadmap
+[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
 
@@ -47,6 +49,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur
 - **Phase 4:** Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.
 
 ## Methodology & Workflow
+[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
 
@@ -63,6 +66,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero
 5. Donec ullamcorper nulla non metus auctor fringilla.
 
 ## Results & Visuals
+[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 
@@ -85,6 +89,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero
 _Figure 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue._
 
 ## Repository Structure
+[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.
 
@@ -122,6 +127,7 @@ project-root/
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla.
 
 ## Authors & Acknowledgements
+[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur.
 
@@ -142,6 +148,7 @@ Special thanks to:
 - Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 
 ## References
+[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 
@@ -154,6 +161,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a 
 5. Ipsum, L. (2019). _Aenean Lacinia Bibendum Nulla Sed Consectetur_. Lorem Ipsum Press.
 
 ## License
+[Table of Contents](#table-of-contents)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.
 
