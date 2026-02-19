@@ -19,7 +19,7 @@ This is a portfolio website that I created to highlight various roles, responsib
 
 The website is currently live (Last Update: Dec, 2025)
 
-### Project Status
+### Project Status & Planned Upgrades
 
 - **Current Version:** v0.1.0
 - **Development Stage:** Live
@@ -30,6 +30,13 @@ The website is live with three known issue(s):
 1. CSS bug results in sizing issue with medium sized windows in a desktop window --> solution is to edit CSS
 2. Slider on <index.html> does not show up on mobile
 3. Auto-downloads for certain pptxs across <projects.html> & other tabs
+
+I am planning to add:
+
+1. LAPN AI and Tech networking event as Moderator with three SMEs
+2. Updating website template
+3. Including dark mode (as default)
+4. Slightly more interactive torus
 
 ## Methodology & Workflow
 
