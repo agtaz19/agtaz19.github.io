@@ -37,6 +37,13 @@ I am planning to add:
 2. Updating website template
 3. Including dark mode (as default)
 4. Slightly more interactive torus
+5. Update resources to be less vague and more personalized
+    - Add career advice:
+        a. "How To Do What You You Love" - Y Combinator
+        b. "Hell Yeah Or No" - Derek Sivers
+        c. "How To Pick A Career" - Tim Urban
+        d. "Make Your Work Your Calling" - Arthur Brooks
+        e. "Guide To Career Planning" - Marc Andreessen
 
 ## Methodology & Workflow
 
