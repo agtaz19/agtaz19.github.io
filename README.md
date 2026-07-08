@@ -8,7 +8,7 @@ This is a portfolio website that I created to highlight various roles, responsib
 
 - [Project Description](#project-description)
 - [Table of Contents](#table-of-contents)
-- [Project Status & Project Roadmap](#project-status--project-roadmap)
+- [Project Status & Plans](#project-status--plans)
 - [Methodology & Workflow](#methodology--workflow)
 - [Repository Structure](#repository-structure)
 - [Acknowledgements](#acknowledgements)
@@ -19,7 +19,7 @@ This is a portfolio website that I created to highlight various roles, responsib
 
 The website is currently live (Last Update: Dec, 2025)
 
-### Project Status & Planned Upgrades
+### Project Status & Plans
 
 - **Current Version:** v0.1.0
 - **Development Stage:** Live
@@ -136,8 +136,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.
 
 This project is licensed under the **Lorem Ipsum License**, Version 1.0.  
+
 For more information, see the [LICENSE](LICENSE) file.
-
-### Notes
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
