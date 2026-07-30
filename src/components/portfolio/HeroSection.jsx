@@ -1,9 +1,5 @@
 /**
- * HeroSection — Full-viewport hero, HRT-style
- *
- * - Typewriter animation cycling through professional titles
- * - City tag "New York, New York" below the headline
- * - LinkedIn + GitHub CTAs with a divider instead of "Get in Touch"
+HeroSection
  */
 import React, { useState, useEffect } from "react";
 import LiveClock from "@/components/portfolio/LiveClock";
@@ -71,16 +67,6 @@ export default function HeroSection() {
                     alt="New York City financial district"
                     className="w-full h-full object-cover object-center"
                 />
-                {/* -- video edit -- 
-                <video
-                    src={HERO_IMAGE} // You might want to rename this variable to HERO_VIDEO later!
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover object-center"
-                />
-                */}
 
                 <div
                     className="absolute inset-0"
@@ -99,7 +85,7 @@ export default function HeroSection() {
             {/* ── Hero text — bottom left ── */}
             <div
                 className="relative z-10 pb-16 md:pb-24 w-full max-w-7xl"
-                style={{ paddingLeft: "var(--fluid-pad)" }}
+                style={{ paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}
             >
                 {/* Main headline */}
                 <h1
@@ -136,13 +122,13 @@ export default function HeroSection() {
                     A curated overview of my research, projects, and professional experience across finance, consulting, and quantitiative finance. This space is designed to highlight my work, provide insights into my approach to problem-solving, and showcase my contributions to academic and the professional world.
                 </p>
 
-                {/* CTA row: LinkedIn | divider | GitHub */}
-                <div className="flex items-center gap-0 mt-8 md:mt-10">
+                {/* CTA row: responsive wrap on mobile, inline dividers on desktop */}
+                <div className="flex flex-wrap items-center gap-3 mt-8 md:mt-10 md:gap-0">
                     <a
                         href="https://www.linkedin.com/in/alexandre-tilly/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold tracking-[0.1em] uppercase transition-all duration-300"
+                        className="inline-flex items-center gap-2.5 px-5 py-2.5 md:px-6 md:py-3 text-sm font-semibold tracking-[0.1em] uppercase transition-all duration-300"
                         style={{ border: "1px solid rgba(90,160,210,0.5)", color: "rgba(90,160,210,0.9)" }}
                         onMouseEnter={e => { e.currentTarget.style.borderColor = "rgb(90,160,210)"; e.currentTarget.style.backgroundColor = "rgba(90,160,210,0.1)"; e.currentTarget.style.color = "rgb(90,160,210)"; }}
                         onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(90,160,210,0.5)"; e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "rgba(90,160,210,0.9)"; }}
@@ -153,14 +139,14 @@ export default function HeroSection() {
                         LinkedIn
                     </a>
 
-                    {/* Divider */}
-                    <div className="w-px h-10 bg-white/20 mx-1" />
+                    {/* Divider - hidden on mobile so it doesn't leave an orphaned line */}
+                    <div className="hidden md:block w-px h-10 bg-white/20 mx-1" />
 
                     <a
                         href="https://github.com/agtaz19"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold tracking-[0.1em] uppercase transition-all duration-300"
+                        className="inline-flex items-center gap-2.5 px-5 py-2.5 md:px-6 md:py-3 text-sm font-semibold tracking-[0.1em] uppercase transition-all duration-300"
                         style={{ border: "1px solid rgba(100,185,130,0.5)", color: "rgba(100,185,130,0.9)" }}
                         onMouseEnter={e => { e.currentTarget.style.borderColor = "rgb(100,185,130)"; e.currentTarget.style.backgroundColor = "rgba(100,185,130,0.1)"; e.currentTarget.style.color = "rgb(100,185,130)"; }}
                         onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(100,185,130,0.5)"; e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "rgba(100,185,130,0.9)"; }}
@@ -171,14 +157,13 @@ export default function HeroSection() {
                         GitHub
                     </a>
 
-                    {/* Divider */}
-                    <div className="w-px h-10 bg-white/20 mx-1" />
+                    <div className="hidden md:block w-px h-10 bg-white/20 mx-1" />
 
                     <a
                         href="https://linktr.ee/agtaz19"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold tracking-[0.1em] uppercase transition-all duration-300"
+                        className="inline-flex items-center gap-2.5 px-5 py-2.5 md:px-6 md:py-3 text-sm font-semibold tracking-[0.1em] uppercase transition-all duration-300"
                         style={{ border: "1px solid rgba(212,175,55,0.5)", color: "rgba(212,175,55,0.9)" }}
                         onMouseEnter={e => { e.currentTarget.style.borderColor = "rgb(212,175,55)"; e.currentTarget.style.backgroundColor = "rgba(212,175,55,0.1)"; e.currentTarget.style.color = "rgb(212,175,55)"; }}
                         onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(212,175,55,0.5)"; e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "rgba(212,175,55,0.9)"; }}
@@ -195,7 +180,7 @@ export default function HeroSection() {
                 @keyframes blink {
                     0%, 100% { opacity: 1; }
                     50%      { opacity: 0; }
-                }
+            }
             `}</style>
         </section>
     );
