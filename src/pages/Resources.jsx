@@ -39,21 +39,24 @@ function InlineRuns({ parts }) {
 // A terminal resource: a link, optionally with a short description.
 function ResourceLeaf({ item }) {
     return (
-        <li className="py-2.5">
+        <li className="py-3.5 first:pt-2 last:pb-2 border-b border-theme/10 last:border-b-0 pl-3">
             <a
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[0.95rem] md:text-base font-semibold leading-snug text-theme hover:opacity-70 transition-opacity"
+                className="text-sm md:text-[0.95rem] font-medium leading-snug text-theme hover:text-[#D4AF37] transition-colors"
                 style={{ textDecoration: "none" }}
             >
                 {item.title}
                 <span className="ml-1.5 text-theme-muted" style={{ fontSize: "0.7em" }}>↗</span>
             </a>
             {item.description && item.description.length > 0 && (
-                <p className="mt-1.5 text-sm leading-relaxed text-theme-muted">
-                    <InlineRuns parts={item.description} />
-                </p>
+                <div className="mt-1 flex items-start gap-2 pl-3">
+                    <span className="text-theme-muted select-none" style={{ fontSize: "0.8em", lineHeight: "1.6" }}>•</span>
+                    <p className="text-[0.85rem] md:text-sm leading-relaxed text-theme-muted">
+                        <InlineRuns parts={item.description} />
+                    </p>
+                </div>
             )}
         </li>
     );
