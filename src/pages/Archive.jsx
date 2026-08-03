@@ -197,41 +197,40 @@ export default function Archive() {
                     <div className="lg:col-span-3">
                         <p className="text-sm font-bold tracking-[0.15em] uppercase text-theme">Random Corner</p>
                         <p className="text-xs mt-3 leading-relaxed text-theme-muted">A button. A rabbit hole. No two the same.</p>
-                </div>
-                <div className="lg:col-span-9">
-                    <div className="border border-theme p-8 transition-colors" style={{ backgroundColor: "rgb(var(--bg-card))", fontFamily: "var(--font-mono)" }}>
-                        <div className="flex items-start justify-between gap-6 mb-6">
-                            <div>
-                                <h3 className="font-heading font-semibold text-2xl text-theme leading-snug mb-3">{site.name}</h3>
-                                    <p className="text-sm leading-relaxed text-theme-muted max-w-lg">{site.blurb}</p>
+                    </div>
+                    <div className="lg:col-span-9">
+                        <div className="border border-theme p-8 transition-colors" style={{ backgroundColor: "rgb(var(--bg-card))", fontFamily: "var(--font-mono)" }}>
+                            <div className="flex items-start justify-between gap-6 mb-6">
+                                <div>
+                                    <h3 className="font-heading font-semibold text-2xl text-theme leading-snug mb-3">{site.name}</h3>
+                                        <p className="text-sm leading-relaxed text-theme-muted max-w-full">{site.blurb}</p>
+                                </div>
+                                <span className="text-2xl flex-shrink-0">🗝️</span>
                             </div>
-                            <span className="text-2xl flex-shrink-0">🗝️</span>
+                            <div className="flex flex-wrap items-center gap-3">
+                                <a
+                                    href={site.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold tracking-[0.18em] uppercase transition-opacity hover:opacity-80"
+                                    style={{ backgroundColor: "rgb(212,175,55)", color: "#000" }}
+                                >
+                                    Visit Site →
+                                </a>
+                                <button
+                                    onClick={rollSite}
+                                    className="px-4 py-2.5 text-xs font-bold tracking-[0.18em] uppercase border border-theme text-theme transition-colors hover:bg-theme-muted"
+                                >
+                                    ↻ Roll Again
+                                </button>
+                                <span className="text-[10px] tracking-[0.15em] text-theme-muted opacity-50 ml-1">{site.url.replace("https://", "")}</span>
+                            </div>
                         </div>
-                        <div className="flex flex-wrap items-center gap-3">
-                            <a
-                                href={site.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold tracking-[0.18em] uppercase transition-opacity hover:opacity-80"
-                                style={{ backgroundColor: "rgb(212,175,55)", color: "#000" }}
-                            >
-                                Visit Site →
-                            </a>
-                            <button
-                                onClick={rollSite}
-                                className="px-4 py-2.5 text-xs font-bold tracking-[0.18em] uppercase border border-theme text-theme transition-colors hover:bg-theme-muted"
-                            >
-                                ↻ Roll Again
-                            </button>
-                            <span className="text-[10px] tracking-[0.15em] text-theme-muted opacity-50 ml-1">{site.url.replace("https://", "")}</span>
+                            <p className="text-[10px] font-mono tracking-[0.15em] text-theme-muted mt-6 opacity-40">
+                                &gt; {SITES.length} sites in rotation. press roll to wander
+                            </p>
                         </div>
-                    </div>
-                        <p className="text-[10px] font-mono tracking-[0.15em] text-theme-muted mt-6 opacity-40">
-                            &gt; {SITES.length} sites in rotation. press roll to wander_
-                        </p>
-                    </div>
                 </div>
-            </section>
 
             {/* ── Infinite 3D Carousel Section ── */}
             <section style={{ 
