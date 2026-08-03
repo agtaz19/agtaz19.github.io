@@ -1,6 +1,8 @@
 import React from "react";
 import { Mail, MapPin, Linkedin, Github } from "lucide-react";
-import Landscape from "@/src/assets/1920x1080-Landscape.JPG";
+import Landscape from "@/assets/1920x1080-Landscape.JPG";
+import CabinPortrait from "@/assets/portrait.JPG"
+import CV_Tilly from "@/assets/Tilly, Alexandre_CV.pdf"
 
 
 
@@ -208,7 +210,7 @@ export default function About() {
             <section className="border-b border-theme" style={{ paddingTop: "clamp(3rem,7vw,6rem)", paddingBottom: "clamp(3rem,7vw,6rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
                 <div className="flex justify-center mb-10">
                     <img 
-                        src="@/assets/portrait.JPG" 
+                        src={CabinPortrait} 
                         alt="Profile picture" 
                         className="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover" 
                     />
@@ -315,7 +317,7 @@ export default function About() {
                             style={{ backgroundColor: "rgb(var(--bg-card))" }}
                         >
                             <iframe
-                                src="src\assets\Tilly, Alexandre_CV.pdf"
+                                src={CV_Tilly}
                                 title="Alexandre Tilly Curriculum Vitae"
                                 className="w-full h-[600px] md:h-[800px] border-none"
                             />
