@@ -199,11 +199,11 @@ export default function Archive() {
                         <p className="text-xs mt-3 leading-relaxed text-theme-muted">A button. A rabbit hole. No two the same.</p>
                     </div>
                     <div className="lg:col-span-9">
-                        <div className="border border-theme p-8 transition-colors" style={{ backgroundColor: "rgb(var(--bg-card))", fontFamily: "var(--font-mono)" }}>
+                        <div className="border border-theme p-8 transition-colors w-full" style={{ backgroundColor: "rgb(var(--bg-card))", fontFamily: "var(--font-mono)" }}>
                             <div className="flex items-start justify-between gap-6 mb-6">
-                                <div>
+                                <div className="w-full">
                                     <h3 className="font-heading font-semibold text-2xl text-theme leading-snug mb-3">{site.name}</h3>
-                                        <p className="text-sm leading-relaxed text-theme-muted max-w-full">{site.blurb}</p>
+                                    <p className="text-sm leading-relaxed text-theme-muted w-full">{site.blurb}</p>
                                 </div>
                                 <span className="text-2xl flex-shrink-0">🗝️</span>
                             </div>
@@ -226,11 +226,12 @@ export default function Archive() {
                                 <span className="text-[10px] tracking-[0.15em] text-theme-muted opacity-50 ml-1">{site.url.replace("https://", "")}</span>
                             </div>
                         </div>
-                            <p className="text-[10px] font-mono tracking-[0.15em] text-theme-muted mt-6 opacity-40">
-                                &gt; {SITES.length} sites in rotation. press roll to wander
-                            </p>
-                        </div>
+                        <p className="text-[10px] font-mono tracking-[0.15em] text-theme-muted mt-6 opacity-40">
+                            &gt; {SITES.length} sites in rotation. press roll to wander
+                        </p>
+                    </div>
                 </div>
+            </section>
 
             {/* ── Infinite 3D Carousel Section ── */}
             <section style={{ 
