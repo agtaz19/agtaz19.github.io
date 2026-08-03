@@ -191,7 +191,7 @@ export default function About() {
             {/* Hero */}
             <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
                 <div className="absolute inset-0">
-                    <img src="src\assets\1920x1080-Landscape.JPG" alt="" className="w-full h-full object-cover object-center opacity-50" />
+                    <img src="src/assets/1920x1080-Landscape.JPG" alt="" className="w-full h-full object-cover object-center opacity-50" />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 100%)" }} />
                 </div>
                 <div className="relative z-10" style={{ paddingTop: "clamp(5rem,10vw,9rem)", paddingBottom: "clamp(3rem,6vw,5rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
@@ -207,7 +207,7 @@ export default function About() {
             <section className="border-b border-theme" style={{ paddingTop: "clamp(3rem,7vw,6rem)", paddingBottom: "clamp(3rem,7vw,6rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
                 <div className="flex justify-center mb-10">
                     <img 
-                        src="src\assets\portrait.JPG" 
+                        src="src/assets/portrait.JPG" 
                         alt="Profile picture" 
                         className="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover" 
                     />
