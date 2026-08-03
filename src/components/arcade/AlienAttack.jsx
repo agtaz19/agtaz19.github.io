@@ -22,7 +22,7 @@ function initialState() {
         playerX: Math.floor(COLS / 2),
         aliens: makeAliens(1),
         dir: 1,
-        bullet: null,
+        bullets: [], // Updated: Array allows rapid firing
         bombs: [],
         score: 0,
         lives: 3,
@@ -74,30 +74,31 @@ function step(prev) {
         next.aliens = s.aliens;
     }
 
-    // bullet
-    if (s.bullet) {
-        const by = s.bullet.y - 1;
-        if (by < 0) {
-            next.bullet = null;
-        } else {
-            let hit = false;
-            next.aliens = next.aliens.map((a) => {
-                if (a.alive && a.x === s.bullet.x && a.y === by) {
-                    hit = true;
-                    return { ...a, alive: false };
-                }
-                return a;
-            });
-            if (hit) {
-                next.bullet = null;
-                next.score = s.score + 10;
-            } else {
-                next.bullet = { x: s.bullet.x, y: by };
+    // bullets movement & collision
+    const remainingBullets = [];
+    let addedScore = 0;
+    let currentAliens = next.aliens.slice();
+
+    for (const b of s.bullets) {
+        const by = b.y - 1;
+        if (by < 0) continue;
+        let hit = false;
+        currentAliens = currentAliens.map((a) => {
+            if (a.alive && a.x === b.x && a.y === by) {
+                hit = true;
+                return { ...a, alive: false };
             }
+            return a;
+        });
+        if (hit) {
+            addedScore += 10;
+        } else {
+            remainingBullets.push({ x: b.x, y: by });
         }
-    } else {
-        next.bullet = null;
     }
+    next.aliens = currentAliens;
+    next.bullets = remainingBullets;
+    next.score = s.score + addedScore;
 
     // alien bombs
     if (Math.random() < bombChance) {
@@ -115,7 +116,7 @@ function step(prev) {
     // move bombs and check player hit
     const playerRow = ROWS - 1;
     let hitPlayer = false;
-    const remaining = [];
+    const remainingBombs = [];
     for (const bm of next.bombs) {
         const ny = bm.y + 1;
         if (ny === playerRow) {
@@ -123,10 +124,10 @@ function step(prev) {
         } else if (ny > playerRow) {
             // discard
         } else {
-            remaining.push({ x: bm.x, y: ny });
+            remainingBombs.push({ x: bm.x, y: ny });
         }
     }
-    next.bombs = remaining;
+    next.bombs = remainingBombs;
     if (hitPlayer) {
         next.lives = s.lives - 1;
         if (next.lives <= 0) next.status = "lost";
@@ -142,7 +143,7 @@ function step(prev) {
     if (!b2.any && next.status === "playing") {
         next.level = s.level + 1;
         next.aliens = makeAliens(next.level);
-        next.bullet = null;
+        next.bullets = [];
         next.bombs = [];
         next.dir = 1;
     }
@@ -207,8 +208,10 @@ export default function AlienAttack({ onExit }) {
 
     const fire = () => {
         const s = stateRef.current;
-        if (s.status !== "playing" || s.bullet) return;
-        s.bullet = { x: s.playerX, y: ROWS - 2 };
+        if (s.status !== "playing") return;
+        // Limit max on-screen bullets to 4 for fast shooting without clutter
+        if (s.bullets.length >= 4) return;
+        s.bullets = [...s.bullets, { x: s.playerX, y: ROWS - 2 }];
         rerender();
     };
 
@@ -279,7 +282,7 @@ export default function AlienAttack({ onExit }) {
     const s = stateRef.current;
     const grid = Array.from({ length: ROWS }, () => Array(COLS).fill(" "));
     for (const a of s.aliens) if (a.alive) grid[a.y][a.x] = "A";
-    if (s.bullet) grid[s.bullet.y][s.bullet.x] = "|";
+    for (const b of s.bullets) grid[b.y][b.x] = "|";
     for (const bm of s.bombs) grid[bm.y][bm.x] = "v";
     grid[ROWS - 1][s.playerX] = "▲";
 
@@ -310,13 +313,16 @@ export default function AlienAttack({ onExit }) {
             </div>
 
             {/* Playfield + skyline */}
-            <div className="relative overflow-hidden border border-theme" style={{ backgroundColor: "#000" }}>
+            <div className="relative overflow-hidden border border-theme">
+                {/* PLAYABLE GAME AREA — Dark Navy/Slate contrast background */}
                 <div
                     style={{
+                        backgroundColor: "#06090e",
                         display: "grid",
                         gridTemplateColumns: `repeat(${COLS}, 1fr)`,
                         maxWidth: "416px",
                         margin: "0 auto",
+                        paddingTop: "6px",
                     }}
                 >
                     {grid.map((row, y) =>
@@ -337,8 +343,16 @@ export default function AlienAttack({ onExit }) {
                     )}
                 </div>
 
-                {/* ASCII city skyline — non-playable ground */}
-                <div style={{ overflow: "hidden", padding: "4px 0 2px", backgroundColor: "#000", textAlign: "center" }}>
+                {/* NON-GAME AREA — Distinct Muted Background + Top Border */}
+                <div
+                    style={{
+                        overflow: "hidden",
+                        padding: "6px 0 2px",
+                        backgroundColor: "#131822",
+                        borderTop: "1px solid rgba(212,175,55,0.3)",
+                        textAlign: "center",
+                    }}
+                >
                     <pre
                         style={{
                             display: "inline-block",
