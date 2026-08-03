@@ -159,7 +159,7 @@ export default function Archive() {
     return (
         <>
             {/* ── Hero Banner ── */}
-            <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+            <section className="relative bg-dark-panel overflow-hidden">
                 <div className="absolute inset-0">
                     <img
                         src="https://images.pexels.com/photos/18343396/pexels-photo-18343396.jpeg?w=1800&q=80&fit=crop"
@@ -227,14 +227,14 @@ export default function Archive() {
                             </div>
                         </div>
                         <p className="text-[10px] font-mono tracking-[0.15em] text-theme-muted mt-6 opacity-40">
-                            &gt; {SITES.length} sites in rotation. press roll to wander
+                            &gt; {SITES.length} sites in rotation. press roll to wander_
                         </p>
                     </div>
                 </div>
             </section>
 
             {/* ── Infinite 3D Carousel Section ── */}
-            <section style={{ 
+            <section className="border-t border-theme" style={{ 
                 paddingTop: "clamp(3rem,7vw,6rem)", 
                 paddingBottom: "clamp(4rem,8vw,7rem)", 
                 paddingLeft: "var(--fluid-pad)", 
@@ -411,7 +411,7 @@ export default function Archive() {
             </section>
 
             {/* ── Bottom Navigation Footer ── */}
-            <section style={{ paddingBottom: "clamp(4rem,8vw,7rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
+            <section className="border-t border-theme" style={{ paddingTop: "clamp(3rem,6vw,5rem)", paddingBottom: "clamp(4rem,8vw,7rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
                 <div>
                     <Link
                         to="/"
