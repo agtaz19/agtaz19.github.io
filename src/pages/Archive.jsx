@@ -136,6 +136,7 @@ export default function Archive() {
     const [visible, setVisible] = useState(false);
     const [site, setSite] = useState(() => SITES[Math.floor(Math.random() * SITES.length)]);
     const [activeGame, setActiveGame] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const rollSite = () => {
         let next = site;
