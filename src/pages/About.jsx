@@ -207,7 +207,7 @@ export default function About() {
             <section className="border-b border-theme" style={{ paddingTop: "clamp(3rem,7vw,6rem)", paddingBottom: "clamp(3rem,7vw,6rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
                 <div className="flex justify-center mb-10">
                     <img 
-                        src="src/assets/portrait.JPG" 
+                        src="@/assets/portrait.JPG" 
                         alt="Profile picture" 
                         className="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover" 
                     />
