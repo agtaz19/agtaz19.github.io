@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const SUITS = ["♠", "♥", "♦", "♣"];
 const VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+const BET_PRESETS = [10, 25, 50, 100, 250];
 
 function createDeck() {
     const deck = [];
@@ -13,7 +14,6 @@ function createDeck() {
             deck.push({ suit, value, weight });
         }
     }
-    // Fisher-Yates shuffle
     for (let i = deck.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [deck[i], deck[j]] = [deck[j], deck[i]];
@@ -76,8 +76,8 @@ export default function Blackjack({ onExit }) {
     const [chips, setChips] = useState(1000);
     const [bet, setBet] = useState(50);
 
-    const startHand = () => {
-        if (chips < bet) return;
+    const startHand = useCallback(() => {
+        if (chips < bet || bet <= 0) return;
         const newDeck = createDeck();
         const pHand = [newDeck.pop(), newDeck.pop()];
         const dHand = [newDeck.pop(), newDeck.pop()];
@@ -94,9 +94,9 @@ export default function Blackjack({ onExit }) {
         } else {
             setStatus("playing");
         }
-    };
+    }, [chips, bet]);
 
-    const hit = () => {
+    const hit = useCallback(() => {
         if (status !== "playing") return;
         const nextDeck = [...deck];
         const nextHand = [...playerHand, nextDeck.pop()];
@@ -106,9 +106,9 @@ export default function Blackjack({ onExit }) {
         if (getHandValue(nextHand) > 21) {
             setStatus("lost");
         }
-    };
+    }, [status, deck, playerHand]);
 
-    const stand = () => {
+    const stand = useCallback(() => {
         if (status !== "playing") return;
         setStatus("dealerTurn");
         let dHand = [...dealerHand];
@@ -133,9 +133,9 @@ export default function Blackjack({ onExit }) {
         } else {
             setStatus("lost");
         }
-    };
+    }, [status, dealerHand, deck, playerHand, bet]);
 
-    const doubleDown = () => {
+    const doubleDown = useCallback(() => {
         if (status !== "playing" || chips < bet) return;
         setChips((c) => c - bet);
         const nextDeck = [...deck];
@@ -166,11 +166,41 @@ export default function Blackjack({ onExit }) {
         } else {
             setStatus("lost");
         }
-    };
+    }, [status, chips, bet, deck, playerHand, dealerHand]);
 
     const adjustBet = (amount) => {
         setBet((b) => Math.max(10, Math.min(chips, b + amount)));
     };
+
+    const setPresetBet = (amount) => {
+        setBet(Math.min(chips, amount));
+    };
+
+    // Keyboard Navigation / Control Listener
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            // Prevent browser scroll when using space or arrow keys
+            if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.code)) {
+                e.preventDefault();
+            }
+
+            const key = e.key.toLowerCase();
+
+            if (status === "playing") {
+                if (key === "h") hit();
+                if (key === "s") stand();
+                if (key === "d" && playerHand.length === 2 && chips >= bet) doubleDown();
+            } else {
+                if (e.code === "Space" || e.code === "Enter") startHand();
+                if (e.key === "ArrowUp" || e.key === "ArrowRight") adjustBet(10);
+                if (e.key === "ArrowDown" || e.key === "ArrowLeft") adjustBet(-10);
+                if (key === "m") setBet(chips); // Quick key for Max Bet
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [status, playerHand, chips, bet, hit, stand, doubleDown, startHand]);
 
     const pScore = getHandValue(playerHand);
     const dScore = getHandValue(dealerHand);
@@ -178,8 +208,8 @@ export default function Blackjack({ onExit }) {
 
     return (
         <div
-            className="border border-theme p-5"
-            style={{ backgroundColor: "rgb(var(--bg-card))", fontFamily: "var(--font-mono)" }}
+            className="border border-theme p-5 max-w-2xl mx-auto"
+            style={{ backgroundColor: "rgb(var(--bg-card, 10, 15, 24))", fontFamily: "var(--font-mono, monospace)" }}
         >
             {/* HUD */}
             <div className="flex items-center justify-between mb-4">
@@ -199,7 +229,7 @@ export default function Blackjack({ onExit }) {
                 </button>
             </div>
 
-            {/* Playfield — Table area */}
+            {/* Playfield Table */}
             <div
                 className="border border-theme p-6 flex flex-col justify-between min-h-[280px]"
                 style={{ backgroundColor: "#06090e" }}
@@ -226,7 +256,7 @@ export default function Blackjack({ onExit }) {
                     </div>
                 </div>
 
-                {/* Center Status Notification Banner */}
+                {/* Center Banner */}
                 <div className="text-center my-4">
                     {status === "won" && (
                         <p className="text-sm tracking-[0.2em] uppercase font-bold" style={{ color: "#86c5a0" }}>
@@ -269,64 +299,98 @@ export default function Blackjack({ onExit }) {
                 </div>
             </div>
 
-            {/* Controls */}
-            <div className="mt-5 flex items-center justify-between gap-3">
+            {/* Control Area */}
+            <div className="mt-5 space-y-3">
                 {status === "betting" || status !== "playing" ? (
-                    <div className="flex items-center gap-2 w-full justify-between">
-                        <div className="flex gap-1">
-                            <button
-                                onClick={() => adjustBet(-10)}
-                                className="px-3 py-2 text-xs border border-theme text-theme hover:bg-theme-muted transition-colors"
-                            >
-                                -10
-                            </button>
-                            <button
-                                onClick={() => adjustBet(10)}
-                                className="px-3 py-2 text-xs border border-theme text-theme hover:bg-theme-muted transition-colors"
-                            >
-                                +10
-                            </button>
+                    <div className="flex flex-col gap-3">
+                        {/* Bet Preset Chips & Adjustment Controls */}
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                            <div className="flex items-center gap-1 flex-wrap">
+                                <span className="text-[10px] text-theme-muted uppercase tracking-wider mr-1">Chips:</span>
+                                {BET_PRESETS.map((amount) => (
+                                    <button
+                                        key={amount}
+                                        onClick={() => setPresetBet(amount)}
+                                        disabled={chips < amount}
+                                        className="px-2.5 py-1 text-xs border border-theme text-theme hover:bg-theme-muted transition-colors disabled:opacity-30"
+                                        style={{ borderColor: bet === amount ? "#d4af37" : undefined }}
+                                    >
+                                        ${amount}
+                                    </button>
+                                ))}
+                                <button
+                                    onClick={() => setPresetBet(chips)}
+                                    disabled={chips <= 0}
+                                    className="px-2.5 py-1 text-xs border border-theme transition-colors font-bold uppercase tracking-wider"
+                                    style={{ borderColor: "rgba(212,175,55,0.6)", color: "#d4af37" }}
+                                >
+                                    MAX
+                                </button>
+                            </div>
+
+                            {/* Adjust +/- Buttons */}
+                            <div className="flex gap-1">
+                                <button
+                                    onClick={() => adjustBet(-10)}
+                                    className="px-2.5 py-1 text-xs border border-theme text-theme hover:bg-theme-muted transition-colors"
+                                >
+                                    -$10
+                                </button>
+                                <button
+                                    onClick={() => adjustBet(10)}
+                                    className="px-2.5 py-1 text-xs border border-theme text-theme hover:bg-theme-muted transition-colors"
+                                >
+                                    +$10
+                                </button>
+                            </div>
                         </div>
+
+                        {/* Deal Button */}
                         <button
                             onClick={startHand}
-                            disabled={chips < bet}
-                            className="px-5 py-2 text-xs border transition-colors font-bold uppercase tracking-[0.15em]"
+                            disabled={chips < bet || bet <= 0}
+                            className="w-full py-2.5 text-xs border transition-colors font-bold uppercase tracking-[0.2em] flex justify-center items-center gap-2"
                             style={{
                                 borderColor: "rgba(212,175,55,0.5)",
-                                color: chips < bet ? "gray" : "rgb(212,175,55)",
+                                color: chips < bet || bet <= 0 ? "gray" : "rgb(212,175,55)",
                             }}
                         >
-                            Deal Hand
+                            Deal Hand <span className="text-[10px] opacity-60 font-normal">[SPACE / ENTER]</span>
                         </button>
                     </div>
                 ) : (
+                    /* Playing Controls */
                     <div className="flex gap-2">
                         <button
                             onClick={hit}
-                            className="px-4 py-2 text-xs border border-theme text-theme hover:bg-theme-muted transition-colors uppercase tracking-[0.1em]"
+                            className="flex-1 py-2 text-xs border border-theme text-theme hover:bg-theme-muted transition-colors uppercase tracking-[0.1em] flex justify-center items-center gap-1.5"
                         >
-                            Hit
+                            Hit <span className="text-[10px] opacity-60">[H]</span>
                         </button>
                         <button
                             onClick={stand}
-                            className="px-4 py-2 text-xs border transition-colors uppercase tracking-[0.1em]"
+                            className="flex-1 py-2 text-xs border transition-colors uppercase tracking-[0.1em] flex justify-center items-center gap-1.5"
                             style={{ borderColor: "rgba(212,175,55,0.5)", color: "rgb(212,175,55)" }}
                         >
-                            Stand
+                            Stand <span className="text-[10px] opacity-60">[S]</span>
                         </button>
                         {playerHand.length === 2 && chips >= bet && (
                             <button
                                 onClick={doubleDown}
-                                className="px-3 py-2 text-xs border border-theme text-theme hover:bg-theme-muted transition-colors uppercase tracking-[0.1em]"
+                                className="flex-1 py-2 text-xs border border-theme text-theme hover:bg-theme-muted transition-colors uppercase tracking-[0.1em] flex justify-center items-center gap-1.5"
                             >
-                                Double
+                                Double <span className="text-[10px] opacity-60">[D]</span>
                             </button>
                         )}
                     </div>
                 )}
-                <p className="text-[10px] tracking-[0.12em] text-theme-muted opacity-50 hidden sm:block">
-                    {status === "playing" ? "hit / stand" : "adjust bet & deal"}
-                </p>
+
+                {/* Keyboard Controls Guide */}
+                <div className="text-[10px] tracking-[0.12em] text-theme-muted opacity-60 text-center">
+                    {status === "playing"
+                        ? "Press H to Hit • S to Stand • D to Double"
+                        : "Press Space/Enter to Deal • Up/Down arrows to adjust bet • M for Max"}
+                </div>
             </div>
         </div>
     );

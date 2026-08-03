@@ -22,12 +22,12 @@ function initialState() {
         playerX: Math.floor(COLS / 2),
         aliens: makeAliens(1),
         dir: 1,
-        bullets: [], // Updated: Array allows rapid firing
+        bullets: [],
         bombs: [],
         score: 0,
         lives: 3,
         level: 1,
-        status: "playing",
+        status: "playing", // "playing" | "paused" | "lost"
         moveCounter: 0,
     };
 }
@@ -53,8 +53,8 @@ function step(prev) {
     const drop = 1 + Math.min(2, Math.floor((s.level - 1) / 3));
     const bombChance = Math.min(0.45, 0.12 + (s.level - 1) * 0.04);
 
-    // alien horizontal movement every 2 ticks
-    if (next.moveCounter % 2 === 0) {
+    // Alien horizontal movement every 5 ticks
+    if (next.moveCounter % 5 === 0) {
         const b = bounds(s.aliens);
         if (b.any) {
             if (b.maxX + s.dir > COLS - 2 || b.minX + s.dir < 0) {
@@ -74,7 +74,7 @@ function step(prev) {
         next.aliens = s.aliens;
     }
 
-    // bullets movement & collision
+    // Bullets movement & collision
     const remainingBullets = [];
     let addedScore = 0;
     let currentAliens = next.aliens.slice();
@@ -100,7 +100,7 @@ function step(prev) {
     next.bullets = remainingBullets;
     next.score = s.score + addedScore;
 
-    // alien bombs
+    // Alien bombs
     if (Math.random() < bombChance) {
         const alive = next.aliens.filter((a) => a.alive);
         if (alive.length) {
@@ -113,7 +113,7 @@ function step(prev) {
         next.bombs = s.bombs.slice();
     }
 
-    // move bombs and check player hit
+    // Move bombs and check player hit
     const playerRow = ROWS - 1;
     let hitPlayer = false;
     const remainingBombs = [];
@@ -122,7 +122,7 @@ function step(prev) {
         if (ny === playerRow) {
             if (bm.x === next.playerX) hitPlayer = true;
         } else if (ny > playerRow) {
-            // discard
+            // Discard
         } else {
             remainingBombs.push({ x: bm.x, y: ny });
         }
@@ -133,13 +133,13 @@ function step(prev) {
         if (next.lives <= 0) next.status = "lost";
     }
 
-    // lose if aliens reach player row
+    // Lose if aliens reach player row
     const b2 = bounds(next.aliens);
     if (b2.any && b2.maxY >= playerRow - 1) {
         next.status = "lost";
     }
 
-    // wave cleared → advance level
+    // Wave cleared → advance level
     if (!b2.any && next.status === "playing") {
         next.level = s.level + 1;
         next.aliens = makeAliens(next.level);
@@ -209,10 +209,22 @@ export default function AlienAttack({ onExit }) {
     const fire = () => {
         const s = stateRef.current;
         if (s.status !== "playing") return;
-        // Limit max on-screen bullets to 4 for fast shooting without clutter
-        if (s.bullets.length >= 4) return;
+        if (s.bullets.length >= 8) return;
+        const last = s.bullets[s.bullets.length - 1];
+        if (last && last.y >= ROWS - 2) return;
         s.bullets = [...s.bullets, { x: s.playerX, y: ROWS - 2 }];
         rerender();
+    };
+
+    const togglePause = () => {
+        const s = stateRef.current;
+        if (s.status === "playing") {
+            s.status = "paused";
+            rerender();
+        } else if (s.status === "paused") {
+            s.status = "playing";
+            rerender();
+        }
     };
 
     const restart = () => {
@@ -222,7 +234,6 @@ export default function AlienAttack({ onExit }) {
         rerender();
     };
 
-    // game loop — speeds up each level
     useEffect(() => {
         const tickMs = Math.max(70, 240 - (level - 1) * 14);
         const id = setInterval(() => {
@@ -237,14 +248,14 @@ export default function AlienAttack({ onExit }) {
         return () => clearInterval(id);
     }, [level]);
 
-    // held-key movement loop — ship speeds up each level
-    const keys = useRef({ left: false, right: false });
+    const keys = useRef({ left: false, right: false, fire: false });
     useEffect(() => {
-        const moveMs = Math.max(28, 70 - (level - 1) * 4);
+        const actionMs = Math.max(28, 65 - (level - 1) * 4);
         const id = setInterval(() => {
             if (keys.current.left) move(-1);
             if (keys.current.right) move(1);
-        }, moveMs);
+            if (keys.current.fire) fire();
+        }, actionMs);
         return () => clearInterval(id);
     }, [level]);
 
@@ -256,14 +267,19 @@ export default function AlienAttack({ onExit }) {
             } else if (e.key === "ArrowRight") {
                 e.preventDefault();
                 keys.current.right = true;
-            } else if ((e.key === " " || e.key === "ArrowUp") && !e.repeat) {
+            } else if (e.key === " " || e.key === "ArrowUp") {
                 e.preventDefault();
+                keys.current.fire = true;
                 fire();
+            } else if (e.key === "p" || e.key === "P" || e.key === "Escape") {
+                e.preventDefault();
+                togglePause();
             }
         };
         const onUp = (e) => {
             if (e.key === "ArrowLeft") keys.current.left = false;
             else if (e.key === "ArrowRight") keys.current.right = false;
+            else if (e.key === " " || e.key === "ArrowUp") keys.current.fire = false;
         };
         window.addEventListener("keydown", onKey);
         window.addEventListener("keyup", onUp);
@@ -304,25 +320,36 @@ export default function AlienAttack({ onExit }) {
                         Lives <span style={{ color: "#d4af37" }}>{s.lives}</span>
                     </span>
                 </div>
-                <button
-                    onClick={onExit}
-                    className="text-[10px] tracking-[0.18em] uppercase text-theme-muted hover:text-theme transition-colors"
-                >
-                    ← exit
-                </button>
+                <div className="flex items-center gap-4">
+                    {s.status !== "lost" && (
+                        <button
+                            onClick={togglePause}
+                            className="text-[10px] tracking-[0.18em] uppercase px-2 py-1 border border-theme text-theme hover:bg-theme-muted transition-colors"
+                        >
+                            {s.status === "paused" ? "▶ resume" : "❚❚ pause"}
+                        </button>
+                    )}
+                    <button
+                        onClick={onExit}
+                        className="text-[10px] tracking-[0.18em] uppercase text-theme-muted hover:text-theme transition-colors"
+                    >
+                        ← exit
+                    </button>
+                </div>
             </div>
 
-            {/* Playfield + skyline */}
-            <div className="relative overflow-hidden border border-theme">
-                {/* PLAYABLE GAME AREA — Dark Navy/Slate contrast background */}
+            {/* Playfield Container Frame */}
+            <div
+                className="relative overflow-hidden border border-theme"
+                style={{ maxWidth: "416px", margin: "0 auto" }}
+            >
+                {/* PLAYABLE GAME AREA — Deep Obsidian Slate */}
                 <div
                     style={{
-                        backgroundColor: "#06090e",
+                        backgroundColor: "#090d14",
                         display: "grid",
                         gridTemplateColumns: `repeat(${COLS}, 1fr)`,
-                        maxWidth: "416px",
-                        margin: "0 auto",
-                        paddingTop: "6px",
+                        paddingTop: "8px",
                     }}
                 >
                     {grid.map((row, y) =>
@@ -343,13 +370,13 @@ export default function AlienAttack({ onExit }) {
                     )}
                 </div>
 
-                {/* NON-GAME AREA — Distinct Muted Background + Top Border */}
+                {/* NON-GAME SKYLINE AREA — Smooth transition & perfect width alignment */}
                 <div
                     style={{
                         overflow: "hidden",
                         padding: "6px 0 2px",
-                        backgroundColor: "#131822",
-                        borderTop: "1px solid rgba(212,175,55,0.3)",
+                        backgroundColor: "#0d121c",
+                        borderTop: "1px solid rgba(255, 255, 255, 0.06)",
                         textAlign: "center",
                     }}
                 >
@@ -357,7 +384,7 @@ export default function AlienAttack({ onExit }) {
                         style={{
                             display: "inline-block",
                             margin: 0,
-                            color: "#3a7d54",
+                            color: "#2e4a38", // Soft muted green background skyline
                             fontSize: "clamp(7px, 1.7vw, 9px)",
                             lineHeight: "1",
                             letterSpacing: "0",
@@ -368,11 +395,29 @@ export default function AlienAttack({ onExit }) {
                     </pre>
                 </div>
 
+                {/* Paused Overlay */}
+                {s.status === "paused" && (
+                    <div
+                        className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
+                        style={{ backgroundColor: "rgba(9, 13, 20, 0.85)" }}
+                    >
+                        <p
+                            className="tracking-[0.3em] uppercase font-bold mb-1"
+                            style={{ color: "#d4af37", fontSize: "clamp(16px, 3.5vw, 22px)" }}
+                        >
+                            ◈ PAUSED ◈
+                        </p>
+                        <p className="text-[10px] tracking-[0.15em] text-theme-muted uppercase">
+                            Press P or ESC to resume
+                        </p>
+                    </div>
+                )}
+
                 {/* Level-up banner */}
                 {banner != null && (
                     <div
                         className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                        style={{ backgroundColor: "rgba(0,0,0,0.55)" }}
+                        style={{ backgroundColor: "rgba(0,0,0,0.65)" }}
                     >
                         <p
                             className="tracking-[0.3em] uppercase font-bold"
@@ -385,7 +430,7 @@ export default function AlienAttack({ onExit }) {
             </div>
 
             {/* Status overlay */}
-            {s.status !== "playing" && (
+            {s.status === "lost" && (
                 <div className="mt-5 text-center">
                     <p
                         className="text-sm tracking-[0.2em] uppercase font-bold mb-3"
@@ -419,8 +464,11 @@ export default function AlienAttack({ onExit }) {
                     <button
                         onPointerDown={(e) => {
                             e.preventDefault();
+                            keys.current.fire = true;
                             fire();
                         }}
+                        onPointerUp={() => (keys.current.fire = false)}
+                        onPointerLeave={() => (keys.current.fire = false)}
                         className="px-4 py-2 text-xs border transition-colors"
                         style={{ borderColor: "rgba(212,175,55,0.5)", color: "rgb(212,175,55)" }}
                     >
@@ -439,7 +487,7 @@ export default function AlienAttack({ onExit }) {
                     </button>
                 </div>
                 <p className="text-[10px] tracking-[0.12em] text-theme-muted opacity-50 hidden sm:block">
-                    ←/→ move · space fire
+                    ←/→ move · hold space to rapid fire · P pause
                 </p>
             </div>
         </div>

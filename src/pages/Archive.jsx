@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AlienAttack from "@/components/arcade/AlienAttack.jsx";
+import Blackjack from "@/components/arcade/Blackjack.jsx";
+import Dropper from "@/components/arcade/BLockDropper.jsx";
+import Poker from "@/components/arcade/TexasPoker.jsx";
+import Snake from "@/components/arcade/Snake.jsx";
+import Frogger from "@/components/arcade/Frogger.jsx";
+import Roulette from "@/components/arcade/Roulette.jsx";
+import Minesweeper from "@/components/arcade/Minesweeper.jsx";
+import ConnectFour from "@/components/arcade/ConnectFour.jsx";
+
+
 
 const SITES = [
     { 
@@ -233,7 +243,7 @@ export default function Archive() {
                 </div>
             </section>
 
-            {/* ── Infinite 3D Carousel Section ── */}
+            {/* ── Favorite Media 3D Carousel Section ── */}
             <section className="border-t border-theme" style={{ 
                 paddingTop: "clamp(3rem,7vw,6rem)", 
                 paddingBottom: "clamp(4rem,8vw,7rem)", 
@@ -351,61 +361,81 @@ export default function Archive() {
                         </p>
                     </div>
                     <div className="lg:col-span-9">
-                        {activeGame === "alien" ? (
+                        {
+                            activeGame === "alien" ? (
                             <AlienAttack onExit={() => setActiveGame(null)} />
-                        ) : (
+                        ) : activeGame === "blackjack" ? (
+                            <Blackjack onExit={() => setActiveGame(null)} />
+                        ) : activeGame === "block" ? (
+                            <Dropper onExit={() => setActiveGame(null)} />
+                        ) : activeGame === "poker" ? (
+                            <Poker onExit={() => setActiveGame(null)} />
+                        ) : activeGame === "snake" ? (
+                            <Snake onExit={() => setActiveGame(null)} />
+                        ) : activeGame === "frogger" ? (
+                            <Frogger onExit={() => setActiveGame(null)} />
+                        ) : activeGame === "roulette" ? (
+                            <Roulette onExit={() => setActiveGame(null)} />
+                        ) : activeGame === "minesweeper" ? (
+                            <Minesweeper onExit={() => setActiveGame(null)} />
+                        ) : activeGame === "connect4" ? (
+                            <ConnectFour onExit={() => setActiveGame(null)} />
+                        ) :
+                        (
                             <>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        {[
-                        { id: "alien", label: "Alien Attack", glyph: "👾", tag: "Shooter", desc: "Defend the terminal against an incoming wave." },
-                        { id: "blackjack", label: "Blackjack", glyph: "🃏", tag: "Cards", desc: "Hit or stand. The house always has an edge." },
-                        { id: "block", label: "Block Dropper", glyph: "🟦", tag: "Puzzle", desc: "Stack falling blocks before the grid fills up." },
-                        { id: "poker", label: "Texas Hold'em", glyph: "♠️", tag: "Cards", desc: "Read the table, manage the stack, bluff the river." },
-                        { id: "snake", label: "Snake", glyph: "🐍", tag: "Arcade", desc: "Grow the line without biting your own tail." },
-                        { id: "frogger", label: "Frogger", glyph: "🐸", tag: "Arcade", desc: "Cross the road, dodge the logs, reach the lily pads." },
-                        { id: "roulette", label: "Roulette", glyph: "🎰", tag: "Casino", desc: "Red, black, or zero. Place your bets and spin." },
-                        { id: "minesweeper", label: "Minesweeper", glyph: "💣", tag: "Puzzle", desc: "Flag the mines. Deduce the grid. Don't click wrong." },
-                        { id: "connect4", label: "Connect Four", glyph: "🔴", tag: "Strategy", desc: "Drop the disc. Build the line. Block the threat." },
-                        ].map((game) => {
-                        const enabled = game.id === "alien";
-                        return (
-                        <button
-                            key={game.id}
-                            disabled={!enabled}
-                            onClick={() => enabled && setActiveGame("alien")}
-                            className={enabled
-                            ? "group text-left border border-theme p-6 transition-colors duration-200 hover:bg-theme-muted cursor-pointer"
-                            : "group text-left border border-theme p-6 transition-colors duration-200 cursor-not-allowed opacity-60 hover:opacity-80"}
-                            style={{ backgroundColor: "rgb(var(--bg-card))", fontFamily: "var(--font-mono)" }}
-                        >
-                            <div className="text-3xl mb-3">
-                                {game.glyph}
-                            </div>
-                            <p className="text-xs font-bold tracking-[0.18em] uppercase text-theme mb-2">{game.label}</p>
-                            <p className="text-xs leading-relaxed text-theme-muted mb-4">{game.desc}</p>
-                            <div className="flex items-center gap-2 flex-wrap">
-                            <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1 border text-theme-muted" style={{ borderColor: "rgba(212,175,55,0.4)", color: "rgb(212,175,55)" }}>
-                                {game.tag}
-                            </span>
-                            {enabled ? (
-                                <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1" style={{ backgroundColor: "rgb(212,175,55)", color: "#000" }}>
-                                Play →
-                                </span>
-                            ) : (
-                                <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1 border border-theme text-theme-muted">
-                                Coming Soon
-                                </span>
-                            )}
-                            </div>
-                        </button>
-                        );
-                        })}
-                    </div>
-                    <p className="text-[10px] font-mono tracking-[0.15em] text-theme-muted mt-6 opacity-40">
-                        &gt; select a game to launch_
-                    </p>
-                        </>
-                    )}
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    {[
+                                        { id: "alien", label: "Alien Attack", glyph: "👾", tag: "Shooter", desc: "Defend the terminal against an incoming wave." },
+                                        { id: "blackjack", label: "Blackjack", glyph: "🃏", tag: "Cards", desc: "Hit or stand. The house always has an edge." },
+                                        { id: "block", label: "Block Dropper", glyph: "🟦", tag: "Puzzle", desc: "Stack falling blocks before the grid fills up." },
+                                        { id: "poker", label: "Texas Hold'em", glyph: "♠️", tag: "Cards", desc: "Read the table, manage the stack, bluff the river." },
+                                        { id: "snake", label: "Snake", glyph: "🐍", tag: "Arcade", desc: "Grow the line without biting your own tail." },
+                                        { id: "frogger", label: "Frogger", glyph: "🐸", tag: "Arcade", desc: "Cross the road, dodge the logs, reach the lily pads." },
+                                        { id: "roulette", label: "Roulette", glyph: "🎰", tag: "Casino", desc: "Red, black, or zero. Place your bets and spin." },
+                                        { id: "minesweeper", label: "Minesweeper", glyph: "💣", tag: "Puzzle", desc: "Flag the mines. Deduce the grid. Don't click wrong." },
+                                        { id: "connect4", label: "Connect Four", glyph: "🔴", tag: "Strategy", desc: "Drop the disc. Build the line. Block the threat." },
+                                    ].map((game) => {
+                                        // Game IDs
+                                        const enabled = ["alien", "blackjack", "block", "poker", "snake", "frogger", "roulette", "", ""].includes(game.id);
+
+                                        return (
+                                            <button
+                                                key={game.id}
+                                                disabled={!enabled}
+                                                onClick={() => enabled && setActiveGame(game.id)}
+                                                className={enabled
+                                                    ? "group text-left border border-theme p-6 transition-colors duration-200 hover:bg-theme-muted cursor-pointer"
+                                                    : "group text-left border border-theme p-6 transition-colors duration-200 cursor-not-allowed opacity-60 hover:opacity-80"}
+                                                style={{ backgroundColor: "rgb(var(--bg-card))", fontFamily: "var(--font-mono)" }}
+                                            >
+                                                <div className="text-3xl mb-3">
+                                                    {game.glyph}
+                                                </div>
+                                                <p className="text-xs font-bold tracking-[0.18em] uppercase text-theme mb-2">{game.label}</p>
+                                                <p className="text-xs leading-relaxed text-theme-muted mb-4">{game.desc}</p>
+                                                <div className="flex items-center gap-2 flex-wrap">
+                                                    <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1 border text-theme-muted" style={{ borderColor: "rgba(212,175,55,0.4)", color: "rgb(212,175,55)" }}>
+                                                        {game.tag}
+                                                    </span>
+                                                    {enabled ? (
+                                                        <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1" style={{ backgroundColor: "rgb(212,175,55)", color: "#000" }}>
+                                                            Play →
+                                                        </span>
+                                                    ) : (
+                                                        <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1 border border-theme text-theme-muted">
+                                                            Coming Soon
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                                <p className="text-[10px] font-mono tracking-[0.15em] text-theme-muted mt-6 opacity-40">
+                                    &gt; select a game to launch_
+                                </p>
+                            </>
+                        )}
                     </div>
                 </div>
             </section>
