@@ -13,10 +13,7 @@
         "outcomes": "",
         "extensions": "",
         "stack": [
-            "Python",
-            "SciPy",
-            "QuantLib",
-            "Plotly"
+            ""
         ],
         "pdf": null,
         "pdfLabel": null,
@@ -36,10 +33,7 @@
         "outcomes": "",
         "extensions": "",
         "stack": [
-            "Python",
-            "Streamlit",
-            "FRED API",
-            "Bloomberg API"
+            ""
         ],
         "pdf": null,
         "pdfLabel": null,
@@ -59,14 +53,10 @@
         "outcomes": "Successfully reproduced benchmark European CB prices, validated Monte Carlo simulations against analytical results, and extended the model to handle American-style CBs with early conversion options. Provides a foundation for future extensions including puts, calls, and forced conversion scenarios.",
         "extensions": "Potential future work includes modeling early redemption options (puts and calls), simulating issuer-triggered forced conversions, integrating refinements from Kind & Wilde (2005), and incorporating advanced pricing features for more complex CB structures.",
         "stack": [
-            "Python",
-            "NumPy",
-            "Pandas",
-            "Polars",
-            "FastAPI"
+            ""
         ],
-        "pdf": "https://www.w3.org/WAI/WCAG21/Techniques/pdf/PDF1",
-        "pdfLabel": "Technical Overview",
+        "pdf": null,
+        "pdfLabel": null,
         "github": null
     },
     {
@@ -83,13 +73,10 @@
         "outcomes": "Successfully created a foundational pipeline for risk-managed momentum strategies, enabling backtested evaluation of portfolios from 2015–2025. Initial analyses demonstrate the ability to capture momentum returns while controlling portfolio risk, providing benchmarks for further optimization and strategy development.",
         "extensions": "Future work includes implementing alternative weighting schemes, adding factor overlays (e.g., size, value), extending momentum strategies across international markets, integrating machine learning for predictive ranking, and incorporating real-time execution considerations for trading simulation and transaction cost analysis.",
         "stack": [
-            "Python",
-            "HuggingFace",
-            "FinBERT",
-            "Pandas"
+            ""
         ],
-        "pdf": "https://www.w3.org/WAI/WCAG21/Techniques/pdf/PDF1",
-        "pdfLabel": "Research Brief",
+        "pdf": null,
+        "pdfLabel": null,
         "github": null
     },
     {
@@ -106,13 +93,10 @@
         "outcomes": "Established a complete workflow for short-run forex analysis, reproducing key findings from the original 2010 study and extending them to multiple regions. Generated summary outputs, hit rate statistics, and visualizations demonstrating predictive accuracy of forward vs. spot relationships.",
         "extensions": "Future work includes expanding to emerging market currencies, incorporating volatility-based models such as GARCH, testing nonlinear and machine learning models for prediction, integrating intraday or high-frequency data, and evaluating real-world execution constraints for strategy deployment.",
         "stack": [
-            "Python",
-            "PostgreSQL",
-            "Docker",
-            "Airflow"
+            ""
         ],
-        "pdf": null,
-        "pdfLabel": null,
+        "pdf": "@/assets/papers_projects_pdfs/Shortrun Exchange Eigenvector Model.pdf",
+        "pdfLabel": "Overview Presentation",
         "github": null
     },
     {
@@ -129,10 +113,7 @@
         "outcomes": "Using the Brier score for model accuracy, the final model achieves an approximately 85 percent out-of-sample directional accuracy in predicting contract outcomes, outperforming naïve baselines and public forecast heuristics. The analysis highlights the value of micro-segmentation calibrated probability modeling in environmental event-derivative forecasting.",
         "extensions": "The framework supports additional development, including multi-city forecasting, integration of short-term signal, ensemble weighting across meteorological sources, and real-time trading pipeline deployment aligned with Kalshi contract specifications.",
         "stack": [
-            "Python",
-            "PostgreSQL",
-            "Docker",
-            "Airflow"
+            ""
         ],
         "pdf": null,
         "pdfLabel": null,
@@ -152,14 +133,11 @@
         "outcomes": "Established a complete workflow for short-run forex analysis, reproducing key findings from the original 2010 study and extending them to multiple regions. Generated summary outputs, hit rate statistics, and visualizations demonstrating predictive accuracy of forward vs. spot relationships.",
         "extensions": "The framework supports integration of order-flow features, regime-switching models, ensemble predictive architectures, and real-time monitoring modules for production-grade trading applications on event-derivative platforms.",
         "stack": [
-            "Python",
-            "PostgreSQL",
-            "Docker",
-            "Airflow"
+            ""
         ],
-        "pdf": "https://www.w3.org/WAI/WCAG21/Techniques/pdf/PDF1",
-        "pdfLabel": "Overview",
-        "github": "https://github.com/username/IR-Modeling"
+        "pdf": null,
+        "pdfLabel": null,
+        "github": null
     },
     {
         "id": "crisis_investing_strategy",
@@ -175,10 +153,7 @@
         "outcomes": "The resulting framework demonstrated material signal strength around post-crisis equity rebounds, capturing value-driven mean-reversion patterns with favorable risk-adjusted performance. Automated IBKR workflows produced consistent basket construction, improved trade discipline, and measurable lift over simple value- and momentum-based baselines.",
         "extensions": "Future enhancements include integrating macro-regime classification, expanding screening rules to international markets, and incorporating volatility-adjusted position sizing for improved capital allocation during crisis windows.",
         "stack": [
-            "Python",
-            "PostgreSQL",
-            "Docker",
-            "Airflow"
+            ""
         ],
         "pdf": null,
         "pdfLabel": null,
@@ -198,10 +173,7 @@
         "outcomes": "",
         "extensions": "",
         "stack": [
-            "Python",
-            "PostgreSQL",
-            "Docker",
-            "Airflow"
+            ""
         ],
         "pdf": null,
         "pdfLabel": null,
@@ -221,10 +193,7 @@
         "outcomes": "",
         "extensions": "",
         "stack": [
-            "Python",
-            "PostgreSQL",
-            "Docker",
-            "Airflow"
+            ""
         ],
         "pdf": null,
         "pdfLabel": null,
@@ -244,10 +213,7 @@
         "outcomes": "",
         "extensions": "",
         "stack": [
-            "Python",
-            "PostgreSQL",
-            "Docker",
-            "Airflow"
+            ""
         ],
         "pdf": null,
         "pdfLabel": null,
@@ -267,10 +233,7 @@
         "outcomes": "The MSP pitch was recognized as the top submission in the competition, demonstrating a stronger valuation outlook, more robust risk-adjusted return profile, and a clearer mispricing relative to fundamentals. The BA analysis provided a contrasting case of long-term recovery value with materially higher risk dispersion, strengthening the team’s comparative insights.",
         "extensions": "The model framework can be adapted for sector-wide screens or multi-asset comparative valuation.",
         "stack": [
-            "Python",
-            "PostgreSQL",
-            "Docker",
-            "Airflow"
+            ""
         ],
         "pdf": null,
         "pdfLabel": null,
@@ -290,10 +253,7 @@
         "outcomes": "Delivered a finalist proposal that earned second place. The final recommendation package demonstrated how Dell could materially improve the first-mile-back experience, expand repair access, decrease reliance on Dell-owned hubs, and strengthen closed-loop material flows. Analyses showed measurable impacts on carbon footprint reduction, recyclability, ESG reporting accuracy, and supply chain resilience under modular product architectures.",
         "extensions": "Future work could model quantitative cost–benefit impacts of decentralized repair networks, integrate predictive failure analytics, and perform simulation-based evaluation of return flows under varying consumer adoption patterns. The framework can be adapted for broader electronics OEMs pursuing circular-economy alignment.",
         "stack": [
-            "Python",
-            "PostgreSQL",
-            "Docker",
-            "Airflow"
+            ""
         ],
         "pdf": null,
         "pdfLabel": null,

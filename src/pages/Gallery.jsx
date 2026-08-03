@@ -1,11 +1,12 @@
 import React, { useState, useRef } from "react";
 import { X } from "lucide-react";
+import  AIXSummit2026 from "@/assets/gallery/AIX_Summit_2026.jpg"
 
 const IMAGES = [
     {
         /* Image 1 */
-        src: "src/assets/gallery/AIX_Summit_2026.jpg?w=1200&q=80&fit=crop",
-        thumb: "src/assets/gallery/AIX_Summit_2026.jpg?w=600&q=80&fit=crop",
+        src: {AIXSummit2026},
+        thumb: {AIXSummit2026},
         title: "AIX Summit 2026",
         date: "March 2026",
         description: "Captured at the inaugural AIX Summit 2026 in New York City, this photo brings together pioneering researchers, industry visionaries, and policymakers shaping the next frontier of artificial intelligence. The event buzzed with transformative energy as world-renowned keynotes and cross-disciplinary panels tackled the dynamic convergence of AI across science, engineering, finance, and healthcare. From vibrant research poster sessions to high-level roundtables, the image highlights an inspiring intergenerational dialogue between established technology pioneers and rising innovators. Every interaction captured underscores a collective commitment to expanding technological boundaries while grounding AI advancement in trust, safety, and rigorous scientific inquiry. This photo serves as a lasting visual milestone from a landmark summit where global experts aligned to shape the next era of innovation.",
