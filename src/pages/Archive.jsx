@@ -1,5 +1,56 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import AlienAttack from "@/components/arcade/AlienAttack.jsx";
+
+const SITES = [
+    { 
+        name: "The Scale of the Universe", 
+        url: "https://scaleofuniverse.com",
+        blurb: "Zoom from quantum foam to the observable universe in one scroll." },
+    { 
+        name: "Window Swap", 
+        url: "https://window-swap.com", 
+        blurb: "Look out of a stranger's window, somewhere in the world, right now." },
+    { 
+        name: "A Soft Murmur", 
+        url: "https://asoftmurmur.com", blurb: "Mix rain, thunder, fire, and coffee shop ambience to find your focus." },
+    { 
+        name: "Radio Garden", 
+        url: "https://radio.garden", 
+        blurb: "Spin the globe and listen to live radio from anywhere on Earth." },
+    { 
+        name: "Drive & Listen", 
+        url: "https://driveandlisten.herokuapp.com", 
+        blurb: "Drive through a city at night with local radio playing in the background." },
+    { 
+        name: "Patatap", 
+        url: "https://www.patatap.com", 
+        blurb: "Tap keys to trigger sounds and animations. A synesthetic playground." },
+    { 
+        name: "Pointer Pointer", 
+        url: "https://pointerpointer.com", 
+        blurb: "The internet finds a photo of someone pointing at your cursor. Somehow." },
+    { 
+        name: "The Useless Web", 
+        url: "https://theuselessweb.com", 
+        blurb: "Press the button. Be transported to a site that is gloriously pointless." },
+    { 
+        name: "Window Knocks", 
+        url: "https://www.windowknocks.com", 
+        blurb: "Short films about the cities people call home — one window at a time." },
+    { 
+        name: "Infinite Jukebox", 
+        url: "https://infinitejukebox.playlistmachinery.com", 
+        blurb: "Pick a song; the algorithm beats-matches it into an endless remix." },
+    { 
+        name: "A Good Universe", 
+        url: "https://agadventure.com", 
+        blurb: "A gentle, minimalist pixel universe to wander through when you need it." },
+    { 
+        name: "Flight Radar 24", 
+        url: "https://www.flightradar24.com", 
+        blurb: "Watch every commercial flight on the planet moving in real time." },
+];
 
 const MEDIA_ENTRIES = [
     { 
@@ -83,7 +134,16 @@ const MEDIA_ENTRIES = [
 
 export default function Archive() {
     const [visible, setVisible] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [site, setSite] = useState(() => SITES[Math.floor(Math.random() * SITES.length)]);
+    const [activeGame, setActiveGame] = useState(null);
+
+    const rollSite = () => {
+        let next = site;
+        while (next.url === site.url) {
+        next = SITES[Math.floor(Math.random() * SITES.length)];
+        }
+        setSite(next);
+    };
 
     useEffect(() => {
         const t = setTimeout(() => setVisible(true), 100);
@@ -127,6 +187,48 @@ export default function Archive() {
                     <p className="mt-5 text-base md:text-lg leading-relaxed text-white/60 max-w-2xl">
                         <i>Media Worth Digesting</i>
                     </p>
+                </div>
+            </section>
+
+            {/* ── Random Websites ── */}
+            <section className="border-t border-theme" style={{ paddingTop: "clamp(3rem,7vw,6rem)", paddingBottom: "clamp(4rem,8vw,7rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+                    <div className="lg:col-span-3">
+                        <p className="text-sm font-bold tracking-[0.15em] uppercase text-theme">Random Corner</p>
+                        <p className="text-xs mt-3 leading-relaxed text-theme-muted">A button. A rabbit hole. No two the same.</p>
+                </div>
+                <div className="lg:col-span-9">
+                    <div className="border border-theme p-8 transition-colors" style={{ backgroundColor: "rgb(var(--bg-card))", fontFamily: "var(--font-mono)" }}>
+                        <div className="flex items-start justify-between gap-6 mb-6">
+                            <div>
+                                <h3 className="font-heading font-semibold text-2xl text-theme leading-snug mb-3">{site.name}</h3>
+                                    <p className="text-sm leading-relaxed text-theme-muted max-w-lg">{site.blurb}</p>
+                            </div>
+                            <span className="text-2xl flex-shrink-0">🗝️</span>
+                        </div>
+                        <div className="flex flex-wrap items-center gap-3">
+                            <a
+                                href={site.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold tracking-[0.18em] uppercase transition-opacity hover:opacity-80"
+                                style={{ backgroundColor: "rgb(212,175,55)", color: "#000" }}
+                            >
+                                Visit Site →
+                            </a>
+                            <button
+                                onClick={rollSite}
+                                className="px-4 py-2.5 text-xs font-bold tracking-[0.18em] uppercase border border-theme text-theme transition-colors hover:bg-theme-muted"
+                            >
+                                ↻ Roll Again
+                            </button>
+                            <span className="text-[10px] tracking-[0.15em] text-theme-muted opacity-50 ml-1">{site.url.replace("https://", "")}</span>
+                        </div>
+                    </div>
+                        <p className="text-[10px] font-mono tracking-[0.15em] text-theme-muted mt-6 opacity-40">
+                            &gt; {SITES.length} sites in rotation. press roll to wander_
+                        </p>
+                    </div>
                 </div>
             </section>
 
@@ -236,38 +338,73 @@ export default function Archive() {
                 </div>
             </section>
 
-            {/* ── ASCII Game Arcade Section ── */}
-            <section className="border-t border-theme" style={{ paddingTop: "clamp(3rem,7vw,6rem)", paddingBottom: "clamp(3rem,5vw,4rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
+            {/* ── ASCII Game Arcade ── */}
+            <section className="border-t border-theme" style={{ paddingTop: "clamp(3rem,7vw,6rem)", paddingBottom: "clamp(4rem,8vw,7rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
                     <div className="lg:col-span-3">
-                        <p className="text-sm font-bold tracking-[0.15em] uppercase text-theme">Arcade</p>
-                        <p className="text-xs mt-3 leading-relaxed text-theme-muted">ASCII games. Because sometimes the terminal is enough.</p>
+                        <p className="text-sm font-bold tracking-[0.15em] uppercase text-theme">
+                            Arcade
+                        </p>
+                        <p className="text-xs mt-3 leading-relaxed text-theme-muted">
+                            ASCII games. Because sometimes the terminal is enough.
+                        </p>
                     </div>
                     <div className="lg:col-span-9">
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            {[
-                                { id: "alien", label: "Alien Attack", glyph: "👾", desc: "Defend the terminal against an incoming wave." },
-                                { id: "blackjack", label: "Blackjack", glyph: "🃏", desc: "Hit or stand. The house always has an edge." },
-                                { id: "block", label: "Block Dropper", glyph: "🟦", desc: "Stack falling blocks before the grid fills up." },
-                            ].map((game) => (
-                                <button
-                                    key={game.id}
-                                    disabled
-                                    className="group text-left border border-theme p-6 transition-colors duration-200 cursor-not-allowed opacity-60 hover:opacity-80"
-                                    style={{ backgroundColor: "rgb(var(--bg-card))", fontFamily: "var(--font-mono)" }}
-                                >
-                                    <div className="text-3xl mb-3">{game.glyph}</div>
-                                    <p className="text-xs font-bold tracking-[0.18em] uppercase text-theme mb-2">{game.label}</p>
-                                    <p className="text-xs leading-relaxed text-theme-muted mb-4">{game.desc}</p>
-                                    <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1 border border-theme text-theme-muted">
-                                        Coming Soon
-                                    </span>
-                                </button>
-                            ))}
-                        </div>
-                        <p className="text-[10px] font-mono tracking-[0.15em] text-theme-muted mt-6 opacity-40">
-                            &gt; select a game to launch_
-                        </p>
+                        {activeGame === "alien" ? (
+                            <AlienAttack onExit={() => setActiveGame(null)} />
+                        ) : (
+                            <>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {[
+                        { id: "alien", label: "Alien Attack", glyph: "👾", tag: "Shooter", desc: "Defend the terminal against an incoming wave." },
+                        { id: "blackjack", label: "Blackjack", glyph: "🃏", tag: "Cards", desc: "Hit or stand. The house always has an edge." },
+                        { id: "block", label: "Block Dropper", glyph: "🟦", tag: "Puzzle", desc: "Stack falling blocks before the grid fills up." },
+                        { id: "poker", label: "Texas Hold'em", glyph: "♠️", tag: "Cards", desc: "Read the table, manage the stack, bluff the river." },
+                        { id: "snake", label: "Snake", glyph: "🐍", tag: "Arcade", desc: "Grow the line without biting your own tail." },
+                        { id: "frogger", label: "Frogger", glyph: "🐸", tag: "Arcade", desc: "Cross the road, dodge the logs, reach the lily pads." },
+                        { id: "roulette", label: "Roulette", glyph: "🎰", tag: "Casino", desc: "Red, black, or zero. Place your bets and spin." },
+                        { id: "minesweeper", label: "Minesweeper", glyph: "💣", tag: "Puzzle", desc: "Flag the mines. Deduce the grid. Don't click wrong." },
+                        { id: "connect4", label: "Connect Four", glyph: "🔴", tag: "Strategy", desc: "Drop the disc. Build the line. Block the threat." },
+                        ].map((game) => {
+                        const enabled = game.id === "alien";
+                        return (
+                        <button
+                            key={game.id}
+                            disabled={!enabled}
+                            onClick={() => enabled && setActiveGame("alien")}
+                            className={enabled
+                            ? "group text-left border border-theme p-6 transition-colors duration-200 hover:bg-theme-muted cursor-pointer"
+                            : "group text-left border border-theme p-6 transition-colors duration-200 cursor-not-allowed opacity-60 hover:opacity-80"}
+                            style={{ backgroundColor: "rgb(var(--bg-card))", fontFamily: "var(--font-mono)" }}
+                        >
+                            <div className="text-3xl mb-3">
+                                {game.glyph}
+                            </div>
+                            <p className="text-xs font-bold tracking-[0.18em] uppercase text-theme mb-2">{game.label}</p>
+                            <p className="text-xs leading-relaxed text-theme-muted mb-4">{game.desc}</p>
+                            <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1 border text-theme-muted" style={{ borderColor: "rgba(212,175,55,0.4)", color: "rgb(212,175,55)" }}>
+                                {game.tag}
+                            </span>
+                            {enabled ? (
+                                <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1" style={{ backgroundColor: "rgb(212,175,55)", color: "#000" }}>
+                                Play →
+                                </span>
+                            ) : (
+                                <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1 border border-theme text-theme-muted">
+                                Coming Soon
+                                </span>
+                            )}
+                            </div>
+                        </button>
+                        );
+                        })}
+                    </div>
+                    <p className="text-[10px] font-mono tracking-[0.15em] text-theme-muted mt-6 opacity-40">
+                        &gt; select a game to launch_
+                    </p>
+                        </>
+                    )}
                     </div>
                 </div>
             </section>
