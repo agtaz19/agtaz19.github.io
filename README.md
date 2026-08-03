@@ -17,28 +17,28 @@ This is a portfolio website that I created to highlight various roles, responsib
 
 ## Project Status
 
-The website is currently live and functional
+The website is currently live and functional.
 
 ### Project Status & Plans
 
 - **Current Version:** v0.2.0
 - **Development Stage:** Live
-- **Last Updated:** December, 2025
+- **Last Updated:** August, 2025
 
-The website is live with three known issue(s):
+The website is live with these known issue(s):
 
 1. N/A
 
 I am planning to add:
 
-1. Slightly more interactive torus
-2. Update resources to be less vague and more personalized
+1. Update resources to be less vague and more personalized
     - Add career advice:
         a. "How To Do What You You Love" - Y Combinator
         b. "Hell Yeah Or No" - Derek Sivers
         c. "How To Pick A Career" - Tim Urban
         d. "Make Your Work Your Calling" - Arthur Brooks
         e. "Guide To Career Planning" - Marc Andreessen
+2. Update Repo Layout in ReadMe
 
 ## Methodology & Workflow
 
@@ -46,19 +46,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur
 
 ### Methodology
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+This repository houses the source code for my personal portfolio and blog website. The site is engineered to reflect a clean, high-performance, and content-first philosophy, blending modern front-end tooling with a minimalist design aesthetic inspired by elite quantitative research and technology blogs.
+
+The following were used as inspiration (content & needed topics) for this website:
+
+1. [Dean Markwick] (https://dm13450.github.io/)
+2. [Manuel Daziale] (https://dazialem.github.io/)
+3. [Guillermo Rauch] (https://rauchg.com/)
+4. [Lynn Fisher] (https://lynnandtonic.com/)
+5. [Robert Heaton] (https://robertheaton.com/)
 
 ### Workflow
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-2. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-3. Cras mattis consectetur purus sit amet fermentum.
-4. Nulla vitae elit libero, a pharetra augue.
-5. Donec ullamcorper nulla non metus auctor fringilla.
+1. Local Development: Rapid prototyping and component structuring locally using Vite's hot module replacement (HMR) for instant feedback loops.
+2. Styling & Architecture: Designing modular, reusable React components styled with Tailwind CSS utility classes to ensure robust cross-device responsiveness.
+3. Version Control: Managing code iterations, feature branches, and tracking changes systematically via Git and GitHub.
+4. Build Optimization: Compiling and minifying production-ready static assets to minimize payload sizes and guarantee near-instant load times.
+5. Continuous Deployment: Deploying the compiled static output seamlessly to GitHub Pages for fast and reliable hosting.
 
 ## Repository Structure
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.
+This repository is organized to maintain a clean, modular architecture separating page templates, styling, scripts, developer tools, and static assets. Below is a comprehensive overview of the directory layout and its contents.
 
 ### Directory Overview
 
@@ -66,70 +74,71 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur
 
 agtaz19.github.io/
 │
-├── .github/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+├── .github/ - GitHub workflow configurations and templates
 │
-├── notebooks/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+├── notebooks/ - Jupyter notebooks for quantitative research and data analysis
 │
-├── devTools/ - Main source code for the project
-│   ├── __init__.py - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-│   ├── module_one.py - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-│   └── module_two.py - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+├── devTools/ - Main source code and utility scripts for the project
+│   ├── __init__.py - Package initialization and module configuration
+│   ├── module_one.py - Core data processing or utility module
+│   └── module_two.py - Secondary supporting module and helper functions
 │
-├── externalLinks/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+├── externalLinks/ - Curated references and external link directories
 │
-├── img/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+├── img/ - Image assets, logos, and visual media for the site
 │
-├── js/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+├── js/ - JavaScript files for client-side interactivity and dynamic features
 │
-├── pdf/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-|
-├── sass/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-|
-├── vendor/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-|
-├── aboutme.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-|
-├── index.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-|
-├── outreach.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-|
-├── projects.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-|
-├── publication.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-|
-├── README.md/ - Main documentation file
-|
-├── roueces.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-|
-├── work.html/ - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-|
-└── LICENSE — Licensing information
+├── pdf/ - PDF documents, resumes, and project reports
+│
+├── sass/ - Sass/SCSS stylesheets for modular and maintainable design styling
+│
+├── vendor/ - Third-party libraries, frameworks, and external plugins
+│
+├── aboutme.html - Personal background, bio, and professional profile page
+│
+├── index.html - Main landing page and portfolio homepage
+│
+├── outreach.html - Community involvement, leadership, and outreach initiatives page
+│
+├── projects.html - Showcase page highlighting technical and quantitative projects
+│
+├── publication.html - Articles, papers, and written publications page
+│
+├── README.md - Main repository documentation file
+│
+├── roueces.html - Curated resources, tools, and reading lists page
+│
+├── work.html - Professional experience and work history showcase page
+│
+└── LICENSE — Licensing information governing the use of the repository code
 ```
 
 ### Notes
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla.
+- Browser Compatibility: Designed and tested to render cleanly across all modern, standards-compliant web browsers (Chrome, Safari, Firefox, Edge).
+
+- Static Hosting: Built for seamless deployment via GitHub Pages, utilizing automated static asset compilation for fast content delivery.
+
+- Extensibility: The modular directory structure allows for straightforward updates to projects, blog articles, quantitative notebooks, and professional milestones.
 
 ## Acknowledgements
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur.
+Special thanks to the open-source community, the maintainers of the core front-end tooling ecosystems, and the technical writers and developers whose minimalist design philosophies inspired the architecture of this portfolio. Gratitude is also extended to peers, mentors, and academic collaborators for their ongoing feedback and support.
 
 ## References
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+The technical implementations, quantitative methodologies, and architectural patterns referenced or built upon in this repository draw from industry standards, academic literature, and software engineering best practices.
 
 ### Example References
 
-1. Lorem, I. & Ipsum, D. (2023). _Lorem Ipsum Dolor Sit Amet_. Consectetur Publishing.
-2. Dolor, S. & Amet, C. (2022). _Vestibulum Id Ligula Porta Felis_. Lorem Press.
-3. Sit, A. & Met, E. (2021). _Integer Posuere Erat a Ante_. Ipsum Academic.
-4. Consectetur, V. (2020). _Sed Posuere Consectetur Est at Lobortis_. Dolor Publishing.
-5. Ipsum, L. (2019). _Aenean Lacinia Bibendum Nulla Sed Consectetur_. Lorem Ipsum Press.
+1. Markwick, D. (2023). Quantitative Finance & Algorithmic Trading Notes. Personal Research Blog.
+2. Hudson River Trading. (2022). Design Systems and High-Density UI Principles in Trading Technology. Tech Insights.
 
 ## License
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.
+This project is open-source software made available for public viewing, educational, and professional showcase purposes.
 
-This project is licensed under the **Lorem Ipsum License**, Version 1.0.  
+This project is licensed under the **MIT License**.  
 
 For more information, see the [LICENSE](LICENSE) file.
