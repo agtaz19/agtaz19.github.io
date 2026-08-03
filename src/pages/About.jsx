@@ -1,5 +1,6 @@
 import React from "react";
 import { Mail, MapPin, Linkedin, Github } from "lucide-react";
+import Landscape from "@/src/assets/1920x1080-Landscape.JPG";
 
 
 
@@ -191,7 +192,7 @@ export default function About() {
             {/* Hero */}
             <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
                 <div className="absolute inset-0">
-                    <img src="@/assets/1920x1080-Landscape.JPG" alt="" className="w-full h-full object-cover object-center opacity-50" />
+                    <img src={Landscape} alt="Landscape Portrait" className="w-full h-full object-cover object-center opacity-50" />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 100%)" }} />
                 </div>
                 <div className="relative z-10" style={{ paddingTop: "clamp(5rem,10vw,9rem)", paddingBottom: "clamp(3rem,6vw,5rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
