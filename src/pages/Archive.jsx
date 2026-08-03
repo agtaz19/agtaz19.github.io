@@ -190,7 +190,7 @@ export default function Archive() {
                     }}
                 >
                     <p className="text-xs font-semibold tracking-[0.35em] uppercase mb-3" style={{ color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-mono)" }}>
-                        ◈ you found it
+                        ◈ you found it ◈
                     </p>
                     <h1 className="font-heading font-bold text-white leading-[1.05]" style={{ fontSize: "clamp(2.2rem,5vw,4.5rem)" }}>
                         The Archives
