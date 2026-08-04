@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { ChevronDown, FileText } from "lucide-react";
+import EventsImage from "@/assets/stock_photos/Events_Ampi_Stock.jpg";
 
-// Helper function to resolve relative assets and PDFs via Vite
-const getAssetUrl = (filepath) => {
-    if (!filepath) return "";
-    return new URL(filepath, import.meta.url).href;
-};
+import RunningMeetingPdf from "@/assets/outreach/20260512-Class Notes-Running a Meeting Effectively.pdf";
+import PublicFinancePdf from "@/assets/papers_projects_pdfs/events_outreach/Public Finance & Banking-vf.pdf";
+import PersuasionPdf from "@/assets/papers_projects_pdfs/events_outreach/Persuasion & Advocacy-vf.pdf";
+import SCCAImage from "@/assets/stock_photos/Z-SCCAImage.jpg";
 
 const EVENTS = [
     {
@@ -16,7 +16,7 @@ const EVENTS = [
         role: "Instructor", 
         location: "Tucson, Arizona", 
         topic: "Robert's Rules of Order & Running a Caucus",
-        pdfUrl: "../assets/outreach/20260512-Class Notes-Running a Meeting Effectively.pdf",
+        pdfUrl: RunningMeetingPdf,
         comments: "Designed to equip emerging leaders with the tools for seamless parliamentary governance, this workshop provided a comprehensive walkthrough of formal meeting management. Attendees mastered the fundamentals of Robert's Rules of Order—from floor motions and point-of-order protocols to voting mechanics—alongside strategic techniques for facilitating dynamic, fast-paced caucuses. Through practical governance scenarios, participants learned how to maintain order, encourage balanced debate, and drive group consensus efficiently. Attendees walked away with the confidence and procedural clarity needed to run structured, impactful meetings in any formal setting.",
     },
     {
@@ -60,7 +60,7 @@ const EVENTS = [
         role: "Instructor", 
         location: "Tucson, Arizona", 
         topic: "Public Finance and the Role of the Treasury",
-        pdfUrl: "../assets/papers_projects_pdfs/events_outreach/Public Finance & Banking-vf.pdf",
+        pdfUrl: PublicFinancePdf,
         comments: "Led coursework on public finance and banking fundamentals, covering government budgeting, financial institutions, and capital markets, with an emphasis on applied analysis and real-world policy and market dynamics.",
     },
     {
@@ -71,7 +71,7 @@ const EVENTS = [
         role: "Instructor", 
         location: "Flagstaff, Arizona", 
         topic: "Methods of Persuasion and Advocacy Roles Within the Current Market",
-        pdfUrl: "../assets/papers_projects_pdfs/events_outreach/Persuasion & Advocacy-vf.pdf",
+        pdfUrl: PersuasionPdf,
         comments: "Delivered intensive instruction on persuasive communication, advocacy strategy, and message framing in a seminar-style academic setting, guiding participants through practical exercises in argument development, public speaking, and policy advocacy.",
     },
     {
@@ -148,7 +148,7 @@ const EXTRACURRICULAR = [
     {
         org: "Sports Car Club of America (SCCA)",
         role: "Competitor / Member",
-        image: "../assets/stock_photos/Z-SCCAImage.jpg",
+        image: SCCAImage,
         description: " The Sports Car Club of America (SCCA) is a non-profit American automobile club and sanctioning body supporting Autocross, Rallycross, HPDE, Time Trial, Road Racing, RoadRally, and Hill Climbs in the United States. Formed in 1944, it runs many programs for both amateur and professional racers.",
     },
     {
@@ -178,7 +178,7 @@ function PdfViewer({ pdfUrl }) {
             {open && (
                 <div className="mt-4 w-full bg-black/20 overflow-hidden rounded-sm border border-theme" style={{ height: "60vh", minHeight: "400px", maxWidth: "800px" }}>
                     <iframe
-                        src={`${getAssetUrl(pdfUrl)}#toolbar=0&navpanes=0`}
+                        src={`${pdfUrl}#toolbar=0&navpanes=0`}
                         title="PDF Presentation"
                         className="w-full h-full border-none"
                     />
@@ -193,7 +193,7 @@ export default function Events() {
         <>
             <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
                 <div className="absolute inset-0">
-                    <img src={getAssetUrl("../assets/stock_photos/Events_Ampi_Stock.jpg")} alt="" className="w-full h-full object-cover object-center opacity-50" />
+                    <img src={EventsImage} alt="" className="w-full h-full object-cover object-center opacity-50" />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 100%)" }} />
                 </div>
                 <div className="relative z-10" style={{ paddingTop: "clamp(5rem,10vw,9rem)", paddingBottom: "clamp(3rem,6vw,5rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
@@ -287,7 +287,7 @@ export default function Events() {
                             <div key={i} className="py-8 border-b border-theme">
                                 {item.image && (
                                     <div className="w-full h-48 md:h-64 overflow-hidden mb-5 rounded-sm">
-                                        <img src={item.image.startsWith('http') ? item.image : getAssetUrl(item.image)} alt={item.org} className="w-full h-full object-cover" />
+                                        <img src={item.image} alt={item.org} className="w-full h-full object-cover" />
                                     </div>
                                 )}
                                 <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-2">
