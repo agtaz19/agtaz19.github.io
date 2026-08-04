@@ -134,15 +134,22 @@ const IMAGES = [
 
 // Split images into 4 rows with offset starting points
 const ROWS = [
-    { images: IMAGES.slice(0, 4),   speed: "95s",   offset: "0px",  reverse: false },
-    { images: IMAGES.slice(4, 8),   speed: "90s",   offset: "0px", reverse: true  },
-    { images: IMAGES.slice(8, 12),  speed: "85s",   offset: "0px", reverse: false },
-    { images: IMAGES.slice(12, 16),  speed: "80s",   offset: "0px", reverse: true },
+    { images: IMAGES.slice(0, 4), speed: "95s", offset: "0px", reverse: false },
+    { images: IMAGES.slice(4, 8), speed: "90s", offset: "0px", reverse: true },
+    { images: IMAGES.slice(8, 12), speed: "85s", offset: "0px", reverse: false },
+    { images: IMAGES.slice(12, 16), speed: "80s", offset: "0px", reverse: true },
 ];
 
-// Helper function to resolve relative paths using Vite's bundler
+const galleryAssets = import.meta.glob(
+    ["./assets/gallery/*", "../assets/gallery/*", "/src/assets/gallery/*"],
+    { eager: true, import: "default" }
+);
+
 const getAssetUrl = (filepath) => {
-    return new URL(filepath, import.meta.url).href;
+    if (!filepath) return "";
+    if (galleryAssets[filepath]) return galleryAssets[filepath];
+    const key = filepath.startsWith("./") ? filepath : `./${filepath}`;
+    return galleryAssets[key] || filepath;
 };
 
 function GalleryStrip({ rowImages, speed, offset, reverse, onSelect }) {
@@ -161,7 +168,7 @@ function GalleryStrip({ rowImages, speed, offset, reverse, onSelect }) {
                     animationPlayState: paused ? "paused" : "running",
                     transform: `translateY(${offset})`,
                     marginTop: offset !== "0px" ? `-${offset}` : "0",
-                    willChange: "transform"
+                    willChange: "transform",
                 }}
                 onMouseEnter={() => setPaused(true)}
                 onMouseLeave={() => setPaused(false)}
@@ -181,16 +188,23 @@ function GalleryStrip({ rowImages, speed, offset, reverse, onSelect }) {
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/70 transition-all duration-300 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100">
-                            <p className="font-heading font-semibold text-white text-sm leading-snug mb-1">{img.title}</p>
+                            <p className="font-heading font-semibold text-white text-sm leading-snug mb-1">
+                                {img.title}
+                            </p>
                             <p className="text-xs font-mono text-white/60 mb-2">{img.date}</p>
                             <div className="flex flex-wrap gap-1 mb-3">
-                                {img.tags.map(tag => (
-                                    <span key={tag} className="text-[9px] tracking-[0.12em] uppercase px-1.5 py-0.5 border border-white/30 text-white/70">
+                                {img.tags.map((tag) => (
+                                    <span
+                                        key={tag}
+                                        className="text-[9px] tracking-[0.12em] uppercase px-1.5 py-0.5 border border-white/30 text-white/70"
+                                    >
                                         {tag}
                                     </span>
                                 ))}
                             </div>
-                            <p className="text-xs tracking-[0.15em] uppercase font-semibold text-white/90">View →</p>
+                            <p className="text-xs tracking-[0.15em] uppercase font-semibold text-white/90">
+                                View →
+                            </p>
                         </div>
                     </div>
                 ))}
@@ -216,7 +230,10 @@ export default function Images() {
             `}</style>
 
             {/* Hero */}
-            <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+            <section
+                className="relative bg-dark-panel border-b overflow-hidden"
+                style={{ borderColor: "rgba(255,255,255,0.08)" }}
+            >
                 <div className="absolute inset-0">
                     <img
                         src={getAssetUrl("./assets/gallery/AIX_Summit_2026.jpg")}
@@ -225,22 +242,49 @@ export default function Images() {
                         loading="lazy"
                         decoding="async"
                     />
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 100%)" }} />
+                    <div
+                        className="absolute inset-0"
+                        style={{
+                            background:
+                                "linear-gradient(to right, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 100%)",
+                        }}
+                    />
                 </div>
                 <div
                     className="relative z-10"
-                    style={{ paddingTop: "clamp(5rem,10vw,9rem)", paddingBottom: "clamp(3rem,6vw,5rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}
+                    style={{
+                        paddingTop: "clamp(5rem,10vw,9rem)",
+                        paddingBottom: "clamp(3rem,6vw,5rem)",
+                        paddingLeft: "var(--fluid-pad)",
+                        paddingRight: "var(--fluid-pad)",
+                    }}
                 >
-                    <p className="text-xs font-semibold tracking-[0.25em] uppercase text-white/40 mb-3">Gallery</p>
-                    <h1 className="font-heading font-bold text-white leading-[1.05]" style={{ fontSize: "clamp(2.2rem,5vw,4.5rem)" }}>Highlights</h1>
+                    <p className="text-xs font-semibold tracking-[0.25em] uppercase text-white/40 mb-3">
+                        Gallery
+                    </p>
+                    <h1
+                        className="font-heading font-bold text-white leading-[1.05]"
+                        style={{ fontSize: "clamp(2.2rem,5vw,4.5rem)" }}
+                    >
+                        Highlights
+                    </h1>
                     <p className="mt-5 text-base md:text-lg leading-relaxed text-white/60">
-                        A curated record of moments across my life like professional presentation, academic lectures, presentation, or industry events - this gallery is intended to capture the breadth of a practice built on both rigour and range.
+                        A curated record of moments across my life like professional
+                        presentation, academic lectures, presentation, or industry events -
+                        this gallery is intended to capture the breadth of a practice built
+                        on both rigour and range.
                     </p>
                 </div>
             </section>
 
             {/* Offset stacked gallery */}
-            <section style={{ paddingTop: "clamp(3rem,7vw,6rem)", paddingBottom: "clamp(4rem,8vw,7rem)", overflow: "hidden" }}>
+            <section
+                style={{
+                    paddingTop: "clamp(3rem,7vw,6rem)",
+                    paddingBottom: "clamp(4rem,8vw,7rem)",
+                    overflow: "hidden",
+                }}
+            >
                 {ROWS.map((row, i) => (
                     <GalleryStrip
                         key={i}
@@ -263,7 +307,7 @@ export default function Images() {
                     <div
                         className="relative max-w-4xl w-full border border-theme overflow-hidden"
                         style={{ backgroundColor: "rgb(var(--bg-card))" }}
-                        onClick={e => e.stopPropagation()}
+                        onClick={(e) => e.stopPropagation()}
                     >
                         <button
                             onClick={() => setSelected(null)}
@@ -271,21 +315,30 @@ export default function Images() {
                         >
                             <X size={20} />
                         </button>
-                        <img 
-                            src={getAssetUrl(selected.src)} 
-                            alt={selected.title} 
-                            className="w-full object-cover" 
-                            style={{ maxHeight: "60vh" }} 
+                        <img
+                            src={getAssetUrl(selected.src)}
+                            alt={selected.title}
+                            className="w-full object-cover"
+                            style={{ maxHeight: "60vh" }}
                         />
                         <div className="p-6 md:p-8">
                             <div className="flex items-start justify-between gap-4 mb-3">
-                                <h2 className="font-heading font-semibold text-xl text-theme leading-snug">{selected.title}</h2>
-                                <span className="text-xs font-mono text-theme-muted flex-shrink-0 pt-1">{selected.date}</span>
+                                <h2 className="font-heading font-semibold text-xl text-theme leading-snug">
+                                    {selected.title}
+                                </h2>
+                                <span className="text-xs font-mono text-theme-muted flex-shrink-0 pt-1">
+                                    {selected.date}
+                                </span>
                             </div>
-                            <p className="text-sm leading-relaxed text-theme-muted mb-4">{selected.description}</p>
+                            <p className="text-sm leading-relaxed text-theme-muted mb-4">
+                                {selected.description}
+                            </p>
                             <div className="flex flex-wrap gap-2">
-                                {selected.tags.map(tag => (
-                                    <span key={tag} className="text-[10px] tracking-[0.15em] uppercase px-2.5 py-1 border border-theme text-theme-muted">
+                                {selected.tags.map((tag) => (
+                                    <span
+                                        key={tag}
+                                        className="text-[10px] tracking-[0.15em] uppercase px-2.5 py-1 border border-theme text-theme-muted"
+                                    >
                                         {tag}
                                     </span>
                                 ))}
