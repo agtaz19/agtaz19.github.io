@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import ResourceImage from "@/assets/stock_photos/Resources_ASU_Library.jpg";
 import { RESOURCE_SECTIONS } from "@/assets/resources/index.js";
@@ -121,7 +121,7 @@ function CategorySection({ section }) {
     };
 
     return (
-        <div id={section.id}>
+        <div id={section.id} style={{ scrollMarginTop: "2rem" }}>
             <h2
                 className="font-heading font-bold text-theme leading-tight mb-1 pb-4 border-b border-theme"
                 style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
@@ -151,6 +151,31 @@ function CategorySection({ section }) {
 // Page
 // ---------------------------------------------------------------------------
 export default function Resources() {
+    // Smooth-scrolls to a section by id and keeps the URL hash in sync,
+    // without relying on the browser's native "#" navigation (which can be
+    // swallowed by react-router's link handling, or land under a fixed
+    // header with no visible effect).
+    const jumpToSection = useCallback((e, id) => {
+        e.preventDefault();
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.pushState(null, "", `#${id}`);
+    }, []);
+
+    // If the page is loaded (or navigated to) with a hash already in the
+    // URL - e.g. a link from another page pointing at #coding - scroll to
+    // it once the sections have actually rendered.
+    useEffect(() => {
+        if (!window.location.hash) return;
+        const id = window.location.hash.slice(1);
+        const timer = setTimeout(() => {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <>
             <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
@@ -184,6 +209,7 @@ export default function Resources() {
                         <React.Fragment key={section.id}>
                             <a 
                                 href={`#${section.id}`} 
+                                onClick={(e) => jumpToSection(e, section.id)}
                                 className="text-theme font-medium underline decoration-theme/30 underline-offset-4 hover:opacity-70 transition-opacity"
                             >
                                 {section.title}
