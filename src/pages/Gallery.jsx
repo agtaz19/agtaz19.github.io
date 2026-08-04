@@ -1,6 +1,33 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 
+const galleryAssets = import.meta.glob(
+    [
+        "./assets/gallery/*.{jpg,jpeg,png,webp,svg}",
+        "../assets/gallery/*.{jpg,jpeg,png,webp,svg}",
+        "../../assets/gallery/*.{jpg,jpeg,png,webp,svg}",
+        "/src/assets/gallery/*.{jpg,jpeg,png,webp,svg}",
+    ],
+    { eager: true, import: "default" }
+);
+
+const getAssetUrl = (filepath) => {
+    if (!filepath) return "";
+
+    const filename = filepath.split("/").pop();
+
+    const matchKey = Object.keys(galleryAssets).find((key) =>
+        key.endsWith(filename)
+    );
+
+    if (matchKey) {
+        return galleryAssets[matchKey];
+    }
+
+    const cleanPath = filepath.replace(/^\.\//, "");
+    return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
 const IMAGES = [
     {
         src: "./assets/gallery/AIX_Summit_2026.jpg",
@@ -139,18 +166,6 @@ const ROWS = [
     { images: IMAGES.slice(8, 12), speed: "85s", offset: "0px", reverse: false },
     { images: IMAGES.slice(12, 16), speed: "80s", offset: "0px", reverse: true },
 ];
-
-const galleryAssets = import.meta.glob(
-    ["./assets/gallery/*", "../assets/gallery/*", "/src/assets/gallery/*"],
-    { eager: true, import: "default" }
-);
-
-const getAssetUrl = (filepath) => {
-    if (!filepath) return "";
-    if (galleryAssets[filepath]) return galleryAssets[filepath];
-    const key = filepath.startsWith("./") ? filepath : `./${filepath}`;
-    return galleryAssets[key] || filepath;
-};
 
 function GalleryStrip({ rowImages, speed, offset, reverse, onSelect }) {
     const [paused, setPaused] = useState(false);
