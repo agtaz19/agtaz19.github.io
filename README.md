@@ -32,12 +32,7 @@ The website is live with these known issue(s):
 I am planning to add:
 
 1. Update resources to be less vague and more personalized
-    - Add career advice:
-        a. "How To Do What You You Love" - Y Combinator
-        b. "Hell Yeah Or No" - Derek Sivers
-        c. "How To Pick A Career" - Tim Urban
-        d. "Make Your Work Your Calling" - Arthur Brooks
-        e. "Guide To Career Planning" - Marc Andreessen
+
 2. Update Repo Layout in ReadMe
 
 ## Methodology & Workflow
