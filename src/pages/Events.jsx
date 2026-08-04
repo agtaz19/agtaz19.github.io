@@ -1,22 +1,29 @@
 import React, { useState } from "react";
 import { ChevronDown, FileText } from "lucide-react";
-import EventsImage from "@/assets/stock_photos/Events_Ampi_Stock.jpg";
+
+// Helper function to resolve relative assets and PDFs via Vite
+const getAssetUrl = (filepath) => {
+    if (!filepath) return "";
+    return new URL(filepath, import.meta.url).href;
+};
 
 const EVENTS = [
     {
         date: "June 2026", 
         title: "Running a Meeting Effectively", 
-        org: "Arizona Boys State", 
+        org: "Arizona Boys State",
+        org_website: "https://azboystate.com/",
         role: "Instructor", 
         location: "Tucson, Arizona", 
         topic: "Robert's Rules of Order & Running a Caucus",
-        pdfUrl: "src/assets/outreach/20260512-Class Notes-Running a Meeting Effectively.pdf",
+        pdfUrl: "../assets/outreach/20260512-Class Notes-Running a Meeting Effectively.pdf",
         comments: "Designed to equip emerging leaders with the tools for seamless parliamentary governance, this workshop provided a comprehensive walkthrough of formal meeting management. Attendees mastered the fundamentals of Robert's Rules of Order—from floor motions and point-of-order protocols to voting mechanics—alongside strategic techniques for facilitating dynamic, fast-paced caucuses. Through practical governance scenarios, participants learned how to maintain order, encourage balanced debate, and drive group consensus efficiently. Attendees walked away with the confidence and procedural clarity needed to run structured, impactful meetings in any formal setting.",
     },
     {
         date: "March 2026", 
         title: "Career Development Series: AI & Technology", 
-        org: "State Street", 
+        org: "State Street",
+        org_website: "https://www.statestreet.com/us/en",
         role: "Moderator", 
         location: "New York, NY", 
         topic: "AI Literacy & Productivity, Emerging Skills, Roles and Careers, Ethics and Responsibility",
@@ -27,6 +34,7 @@ const EVENTS = [
         date: "Spring 2026", 
         title: "Networking Series", 
         org: "Financial Quants & Engineers (FQE)", 
+        org_website: "https://baruchfqe.github.io/",
         role: "Co-Host", 
         location: "New York, NY", 
         topic: "How to Network & Hosting Industry Professionals",
@@ -37,6 +45,7 @@ const EVENTS = [
         date: "Fall 2025", 
         title: "Education Series", 
         org: "Financial Quants & Engineers (FQE)", 
+        org_website: "https://baruchfqe.github.io/",
         role: "Co-Host", 
         location: "New York, NY", 
         topic: "Quantitative Finance Topics",
@@ -46,27 +55,30 @@ const EVENTS = [
     {
         date: "June 2025", 
         title: "Public Finance & Banking", 
-        org: "Arizona Boys State", 
+        org: "Arizona Boys State",
+        org_website: "https://azboystate.com/",
         role: "Instructor", 
         location: "Tucson, Arizona", 
         topic: "Public Finance and the Role of the Treasury",
-        pdfUrl: "src/assets/papers_projects_pdfs/events_outreach/Public Finance & Banking-vf.pdf",
+        pdfUrl: "../assets/papers_projects_pdfs/events_outreach/Public Finance & Banking-vf.pdf",
         comments: "Led coursework on public finance and banking fundamentals, covering government budgeting, financial institutions, and capital markets, with an emphasis on applied analysis and real-world policy and market dynamics.",
     },
     {
         date: "June 2024", 
         title: "Persuasion & Advocacy", 
-        org: "Arizona Boys State", 
+        org: "Arizona Boys State",
+        org_website: "https://azboystate.com/",
         role: "Instructor", 
         location: "Flagstaff, Arizona", 
         topic: "Methods of Persuasion and Advocacy Roles Within the Current Market",
-        pdfUrl: "src/assets/papers_projects_pdfs/events_outreach/Persuasion & Advocacy-vf.pdf",
+        pdfUrl: "../assets/papers_projects_pdfs/events_outreach/Persuasion & Advocacy-vf.pdf",
         comments: "Delivered intensive instruction on persuasive communication, advocacy strategy, and message framing in a seminar-style academic setting, guiding participants through practical exercises in argument development, public speaking, and policy advocacy.",
     },
     {
         date: "September 2023", 
         title: "2023 New Consultant Orientation", 
         org: "FTI Consulting", 
+        org_website: "https://www.fticonsulting.com/",
         role: "Instructor", 
         location: "Chantilly, Virginia", 
         topic: "Corporate Finance & Restructuring Case Study & Performance Improvement Case Study",
@@ -78,6 +90,7 @@ const EVENTS = [
         title: "FTI Consulting Recruiting @ ASU", 
         org: "Hispanic Organization for Leadership & Advancement", 
         role: "Host", 
+        org_website: "https://www.fticonsulting.com/",
         location: "Tempe, Arizona", 
         topic: "More about FTI Consulting and the five independent departments",
         pdfUrl: "",
@@ -135,7 +148,7 @@ const EXTRACURRICULAR = [
     {
         org: "Sports Car Club of America (SCCA)",
         role: "Competitor / Member",
-        image: "@/assets/stock_photos/Z-SCCAImage.jpg",
+        image: "../assets/stock_photos/Z-SCCAImage.jpg",
         description: " The Sports Car Club of America (SCCA) is a non-profit American automobile club and sanctioning body supporting Autocross, Rallycross, HPDE, Time Trial, Road Racing, RoadRally, and Hill Climbs in the United States. Formed in 1944, it runs many programs for both amateur and professional racers.",
     },
     {
@@ -165,7 +178,7 @@ function PdfViewer({ pdfUrl }) {
             {open && (
                 <div className="mt-4 w-full bg-black/20 overflow-hidden rounded-sm border border-theme" style={{ height: "60vh", minHeight: "400px", maxWidth: "800px" }}>
                     <iframe
-                        src={`${pdfUrl}#toolbar=0&navpanes=0`}
+                        src={`${getAssetUrl(pdfUrl)}#toolbar=0&navpanes=0`}
                         title="PDF Presentation"
                         className="w-full h-full border-none"
                     />
@@ -180,7 +193,7 @@ export default function Events() {
         <>
             <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
                 <div className="absolute inset-0">
-                    <img src={EventsImage} alt="" className="w-full h-full object-cover object-center opacity-50" />
+                    <img src={getAssetUrl("../assets/stock_photos/Events_Ampi_Stock.jpg")} alt="" className="w-full h-full object-cover object-center opacity-50" />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 100%)" }} />
                 </div>
                 <div className="relative z-10" style={{ paddingTop: "clamp(5rem,10vw,9rem)", paddingBottom: "clamp(3rem,6vw,5rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
@@ -208,7 +221,7 @@ export default function Events() {
                                         <h3 className="font-heading font-semibold text-base text-theme">{e.title}</h3>
                                         <span className="text-[10px] tracking-[0.15em] uppercase px-2 py-0.5 border border-theme text-theme-muted flex-shrink-0">{e.role}</span>
                                     </div>
-                                    <p className="text-sm font-semibold text-theme mb-1">{e.org}</p>
+                                    <a className="text-sm font-semibold text-theme mb-1" href={e.org_website}>{e.org}</a>
                                     <p className="text-xs text-theme-muted mb-2">{e.location}</p>
                                     <p className="text-sm text-theme-muted italic mb-3">"{e.topic}"</p>
                                     <p className="text-sm text-theme-muted leading-relaxed mb-1">{e.comments}</p>
@@ -240,12 +253,10 @@ export default function Events() {
                                 
                                 {item.entries && item.entries.length > 0 && (
                                     <>
-                                        {/* Render the first entry as a standard description paragraph */}
                                         <p className="text-sm leading-relaxed text-theme-muted mb-3">
                                             {item.entries[0]}
                                         </p>
                                         
-                                        {/* Render the rest of the entries (if any) as a bulleted list */}
                                         {item.entries.length > 1 && (
                                             <ul className="space-y-2">
                                                 {item.entries.slice(1).map((entry, j) => (
@@ -276,7 +287,7 @@ export default function Events() {
                             <div key={i} className="py-8 border-b border-theme">
                                 {item.image && (
                                     <div className="w-full h-48 md:h-64 overflow-hidden mb-5 rounded-sm">
-                                        <img src={item.image} alt={item.org} className="w-full h-full object-cover" />
+                                        <img src={item.image.startsWith('http') ? item.image : getAssetUrl(item.image)} alt={item.org} className="w-full h-full object-cover" />
                                     </div>
                                 )}
                                 <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-2">

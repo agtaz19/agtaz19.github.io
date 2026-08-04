@@ -7,6 +7,7 @@ const ROLES = [
         location: "New York, NY",
         title: "Alternative Investments Business Transformation Analyst, Assistant Vice-President",
         firm: "State Street",
+        firm_website: "https://www.statestreet.com/us/en",
         description: "Part of the Alternative Investments Business Transformation team, supporting strategic and operational initiatives across institutional alternative investment platforms, including private equity, private credit, and real assets. Focused on process optimization, data-driven insights, and scalable solutions to enhance investment operations and decision-making.",
         highlights: ["Led team execution and coordinated cross-functional partners to deploy operational and technology enhancements across alternative investment platforms, turning complex workflows into actionable deliverables.","Designed and implemented analytical models to optimize portfolio operations and evaluate investment workflows.", "Worked with large-scale financial datasets using SQL, Python, and Excel to support performance analysis, reporting, and scenario modeling.", "Collaborated with cross-functional teams, including risk, compliance, technology, and reporting, to deliver process improvements and technology-enabled solutions."],
     },
@@ -15,6 +16,7 @@ const ROLES = [
         location: "New York, New York",
         title: "Management Consultant, Consultant",
         firm: "FTI Consulting",
+        firm_website: "https://www.fticonsulting.com/",
         description: "Consulting within FTI’s Corporate Finance & Restructuring practice, advising corporate clients, creditors, and investors on complex restructuring, turnaround, and performance improvement initiatives. Focused on financial analysis, operational optimization, and business transformation to support strategic and transactional decision-making.",
         highlights: ["Developed financial models, valuation analyses, and liquidity forecasts to guide restructuring and turnaround strategies for clients across industries.", "Evaluated operational and financial data to identify performance gaps and quantify potential improvements.", "Partnered with cross-functional teams, including legal, finance, and operations, to craft actionable recommendations and execution plans.", " Produced executive-ready reports, dashboards, and presentations to inform stakeholder decision-making in both in-court and out-of-court restructuring scenarios."],
     },
@@ -23,6 +25,7 @@ const ROLES = [
         location: "Tempe, Arizona",
         title: "Research Analyst",
         firm: "Center for Investment Engineering, W.P. Carey School of Business",
+        firm_website: "https://wpcarey.asu.edu/finance-degrees",
         description: "Conducted quantitative finance research within the Center for Investment Engineering, supporting faculty-led projects on asset pricing, investment strategies, and financial statement analysis. Focused on structuring and analyzing complex datasets to generate actionable insights for empirical research.",
         highlights: ["Organized unstructured historical financial statement data to enable large-scale empirical analysis.", "Assisted in development of models linking R&D expenditures to future cash-based operating profitability and expected returns, contributing to peer-reviewed research (Goyal, A. & Wahal, S., 2023, “R&D, Expected Profitability, and Expected Returns”).", "Performed statistical and econometric analyses to validate hypotheses and generate research-ready datasets.", "Prepared technical reports and visualizations summarizing findings for faculty and academic audiences."],
     }
@@ -119,7 +122,7 @@ export default function Experience() {
                             </div>
                             <div className="lg:col-span-9">
                                 <h3 className="font-heading font-semibold text-xl text-theme">{role.title}</h3>
-                                <p className="text-sm font-bold mt-1 mb-3" style={{ color: "rgb(134,197,134)" }}>{role.firm}</p>
+                                <a className="text-sm font-bold mt-1 mb-3" style={{ color: "rgb(134,197,134)" }} href={role.firm_website}>{role.firm}</a>
                                 <p className="text-sm leading-relaxed text-theme-muted mb-4">{role.description}</p>
                                 <ul className="space-y-1.5">
                                     {role.highlights.map((h, j) => (
