@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ResourceImage } from "@/assets/stock_photos/Resources_ASU_Library.jpg";
+import ResourceImage from "@/assets/stock_photos/Resources_ASU_Library.jpg";
 import { RESOURCE_SECTIONS } from "@/assets/resources/index.js";
 
 // ---------------------------------------------------------------------------
