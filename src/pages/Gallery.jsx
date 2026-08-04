@@ -251,7 +251,7 @@ export default function Images() {
             >
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.pexels.com/photos/18343396/pexels-photo-18343396.jpeg?w=1800&q=80&fit=crop"
+                        src="https://images.pexels.com/photos/2180820/pexels-photo-2180820.jpeg"
                         alt=""
                         className="w-full h-full object-cover object-center opacity-50"
                         loading="lazy"
