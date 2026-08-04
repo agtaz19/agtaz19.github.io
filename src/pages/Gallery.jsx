@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import { X } from "lucide-react";
+import GalleryImage from "https://images.pexels.com/photos/2180820/pexels-photo-2180820.jpeg";
+
 import  AIXSummit2026 from "@/assets/gallery/AIX_Summit_2026.jpg"
 
 const IMAGES = [
@@ -231,7 +233,7 @@ export default function Images() {
             <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.pexels.com/photos/2180820/pexels-photo-2180820.jpeg"
+                        src={GalleryImage}
                         alt=""
                         className="w-full h-full object-cover object-center opacity-50"
                         loading="lazy"

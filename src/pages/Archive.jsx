@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ArchiveImage from "https://images.pexels.com/photos/18343396/pexels-photo-18343396.jpeg";
 import AlienAttack from "@/components/arcade/AlienAttack.jsx";
 import Blackjack from "@/components/arcade/Blackjack.jsx";
 import Dropper from "@/components/arcade/BLockDropper.jsx";
@@ -172,7 +173,7 @@ export default function Archive() {
             <section className="relative bg-dark-panel overflow-hidden">
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.pexels.com/photos/18343396/pexels-photo-18343396.jpeg?w=1800&q=80&fit=crop"
+                    src={ArchiveImage}
                         alt=""
                         className="w-full h-full object-cover object-center opacity-50"
                     />

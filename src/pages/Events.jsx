@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, FileText } from "lucide-react";
+import EventsImage from "@/assets/stock_photos/Events_Ampi_Stock.jpg";
 
 const EVENTS = [
     {
@@ -134,7 +135,7 @@ const EXTRACURRICULAR = [
     {
         org: "Sports Car Club of America (SCCA)",
         role: "Competitor / Member",
-        image: "src/assets/stock_photos/Z-SCCAImage.jpg",
+        image: "@/assets/stock_photos/Z-SCCAImage.jpg",
         description: " The Sports Car Club of America (SCCA) is a non-profit American automobile club and sanctioning body supporting Autocross, Rallycross, HPDE, Time Trial, Road Racing, RoadRally, and Hill Climbs in the United States. Formed in 1944, it runs many programs for both amateur and professional racers.",
     },
     {
@@ -179,7 +180,7 @@ export default function Events() {
         <>
             <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
                 <div className="absolute inset-0">
-                    <img src="src\assets\stock_photos\Events_Ampi_Stock.jpg?w=1800&q=80&fit=crop" alt="" className="w-full h-full object-cover object-center opacity-50" />
+                    <img src={EventsImage} alt="" className="w-full h-full object-cover object-center opacity-50" />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 100%)" }} />
                 </div>
                 <div className="relative z-10" style={{ paddingTop: "clamp(5rem,10vw,9rem)", paddingBottom: "clamp(3rem,6vw,5rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>

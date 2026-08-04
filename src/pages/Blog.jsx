@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Search, ChevronDown } from "lucide-react"; // Added ChevronDown
+import BlogImage from "@/assets/stock_photos/Blog_Storm.jpg";
 
 export const POSTS = [
     {
@@ -71,7 +72,7 @@ export default function Blog() {
         <>
             <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
                 <div className="absolute inset-0">
-                    <img src="src\assets\stock_photos\Blog_Storm.jpg?w=1800&q=80&fit=crop" alt="" className="w-full h-full object-cover object-center opacity-50" />
+                    <img src={BlogImage} alt="" className="w-full h-full object-cover object-center opacity-50" />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 100%)" }} />
                 </div>
                 <div className="relative z-10" style={{ paddingTop: "clamp(5rem,10vw,9rem)", paddingBottom: "clamp(3rem,6vw,5rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>

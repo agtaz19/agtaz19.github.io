@@ -1,5 +1,5 @@
 import React from "react";
-import Sailing from "@/assets/stock_photos/Experience_Sailing.jpg"
+import Sailing from "@/assets/stock_photos/Experience_Sailing.jpg";
 
 const ROLES = [
     {

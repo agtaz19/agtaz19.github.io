@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { ResourceImage } from "@/assets/stock_photos/Resources_ASU_Library.jpg";
 import { RESOURCE_SECTIONS } from "@/assets/resources/index.js";
 
 // ---------------------------------------------------------------------------
@@ -154,7 +155,7 @@ export default function Resources() {
         <>
             <section className="relative bg-dark-panel border-b overflow-hidden" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
                 <div className="absolute inset-0">
-                    <img src="src\\assets\\stock_photos\\Resources_ASU_Library.jpg?w=1800&q=80&fit=crop" alt="" className="w-full h-full object-cover object-center opacity-50" />
+                    <img src={ResourceImage} alt="" className="w-full h-full object-cover object-center opacity-50" />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 100%)" }} />
                 </div>
                 <div className="relative z-10" style={{ paddingTop: "clamp(5rem,10vw,9rem)", paddingBottom: "clamp(3rem,6vw,5rem)", paddingLeft: "var(--fluid-pad)", paddingRight: "var(--fluid-pad)" }}>
