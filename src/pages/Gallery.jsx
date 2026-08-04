@@ -251,7 +251,7 @@ export default function Images() {
             >
                 <div className="absolute inset-0">
                     <img
-                        src={getAssetUrl("./assets/gallery/AIX_Summit_2026.jpg")}
+                        src="https://images.pexels.com/photos/18343396/pexels-photo-18343396.jpeg?w=1800&q=80&fit=crop"
                         alt=""
                         className="w-full h-full object-cover object-center opacity-50"
                         loading="lazy"
