@@ -3,12 +3,7 @@ import { Link } from "react-router-dom";
 import ResourceImage from "@/assets/stock_photos/Resources_ASU_Library.jpg";
 import { RESOURCE_SECTIONS } from "@/assets/resources/index.js";
 
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
 
-// Renders a description made of alternating plain-text and linked runs
-// without introducing stray spaces before punctuation.
 function InlineRuns({ parts }) {
     return (
         <>
@@ -37,7 +32,6 @@ function InlineRuns({ parts }) {
     );
 }
 
-// A terminal resource: a link, optionally with a short description.
 function ResourceLeaf({ item }) {
     return (
         <li className="py-3.5 first:pt-2 last:pb-2 border-b border-theme/10 last:border-b-0 pl-3">
@@ -63,9 +57,6 @@ function ResourceLeaf({ item }) {
     );
 }
 
-// A collapsible group of resources (a topic, or a nested sub-topic). Renders
-// itself recursively since some groups contain further groups before
-// reaching an actual link.
 function ResourceGroup({ node, depth, pathKey }) {
     const [open, setOpen] = useState(depth === 0 ? false : false);
 
@@ -114,7 +105,6 @@ function ResourceGroup({ node, depth, pathKey }) {
     );
 }
 
-// A full section (e.g. "Coding"): a heading plus its top-level groups/topics.
 function CategorySection({ section }) {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -147,14 +137,8 @@ function CategorySection({ section }) {
     );
 }
 
-// ---------------------------------------------------------------------------
-// Page
-// ---------------------------------------------------------------------------
 export default function Resources() {
-    // Smooth-scrolls to a section by id and keeps the URL hash in sync,
-    // without relying on the browser's native "#" navigation (which can be
-    // swallowed by react-router's link handling, or land under a fixed
-    // header with no visible effect).
+
     const jumpToSection = useCallback((e, id) => {
         e.preventDefault();
         const el = document.getElementById(id);
@@ -163,9 +147,6 @@ export default function Resources() {
         window.history.pushState(null, "", `#${id}`);
     }, []);
 
-    // If the page is loaded (or navigated to) with a hash already in the
-    // URL - e.g. a link from another page pointing at #coding - scroll to
-    // it once the sections have actually rendered.
     useEffect(() => {
         if (!window.location.hash) return;
         const id = window.location.hash.slice(1);

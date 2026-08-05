@@ -7,6 +7,8 @@ import PublicFinancePdf from "@/assets/papers_projects_pdfs/events_outreach/Publ
 import PersuasionPdf from "@/assets/papers_projects_pdfs/events_outreach/Persuasion & Advocacy-vf.pdf";
 import SCCAImage from "@/assets/stock_photos/Z-SCCAImage.jpg";
 
+
+//events and pdfs
 const EVENTS = [
     {
         date: "June 2026", 

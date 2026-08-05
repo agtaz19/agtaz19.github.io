@@ -4,30 +4,25 @@ import { Search, ChevronDown } from "lucide-react";
 import BlogImage from "@/assets/stock_photos/Blog_Storm.jpg";
 import PostsData from "@/assets/blog_posts/blog_posts.json";
 
-// ---- Single source of truth for blog data ----
-// Edit tag colors and post-loading logic HERE only.
-// BlogPost.jsx imports both POSTS and TAG_COLORS from this file.
 
-// Normalizes either a raw array export or a { posts: [...] } wrapper,
-// so the JSON file's shape can change later without touching page code.
 export const POSTS = Array.isArray(PostsData) ? PostsData : (PostsData.posts || []);
 
 export const TAG_COLORS = {
-    Markets:           "rgb(212,175,55)",   /* gold   — finance/markets       */
-    Macro:             "rgb(90,160,210)",   /* blue   — macro/global          */
-    Quantitative:      "rgb(100,185,130)",  /* green  — quant/data            */
-    Strategy:          "rgb(220,160,100)",  /* amber  — strategy              */
-    Restructuring:     "rgb(210,80,80)",    /* red    — turnaround/distress   */
+    Markets:            "rgb(212,175,55)",   /* gold   — finance/markets       */
+    Macro:              "rgb(90,160,210)",   /* blue   — macro/global          */
+    Quantitative:       "rgb(100,185,130)",  /* green  — quant/data            */
+    Strategy:           "rgb(220,160,100)",  /* amber  — strategy              */
+    Restructuring:      "rgb(210,80,80)",    /* red    — turnaround/distress   */
     Private_Equity:     "rgb(140,110,200)",  /* purple — private equity        */
     Venture_Capital:    "rgb(230,130,180)",  /* pink   — venture/startups      */
     Financial_Modeling: "rgb(80,180,190)",   /* teal   — accounting/modeling   */
     Investment_Banking: "rgb(60,110,180)",   /* navy   — M&A/banking           */
-    Consulting:        "rgb(160,140,110)",  /* taupe  — advisory/consulting   */
-    Lifestyle:         "rgb(120,190,150)",  /* sage   — habits/lifestyle      */
-    Career:            "rgb(170,130,100)",  /* rust   — career/development    */
-    Reviews:           "rgb(235,120,100)"   /* coral  — dining/reviews        */
+    Consulting:         "rgb(160,140,110)",  /* taupe  — advisory/consulting   */
+    Lifestyle:          "rgb(120,190,150)",  /* sage   — habits/lifestyle      */
+    Career:             "rgb(170,130,100)",  /* rust   — career/development    */
+    Reviews:            "rgb(235,120,100)",  /* coral  — dining/reviews        */
+    Other:              "rgb(145,150,160)"   /* slate  — neutral/miscellaneous */
 };
-// ---- End single source of truth ----
 
 const ALL_DATES = ["All", ...Array.from(new Set(POSTS.map(p => p.date)))];
 const ALL_TAGS = ["All", ...Array.from(new Set(POSTS.map(p => p.tag))).sort()];
