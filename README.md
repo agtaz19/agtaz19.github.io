@@ -35,6 +35,8 @@ I am planning to add:
 
 2. Update Repo Layout in ReadMe
 
+3. Add pdfs and githubs for projects
+
 ## Methodology & Workflow
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
