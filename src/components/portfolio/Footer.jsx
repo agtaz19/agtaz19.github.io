@@ -128,7 +128,7 @@ export default function Footer() {
                         style={{ color: "rgb(var(--text-secondary))", fontFamily: "var(--font-mono)" }}
                         title="You found it."
                     >
-                        ◈
+                        ◈ Click Me ◈
                     </Link>
 
                     {/* Right: timestamp */}
