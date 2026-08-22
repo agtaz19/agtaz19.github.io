@@ -661,7 +661,7 @@ export default function HeroSection() {
     const handleLeave = useCallback(() => setTooltip(null), []);
 
     return (
-        <section className="relative w-full h-screen min-h-[600px] flex items-end overflow-hidden">
+        <section className="relative w-full h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden">
             {/* ── Background Image & Gradients ── */}
             <div className="absolute inset-0">
                 <img
@@ -678,13 +678,18 @@ export default function HeroSection() {
             </div>
 
             {/* ── Live clock + market status, divider, tickers, and search bar — top right ── */}
-            <div className="absolute top-24 right-0 pr-[var(--fluid-pad)] z-10 flex flex-col items-end gap-2 w-[300px] sm:w-[380px] md:w-[440px]">
+            {/* Phones: clock + status only. Tablets (sm+): add ticker ribbons. Desktop (md+): add stock search. */}
+            <div className="absolute top-16 sm:top-24 right-0 pr-[var(--fluid-pad)] z-10 flex flex-col items-end gap-2 w-auto sm:w-[380px] md:w-[440px] max-w-[calc(100vw-2*var(--fluid-pad))]">
                 <LiveClock />
                 <MarketStatusBadge isOpen={isOpen} />
-                <div className="w-full h-px bg-white/15 my-1" />
-                <TickerRibbons tickers={tickers} onCellHover={handleHover} onCellLeave={handleLeave} />
-                <div className="w-full h-px bg-white/15 my-1" />
-                <StockSearch />
+                <div className="hidden sm:block w-full h-px bg-white/15 my-1" />
+                <div className="hidden sm:block w-full">
+                    <TickerRibbons tickers={tickers} onCellHover={handleHover} onCellLeave={handleLeave} />
+                </div>
+                <div className="hidden md:block w-full h-px bg-white/15 my-1" />
+                <div className="hidden md:block w-full">
+                    <StockSearch />
+                </div>
             </div>
 
             {/* ── Hero text — bottom left ── */}
