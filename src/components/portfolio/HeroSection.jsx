@@ -726,7 +726,7 @@ export default function HeroSection() {
                     className="mt-5 text-white/75 text-base md:text-lg leading-relaxed max-w-5xl"
                     style={{ fontFamily: "var(--font-body)" }}
                 >
-                    A curated overview of my research, projects, and professional experience across finance, consulting, and quantitiative finance. This space is designed to highlight my work, provide insights into my approach to problem-solving, and showcase my contributions to academic and the professional world.
+                    Dive into a curated archive of my quantitative research, engineering projects, and professional advisory work. This space details how I combine advanced mathematics, computer science, and fundamental analysis to decode complex systems and build high-performance solutions.
 
                 </p>
 

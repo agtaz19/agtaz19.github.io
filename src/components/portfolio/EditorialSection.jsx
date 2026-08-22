@@ -38,14 +38,14 @@ export default function EditorialSection() {
                         className="font-heading font-medium leading-[1.35] text-theme"
                         style={{ fontSize: "clamp(1.3rem, 2.5vw, 2rem)" }}
                     >
-                        I help organizations make high-stakes decisions with confidence. With my background in quantiative finance and management consulting, I build frameworks, models, and strategies to evaluate and solve problems. From my experience from engineering quantitiative strategies to building a financial model or assisting non-profit organizations with a project plan, I weight inputs and measure optimal outcomes.
+                        I apply rigorous mathematics, computer science, and quantitative modeling to engineer high-performance trading strategies and decode complex market dynamics. By leveraging stochastic calculus, algorithmic execution frameworks, and statistical arbitrage models, I transform raw data into systematic alpha. Supported by past experience spanning institutional finance and strategic consulting, I bring a structured perspective to high-stakes problem-solving. Whether backtesting execution pipelines or building robust financial models, I bridge advanced computational theory with disciplined capital deployment.
                     </p>
 
                     <p
                         className="mt-6 text-base leading-relaxed"
                         style={{ color: "rgb(var(--text-secondary))", maxWidth: "920px" }}
                     >
-                        My experience is extensive from Quantitative Research & Analysis to Programming & Software Development, even including more traditional areas like restructuring and transaction advisory. Please reach out and learn more.
+                        From architecting algorithmic software and quantitative research pipelines to evaluating corporate health through restructuring and transaction advisory, I connect deep computational execution with fundamental business strategy intuition. Let's connect to explore how we can build, analyze, or solve something exceptional together. Please reach out to learn more.
                     </p>
 
                     <Link
