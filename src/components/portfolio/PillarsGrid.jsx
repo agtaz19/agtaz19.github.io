@@ -18,32 +18,32 @@ const DATA_IMG   = "https://images.pexels.com/photos/36346074/pexels-photo-36346
 // ── Edit these to change pillar titles / descriptions ──
 const PILLARS = [
     {
-        id: "finance",
-        label: "Finance",
-        word: "Advisory",
-        description: "Capital markets, M&A, and restructuring.",
-        image: FINANCE_IMG,
+        id: "theoretical_foundation",
+        label: "Core Discipline",
+        word: "Mathematics",
+        description: "The formal language of quantitative finance, utilizing probability theory, linear algebra, and stochastic calculus to model continuous-time asset price paths, volatility smiles, and derivative valuations.",
+        image: DATA_IMG,
     },
     {
-        id: "quant",
-        label: "Mathematics & Coding",
-        word: "Quantitative Finance",
-        description: "Modeling, Development, and Trading.",
-        image: QUANT_IMG,
-    },
-    {
-        id: "consulting",
-        label: "Strategy",
-        word: "Consulting",
-        description: "Corporate strategy, strategic planning, and due diligence.",
+        id: "empirical_engine",
+        label: "Analytical Method",
+        word: "Statistics",
+        description: "The data-driven framework used for parameter estimation, hypothesis testing, time-series analysis, and econometrics to separate genuine market signals from noise.",
         image: CONSULTING_IMG,
     },
     {
-        id: "data",
-        label: "Data Science",
-        word: "Insights",
-        description: "Deep learning, big data, model validation.",
-        image: DATA_IMG,
+        id: "execution_infrastructure",
+        label: "Technical Backbone",
+        word: "Computation",
+        description: "The software engineering and data infrastructure required to build low-latency execution pipelines, manage massive tick-data stores, and backtest algorithmic trading strategies efficiently.",
+        image: QUANT_IMG,
+    },
+    {
+        id: "market_principles",
+        label: "Domain Knolwedge",
+        word: "Financial Economics",
+        description: "The underlying theory of capital markets, covering market microstructure, asset pricing anomalies, liquidity dynamics, and portfolio risk management frameworks.",
+        image: FINANCE_IMG,
     },
 ];
 
