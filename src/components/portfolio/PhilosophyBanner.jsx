@@ -1,22 +1,84 @@
 /**
  * PhilosophyBanner — Full-width dark editorial banner, HRT-style
- *
- * Mirrors HRT's "Our Philosophy" section:
- * - Always dark background (even in light mode), for contrast
- * - Small-caps label on the left / top
- * - Large serif paragraph spanning the width
- * - Subtle accent stat row at the bottom
  */
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // ── Key stats displayed at the bottom of the banner ──
 // Edit values and labels to match your real numbers
 const STATS = [
-    { value: "$2.4B", label: "Capital Overseen" },
+    { value: "$2.4B", label: "Capital Modeled & Serviced" },
     { value: "20+",    label: "Companies Advised" },
     { value: "20M+",   label: "Financial Data Points Modeled" },
     { value: "12",     label: "Organizations Collaborated With" },
 ];
+
+// ── Custom Count Up Hook & Component ──
+const AnimatedStat = ({ textValue }) => {
+    const [count, setCount] = useState(0);
+    const [hasAnimated, setHasAnimated] = useState(false);
+    const ref = useRef(null);
+
+    // Regex to split "$2.4B" into prefix ("$"), number ("2.4"), and suffix ("B")
+    const match = textValue.match(/^([^0-9.-]*)([0-9.]+)(.*)$/);
+    const prefix = match ? match[1] : '';
+    const target = match ? parseFloat(match[2]) : 0;
+    const suffix = match ? match[3] : '';
+    
+    // Determine how many decimal places to preserve (e.g., 2.4 has 1)
+    const isFloat = match && match[2].includes('.');
+    const decimals = isFloat ? match[2].split('.')[1].length : 0;
+
+    useEffect(() => {
+        if (!ref.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // Trigger animation only once when it enters the viewport
+                if (entry.isIntersecting && !hasAnimated) {
+                    setHasAnimated(true);
+                    startAnimation();
+                }
+            },
+            { threshold: 0.5 } // Triggers when 50% of the element is visible
+        );
+
+        observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, [hasAnimated]);
+
+    const startAnimation = () => {
+        let startTime = null;
+        const duration = 2000; // 2 seconds
+
+        const animate = (currentTime) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+
+            // Ease-out exponential function for a natural slowdown at the end
+            const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
+            setCount(target * easeOut);
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                setCount(target);
+            }
+        };
+        requestAnimationFrame(animate);
+    };
+
+    // Fallback if the string doesn't contain a number
+    if (!match) return <span>{textValue}</span>;
+
+    return (
+        <span ref={ref}>
+            {prefix}
+            {count.toFixed(decimals)}
+            {suffix}
+        </span>
+    );
+};
 
 export default function PhilosophyBanner() {
     return (
@@ -45,7 +107,7 @@ export default function PhilosophyBanner() {
                         className="font-heading font-medium leading-[1.3] text-theme"
                         style={{ fontSize: "clamp(1.4rem, 2.8vw, 2.2rem)" }}
                     >
-                        I view complex organizations and financial markets as interconnected systems that can be modeled, optimized, and systematically improved. True transformation requires peeling back the surface layers to understand the fundamental mechanics driving an operation, then restructuring those pieces for maximum efficiency. My goal is always to eliminate institutional guesswork and replace it with predictable, data-driven frameworks that ensure long-term stability.
+                        I view  financial markets and complex organizations as interconnected systems that can be modeled, optimized, and systematically improved. Whether designing multi-factor quantitative strategies and empirical asset pricing models at Arizona State University, executing corporate restructuring and financial transformations at FTI Consulting, or driving operational efficiency at State Street, my approach centers on peeling back surface layers to master fundamental mechanics. True transformation requires eliminating institutional guesswork and replacing it with rigorous, data-driven architectures—spanning algorithmic backtesting, predictive financial modeling, and streamlined operational workflows—that ensure long-term resilience and scalable performance.
                     </p>
                 </div>
             </div>
@@ -63,7 +125,8 @@ export default function PhilosophyBanner() {
                                 color: "rgb(212,175,55)",
                             }}
                         >
-                            {s.value}
+                            {/* Replaced static value with AnimatedStat component */}
+                            <AnimatedStat textValue={s.value} />
                         </div>
                         <div className="text-[11px] tracking-[0.2em] uppercase text-theme-muted mt-1"
                             style={{ fontFamily: "var(--font-mono)" }}>
