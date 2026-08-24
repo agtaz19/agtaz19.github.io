@@ -1,10 +1,5 @@
 /**
  * Layout — Page wrapper providing consistent Header + Footer
- *
- * Wraps every page via React Router's <Outlet>.
- * NOTE: The hero section handles its own top spacing (full-viewport).
- *       The main element has no top padding here — the header is transparent
- *       over the hero and becomes solid on scroll.
  */
 import React from "react";
 import { Outlet } from "react-router-dom";

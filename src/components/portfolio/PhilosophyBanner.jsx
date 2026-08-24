@@ -12,11 +12,10 @@ const STATS = [
     { value: "12",     label: "Organizations Collaborated With" },
 ];
 
-// ── Custom Count Up Hook & Component ──
 const AnimatedStat = ({ textValue }) => {
     const [count, setCount] = useState(0);
-    const [hasAnimated, setHasAnimated] = useState(false);
     const ref = useRef(null);
+    const animationRef = useRef(null); // Keeps track of the animation frame
 
     // Regex to split "$2.4B" into prefix ("$"), number ("2.4"), and suffix ("B")
     const match = textValue.match(/^([^0-9.-]*)([0-9.]+)(.*)$/);
@@ -24,27 +23,9 @@ const AnimatedStat = ({ textValue }) => {
     const target = match ? parseFloat(match[2]) : 0;
     const suffix = match ? match[3] : '';
     
-    // Determine how many decimal places to preserve (e.g., 2.4 has 1)
+    // Determine how many decimal places to preserve
     const isFloat = match && match[2].includes('.');
     const decimals = isFloat ? match[2].split('.')[1].length : 0;
-
-    useEffect(() => {
-        if (!ref.current) return;
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                // Trigger animation only once when it enters the viewport
-                if (entry.isIntersecting && !hasAnimated) {
-                    setHasAnimated(true);
-                    startAnimation();
-                }
-            },
-            { threshold: 0.5 } // Triggers when 50% of the element is visible
-        );
-
-        observer.observe(ref.current);
-        return () => observer.disconnect();
-    }, [hasAnimated]);
 
     const startAnimation = () => {
         let startTime = null;
@@ -54,19 +35,44 @@ const AnimatedStat = ({ textValue }) => {
             if (!startTime) startTime = currentTime;
             const progress = Math.min((currentTime - startTime) / duration, 1);
 
-            // Ease-out exponential function for a natural slowdown at the end
+            // Ease-out exponential function
             const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
 
             setCount(target * easeOut);
 
             if (progress < 1) {
-                requestAnimationFrame(animate);
+                animationRef.current = requestAnimationFrame(animate);
             } else {
                 setCount(target);
             }
         };
-        requestAnimationFrame(animate);
+        animationRef.current = requestAnimationFrame(animate);
     };
+
+    useEffect(() => {
+        if (!ref.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    // Start animation when it enters the viewport
+                    startAnimation();
+                } else {
+                    // User scrolled away: cancel animation and reset to 0
+                    if (animationRef.current) cancelAnimationFrame(animationRef.current);
+                    setCount(0);
+                }
+            },
+            { threshold: 0.5 } // Triggers when 50% of the element is visible
+        );
+
+        observer.observe(ref.current);
+        
+        return () => {
+            observer.disconnect();
+            if (animationRef.current) cancelAnimationFrame(animationRef.current);
+        };
+    }, [target]);
 
     // Fallback if the string doesn't contain a number
     if (!match) return <span>{textValue}</span>;
@@ -94,14 +100,12 @@ export default function PhilosophyBanner() {
         >
             {/* Label + body: 12-col grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-                {/* Left label */}
                 <div className="lg:col-span-3">
                     <p className="text-xs font-semibold tracking-[0.25em] uppercase text-theme-muted">
                         My Insights
                     </p>
                 </div>
 
-                {/* Right: large serif text */}
                 <div className="lg:col-span-9">
                     <p
                         className="font-heading font-medium leading-[1.3] text-theme"
@@ -125,7 +129,6 @@ export default function PhilosophyBanner() {
                                 color: "rgb(212,175,55)",
                             }}
                         >
-                            {/* Replaced static value with AnimatedStat component */}
                             <AnimatedStat textValue={s.value} />
                         </div>
                         <div className="text-[11px] tracking-[0.2em] uppercase text-theme-muted mt-1"
