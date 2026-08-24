@@ -32,7 +32,8 @@ const SECTIONS = [
                 </a>
                 ). In this project, I analyzed how corporate R&D expenditures predict future cash-based operating profitability and the implications for expected stock returns. My work involved gathering and cleaning firm-level financial and R&D data, constructing operating profitability factors, and implementing regression analyses to examine relationships between R&D intensity and expected returns. Through this research, I helped confirm that high R&D firms exhibit positive loadings on a cash-based operating profitability factor while showing zero alphas, and demonstrated that capitalizing R&D into book values is unnecessary for asset pricing when expected profitability is explicitly incorporated. This experience honed my quantitative modeling skills, empirical research methodology, and ability to translate complex financial concepts into actionable insights.
             </>,
-            "I have additional experience in estate planning and business law as a legal assistant.",
+            "I gained exposure to traditional finance through the internships that I had during my time at Arizona State University. Starting with experience at Anodize Capital Partners, which was a search fund, then working at Transcend Healthcare Partners, a healthcare technology private equity firm, and finalizing my internship activity at Intel working on strategy consulting and financial planning for autonomous vehicle deployment",
+            "I have additional experience in a small estate planning and business boutique law as a legal assistant at Forakis Law Firm.",
         ],
     },
     {
@@ -60,15 +61,15 @@ const SECTIONS = [
             </>,
             "I further strengthened my practical skills and competitive edge through participation in multiple case competitions. Notably, I earned second place in the Dell Case Competition for sustainable supply chain management, demonstrating my ability to apply analytical frameworks and strategic insights to real-world operational challenges. Additional competitions provided exposure to corporate strategy, financial modeling, and cross-functional teamwork, reinforcing both my technical capabilities and leadership skills.",
             "Collectively, my education combined rigorous theoretical training, applied research, and practical investment and operational experience, equipping me to approach complex business and financial problems with analytical precision, strategic insight, and creativity.",
-            "I spent two years at Case Western Reserve University studying Cognitive Science and English, minoring in Computer Science."
+            "I spent two years at Case Western Reserve University studying Cognitive Science and English, minoring in Computer Science. Furthermore, I worked as a residential assistant during my time at Case Western."
         ],
     },
     {
         id: "interests",
         label: "Personal Interests",
         content: [
-            "Outside of work and academics, I pursue activities that challenge both mind and body. I am an avid participant in motorsports and distance running, disciplines that sharpen focus, endurance, and discipline. I also enjoy testing my knowledge through trivia competitions, which feed my curiosity and appreciation for learning across diverse subjects.",
-            "In addition to personal hobbies, I am a devoted pet owner to a Yorkshire Terrier, who provides companionship, balance, and perspective amid busy professional and academic schedules. These interests allow me to cultivate resilience, creativity, and a sense of play, complementing my professional and scholarly pursuits."
+            "Outside of work and academics, I pursue activities that challenge both mind and body. I am an avid participant in motorsports and working out, activities that sharpen focus, endurance, and discipline. I also enjoy testing my knowledge through trivia competitions, which feed my curiosity and appreciation for learning across diverse subjects.",
+            "In addition to personal hobbies, I am a devoted pet owner to a Yorkshire Terrier, who provides companionship, balance, and perspective amid busy professional and academic schedules. These interests allow me to cultivate resilience, creativity, and a sense of play, complementing my professional and academic pursuits."
         ],
     },
     {
@@ -182,7 +183,7 @@ const TIMELINE = [
             { 
                 role: "Growing Up", 
                 org: "Arizona", 
-                note: "Pursued interdisciplinary coursework in cognitive science, English, and computer science while participating in The Athenian satirical journal, ultimate frisbee, and pre-law organizations. My academic focus centered on formalizing models of human decision-making by integrating cognitive theory, linguistic analysis, and computational methods, with particular interest in applications to law and institutional decision systems." 
+                note: "Growing up in Phoenix, Arizona, daily routines were shaped by the regional climate and landscape, which involved frequent hiking excursions through local desert mountain preserves. Physical conditioning centered on competitive cross country running and track and field training, requiring regular adaptation to high-temperature outdoor training environments. High school education was completed at a liberal arts institution that combined traditional college-preparatory coursework with structured arts programs. Musical involvement ran parallel to these academic and athletic commitments, encompassing instrumental performance on the saxophone within jazz and concert bands alongside vocal participation in school and community choral ensembles." 
             }
         ]
     }

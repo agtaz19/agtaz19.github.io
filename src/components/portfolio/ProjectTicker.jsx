@@ -192,7 +192,7 @@ const PROJECTS = [
     {
         id: 11,
         tag: "Volunteering",
-        title: "Boys State Operations & Logistics Revamp",
+        title: "Arizona Boys State Operations & Logistics Revamp",
         description: "Overhauled operational logistics, scheduling systems, and administrative infrastructure for a premier leadership program.",
         metric: "1,000+",
         metricLabel: "Participants Served",

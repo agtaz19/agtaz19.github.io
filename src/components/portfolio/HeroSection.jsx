@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import LiveClock from "@/components/portfolio/LiveClock";
 
 // ── Hero background
@@ -15,12 +15,33 @@ const ROTATING_WORDS = [
     "an engineer.",
 ];
 
-function useTypewriter(words, typingSpeed = 80, deletingSpeed = 45, pauseDuration = 1800) {
+// ── Pauses background work (intervals, timers) when the section scrolls out of view ──
+function useIsVisible(ref, options = { threshold: 0 }) {
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        const node = ref.current;
+        if (!node) return;
+
+        const observer = new IntersectionObserver(([entry]) => {
+            setIsVisible(entry.isIntersecting);
+        }, options);
+
+        observer.observe(node);
+        return () => observer.disconnect();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [ref]);
+
+    return isVisible;
+}
+
+function useTypewriter(words, isActive, typingSpeed = 80, deletingSpeed = 45, pauseDuration = 1800) {
     const [displayed, setDisplayed] = useState("");
     const [wordIndex, setWordIndex] = useState(0);
     const [phase, setPhase] = useState("typing");
 
     useEffect(() => {
+        if (!isActive) return;
         const word = words[wordIndex % words.length];
 
         if (phase === "typing") {
@@ -47,7 +68,7 @@ function useTypewriter(words, typingSpeed = 80, deletingSpeed = 45, pauseDuratio
                 setPhase("typing");
             }
         }
-    }, [displayed, phase, wordIndex, words, typingSpeed, deletingSpeed, pauseDuration]);
+    }, [displayed, phase, wordIndex, words, typingSpeed, deletingSpeed, pauseDuration, isActive]);
 
     return displayed;
 }
@@ -153,7 +174,7 @@ function formatTickerValue(key, price) {
     return price.toFixed(2);
 }
 
-function useMarketData() {
+function useMarketData(isActive = true) {
     const [isOpen, setIsOpen] = useState(isNyseOpenNow());
     const [tickers, setTickers] = useState(() => {
         const seed = {};
@@ -164,11 +185,13 @@ function useMarketData() {
     });
 
     useEffect(() => {
+        if (!isActive) return;
         const id = setInterval(() => setIsOpen(isNyseOpenNow()), 60_000);
         return () => clearInterval(id);
-    }, []);
+    }, [isActive]);
 
     useEffect(() => {
+        if (!isActive) return;
         const id = setInterval(() => {
             setTickers(prev => {
                 const next = {};
@@ -184,7 +207,7 @@ function useMarketData() {
             });
         }, 2500);
         return () => clearInterval(id);
-    }, [isOpen]);
+    }, [isOpen, isActive]);
 
     return { isOpen, tickers };
 }
@@ -649,8 +672,11 @@ function StockSearch() {
 }
 
 export default function HeroSection() {
-    const typedWord = useTypewriter(ROTATING_WORDS);
-    const { isOpen, tickers } = useMarketData();
+    const sectionRef = useRef(null);
+    const isVisible = useIsVisible(sectionRef, { threshold: 0 });
+
+    const typedWord = useTypewriter(ROTATING_WORDS, isVisible);
+    const { isOpen, tickers } = useMarketData(isVisible);
 
     const [tooltip, setTooltip] = useState(null);
 
@@ -661,7 +687,10 @@ export default function HeroSection() {
     const handleLeave = useCallback(() => setTooltip(null), []);
 
     return (
-        <section className="relative w-full h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden">
+        <section
+            ref={sectionRef}
+            className="relative w-full h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden"
+        >
             {/* ── Background Image & Gradients ── */}
             <div className="absolute inset-0">
                 <img
