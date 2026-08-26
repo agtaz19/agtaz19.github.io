@@ -23,7 +23,7 @@ The website is currently live and functional.
 
 - **Current Version:** v0.2.0
 - **Development Stage:** Live
-- **Last Updated:** August, 2025
+- **Last Updated:** August, 2026
 
 The website is live with these known issue(s):
 
@@ -36,6 +36,8 @@ I am planning to add:
 2. Update Repo Layout in ReadMe
 
 3. Add pdfs and githubs for projects
+
+4. Make projects more interactive
 
 ## Methodology & Workflow
 
